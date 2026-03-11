@@ -1,0 +1,7 @@
+services:
+  dashboard:
+    build: .
+    container_name: dashboard-obstetricia
+    ports:
+      - "8502:8502"
+    restart: unless-stopped
