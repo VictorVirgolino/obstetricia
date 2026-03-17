@@ -4,4 +4,6 @@ services:
     container_name: dashboard-obstetricia
     ports:
       - "8502:8502"
+    volumes:
+      - ./saude_real.db:/app/saude_real.db
     restart: unless-stopped

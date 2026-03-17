@@ -2,3 +2,5 @@ __pycache__
 *.pyc
 .git
 documentacao_dashboard.md
+*_backup_*.db
+saude_real.db
