@@ -57,7 +57,7 @@ def marcar_problemas():
                     WHEN observacao NOT LIKE '%SEM AIH%' THEN observacao || ' | SEM AIH'
                     ELSE observacao
                 END
-            WHERE competencia = ? AND (id_aih = '' OR id_aih IS NULL)
+            WHERE competencia = ? AND (id_aih = '' OR id_aih IS NULL OR id_aih LIKE 'SEM_AIH_%')
         ''', (comp,))
 
         # SEM CNS

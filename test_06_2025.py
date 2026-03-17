@@ -80,7 +80,7 @@ async def extract_and_save(detail_page, record_id, data_ent_url, data_sai_url):
     db_manager.save_paciente(patient_data)
 
     # 2. AIH Record
-    id_aih = await safe_get_value(detail_page, 'input#AIH_NUM_AIH', f"P{record_id}")
+    id_aih = await safe_get_value(detail_page, 'input#AIH_NUM_AIH', "")
     data_ent = await safe_get_value(detail_page, 'input#AIH_DT_INT')
     data_sai = await safe_get_value(detail_page, 'input#AIH_DT_SAI')
     if not data_ent:
@@ -88,8 +88,13 @@ async def extract_and_save(detail_page, record_id, data_ent_url, data_sai_url):
     if not data_sai:
         data_sai = data_sai_url
 
+    # Generate synthetic id_aih when empty (e.g. RN patients without AIH)
+    id_aih_clean = id_aih.strip()
+    if not id_aih_clean:
+        id_aih_clean = f"SEM_AIH_{record_id}_{data_ent}_{data_sai}"
+
     aih_data = {
-        'id_aih': id_aih.strip(),
+        'id_aih': id_aih_clean,
         'prontuario': record_id,
         'cns_paciente': p_cns.strip(),
         'data_ent': data_ent,
@@ -134,11 +139,11 @@ async def extract_and_save(detail_page, record_id, data_ent_url, data_sai_url):
     if not procs:
         main_proc = await safe_get_value(detail_page, 'input#AIH_PROC_REA')
         if main_proc and re.match(r'^\d{10}$', main_proc.strip()):
-            db_manager.save_procedimento(id_aih.strip(), main_proc.strip(), 1, "", "")
+            db_manager.save_procedimento(id_aih_clean, main_proc.strip(), 1, "", "")
     else:
         for proc in procs:
             qty = int(proc['qty']) if proc['qty'].isdigit() else 1
-            db_manager.save_procedimento(id_aih.strip(), proc['code'], qty, proc['cbo'], proc['cnes'])
+            db_manager.save_procedimento(id_aih_clean, proc['code'], qty, proc['cbo'], proc['cnes'])
 
     saved_ok.append(record_id)
     print(f"  OK: {record_id} - {p_name.strip()} ({len(procs)} procs)")

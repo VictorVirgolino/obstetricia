@@ -167,6 +167,26 @@ def migrate_db():
         cursor.execute("ALTER TABLE aih_records_new RENAME TO aih_records")
         print(f"  Migrado: {old_count} -> {new_count} registros")
 
+    # Migrate empty id_aih to synthetic keys (SEM_AIH_prontuario_data_ent_data_sai)
+    # This fixes the bug where all patients without AIH shared id_aih=''
+    cursor.execute("SELECT COUNT(*) FROM aih_records WHERE id_aih = ''")
+    empty_count = cursor.fetchone()[0]
+    if empty_count > 0:
+        print(f"Migrando {empty_count} registros com id_aih vazio para chave sintetica...")
+        # Update aih_records: generate synthetic id_aih
+        cursor.execute("""
+            UPDATE aih_records
+            SET id_aih = 'SEM_AIH_' || prontuario || '_' || data_ent || '_' || data_sai
+            WHERE id_aih = ''
+        """)
+        # Delete orphaned procedures with empty id_aih (they were shared/corrupt)
+        # They will be re-extracted with correct id_aih on next scraper run
+        cursor.execute("DELETE FROM aih_procedimentos WHERE id_aih = ''")
+        deleted = cursor.rowcount
+        print(f"  Registros AIH atualizados: {empty_count}")
+        print(f"  Procedimentos orfaos removidos: {deleted}")
+        print(f"  Execute 'python run_sync.py' para re-extrair os procedimentos corretos.")
+
     conn.commit()
     conn.close()
 

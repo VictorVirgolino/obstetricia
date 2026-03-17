@@ -1,0 +1,201 @@
+=== Report for Prontuario: 368677 ===
+
+[AIH Records]
+  prontuario competencia    data_ent id_aih     cns_paciente    data_sai cid_principal    motivo_saida           medico_solic                    medico_resp data_atendimento observacao
+0     368677     06/2025  2025-05-21         500508769897651  2025-05-27          P599  ALTA MELHORADO  CANDIDA MARIA C DINIZ  KAROLINNE SOUTO DE FIGUEIREDO       2025-05-21    SEM AIH
+
+--- Procedures for ID_AIH:  (Comp: 06/2025) ---
+       proc_cod  qtd cbo_profissional cnes_executante                                                                                              descricao
+0    0303100044    1           225125         2362287                                                     TRATAMENTO DE INTERCORRENCIAS CLINICAS NA GRAVIDEZ
+1    0202031110    1                          2362287                                                           TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS
+2    0214010058    1                          2362287                                                        TESTE RÁPIDO PARA DETECÇÃO DE INFECÇÃO PELO HIV
+3    0202120023    1                          2362287                                                             DETERMINACAO DIRETA E REVERSA DE GRUPO ABO
+4    0202030636    1                          2362287                 PESQUISA DE ANTICORPOS CONTRA ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (ANTI-HBS)
+5    0802010016    1                          2362287                                                           DIARIA DE ACOMPANHANTE ADULTO (COM PERNOITE)
+6    0205020143    1                          2362287                                                                            ULTRASSONOGRAFIA OBSTETRICA
+7    0202020380    1                          2362287                                                                                     HEMOGRAMA COMPLETO
+8    0202020029    1                          2362287                                                                                  CONTAGEM DE PLAQUETAS
+9    0202010694    1                          2362287                                                                                       DOSAGEM DE UREIA
+10   0202050017    1                          2362287                                          ANALISE DE CARACTERES FISICOS, ELEMENTOS E SEDIMENTO DA URINA
+11   0202010317    1                          2362287                                                                                  DOSAGEM DE CREATININA
+12   0202010635    1                          2362287                                                                                       DOSAGEM DE SODIO
+13   0202010600    1                          2362287                                                                                    DOSAGEM DE POTASSIO
+14   0202010260    1                          2362287                                                                                     DOSAGEM DE CLORETO
+15   0202010210    1                          2362287                                                                                      DOSAGEM DE CALCIO
+16   0301010048    1           251510         2362287                   CONSULTA DE PROFISSIONAIS DE NIVEL SUPERIOR NA ATENÇÃO ESPECIALIZADA (EXCETO MÉDICO)
+17   0411010026    1           225250         2362287                                                              PARTO CESARIANO EM GESTACAO DE ALTO RISCO
+18   0417010036    1           225151         2362287                                             ANESTESIA OBSTETRICA P/CESARIANA EM GESTACAO DE ALTO RISCO
+19   0310010020    1           225124         2362287                                                  ATENDIMENTO AO RECEM-NASCIDO NO MOMENTO DO NASCIMENTO
+20   0301010145    1           225124         2362287                                                        PRIMEIRA CONSULTA DE PEDIATRIA AO RECEM-NASCIDO
+21   0802010032    4                          2362287                                                         DIARIA DE ACOMPANHANTE DE GESTANTE C/ PERNOITE
+22   0302050019    3           223605         2362287  ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTES NO PRÉ E PÓS-OPERATÓRIO NAS DISFUNÇÕES MÚSCULO ESQUELÉTICAS
+23   0202010643    1                          2362287                                                    DOSAGEM DE TRANSAMINASE GLUTAMICO-OXALACETICA (TGO)
+24   0202010651    1                          2362287                                                       DOSAGEM DE TRANSAMINASE GLUTAMICO-PIRUVICA (TGP)
+25   0202010368    1                          2362287                                                                        DOSAGEM DE DESIDROGENASE LATICA
+26   0202031179    1                          2362287                                              TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS EM GESTANTES
+27   0301060088    1           225125         2362287                                             DIAGNOSTICO E/OU ATENDIMENTO DE URGENCIA EM CLINICA MEDICA
+28   0202010120    1                          2362287                                                                                 DOSAGEM DE ACIDO URICO
+29   0202010201    2                          2362287                                                                 DOSAGEM DE BILIRRUBINA TOTAL E FRACOES
+30   0202010040    2                          2362287                                                           DETERMINACAO DE CURVA GLICEMICA (2 DOSAGENS)
+31   0202010473    2                          2362287                                                                                     DOSAGEM DE GLICOSE
+32   0205010059    1                          2362287                                                           ULTRASSONOGRAFIA DOPPLER DE FLUXO OBSTETRICO
+33   0205020151    1                          2362287                                              ULTRASSONOGRAFIA OBSTETRICA C/ DOPPLER COLORIDO E PULSADO
+34   0205020186    1                          2362287                                                                          ULTRASSONOGRAFIA TRANSVAGINAL
+35   0310010047    1           225250         2362287                                                                 PARTO NORMAL EM GESTACAO DE ALTO RISCO
+36   0801010039    1                          2362287                                                               INCENTIVO AO PARTO - PHPN (COMPONENTE I)
+37   0310010039    1           225250         2362287                                                                                           PARTO NORMAL
+38   0302010033    6           223605         2362287                                                       ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE NEONATO
+39   0205020054    1                          2362287                                                                  ULTRASSONOGRAFIA DE APARELHO URINÁRIO
+40   0409060070    1           225151         2362287                             ESVAZIAMENTO DE UTERO POS-ABORTO POR ASPIRACAO MANUAL INTRA-UTERINA (AMIU)
+41   0202020541    1                          2362287                                                             TESTE DIRETO DE ANTIGLOBULINA HUMANA (TAD)
+42   0301010170    1           225120         2362287                                                               CONSULTA/AVALIAÇÃO EM PACIENTE INTERNADO
+43   0205020046    1                          2362287                                                                      ULTRASSONOGRAFIA DE ABDOMEN TOTAL
+44   0411010034    1           225250         2362287                                                                                        PARTO CESARIANO
+45   0417010010    1           225151         2362287                                                                      ANESTESIA OBSTETRICA P/ CESARIANA
+46   0411010042    1           225250         2362287                                                                  PARTO CESARIANO C/ LAQUEADURA TUBARIA
+47   0302040013   11           223605         2362287       ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE COM TRANSTORNO RESPIRATÓRIO COM COMPLICAÇÕES SISTÊMICAS
+48   0411020013    1           225151         2362287                                                                  CURETAGEM POS-ABORTAMENTO / PUERPERAL
+49   0202060217    1                          2362287                                              DOSAGEM DE GONADOTROFINA CORIONICA HUMANA (HCG, BETA HCG)
+50   0202020150    1                          2362287                                                  DETERMINAÇÃO DE VELOCIDADE DE HEMOSSEDIMENTAÇÃO (VHS)
+51   0202020142    2                          2362287                                                 DETERMINAÇÃO DE TEMPO E ATIVIDADE DA PROTROMBINA (TAP)
+52   0202020134    2                          2362287                                  DETERMINAÇÃO DE TEMPO DE TROMBOPLASTINA PARCIAL ATIVADA (TTP ATIVADA)
+53   0801010047    1                          2362287                                                              INCENTIVO AO REGISTRO CIVIL DE NASCIMENTO
+54   0409060011    1           225151         2362287                                                                             CERCLAGEM DE COLO DO UTERO
+55   0202010554    1                          2362287                                                                                      DOSAGEM DE LIPASE
+56   0303150033    1           225125         2362287                                      TRATAMENTO DE DOENCAS INFLAMATORIAS DOS ORGAOS PELVICOS FEMININOS
+57   0802010083    2                          2362287                                                 DIARIA DE UNIDADE DE TERAPIA INTENSIVA ADULTO (UTI II)
+58   0306020068    2           225185         2362287                                                                  TRANSFUSAO DE CONCENTRADO DE HEMACIAS
+59   0205020160    1                          2362287                                                                ULTRASSONOGRAFIA PELVICA (GINECOLOGICA)
+60   0202010678    1                          2362287                                                                              DOSAGEM DE TRIGLICERIDEOS
+61   0202010627    1                          2362287                                                                  DOSAGEM DE PROTEINAS TOTAIS E FRACOES
+62   0202030202    1                          2362287                                                                          DOSAGEM DE PROTEINA C REATIVA
+63   0202010562    2                          2362287                                                                                    DOSAGEM DE MAGNESIO
+64   0202010503    1                          2362287                                                                     DOSAGEM DE HEMOGLOBINA GLICOSILADA
+65   0202010295    1                          2362287                                                                            DOSAGEM DE COLESTEROL TOTAL
+66   0202010279    1                          2362287                                                                              DOSAGEM DE COLESTEROL HDL
+67   0202020096    1                          2362287                                                             DETERMINAÇÃO DE TEMPO DE SANGRAMENTO -DUKE
+68   0202020070    1                          2362287                                                                    DETERMINAÇÃO DE TEMPO DE COAGULAÇÃO
+69   0802010199    2                          2362287                                                                          DIÁRIA DE PERMANÊNCIA A MAIOR
+70   0211020036    1                          2362287                                                                                      ELETROCARDIOGRAMA
+71   0303100010    1           225125         2362287                                 TRATAMENTO DE COMPLICACOES RELACIONADAS PREDOMINANTEMENTE AO PUERPERIO
+72   0202010422    1                          2362287                                                                          DOSAGEM DE FOSFATASE ALCALINA
+73   0202010465    1                          2362287                                                         DOSAGEM DE GAMA-GLUTAMIL-TRANSFERASE (GAMA GT)
+74   0214010040    1                          2362287                                          TESTE RAPIDO PARA DETECCAO DE HIV NA GESTANTE OU PAI/PARCEIRO
+75   0202030970    1                          2362287                                      PESQUISA DE ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (HBSAG)
+76   0202030679    1                          2362287                                         PESQUISA DE ANTICORPOS CONTRA O VIRUS DA HEPATITE C (ANTI-HCV)
+77   0303160039    1           225124         2362287                                       TRATAMENTO DE OUTROS TRANSTORNOS ORIGINADOS NO PERIODO PERINATAL
+78   0802010121    4                          2362287                                       DIÁRIA DE UNIDADE DE TERAPIA INTENSIVA NEONATAL - UTIN (TIPO II)
+79   0802010024    1                          2362287                                                  DIARIA DE ACOMPANHANTE CRIANCA/ADOLESCENTE C/PERNOITE
+80   0205020178    1                          2362287                                                                        ULTRASSONOGRAFIA TRANSFONTANELA
+81   0303010126    1           225124         2362287                            TRATAMENTO DE INFECÇÕES DE TRANSMISSÃO PREDOMINANTEMENTE SEXUAL (A50 A A64)
+82   0205010032    1                          2362287                                                                          ECOCARDIOGRAFIA TRANSTORACICA
+83   0303010037    1           225124         2362287                                                               TRATAMENTO DE OUTRAS DOENÇAS BACTERIANAS
+84   0802010237   21                          2362287                            DIÁRIA DE UNIDADE DE CUIDADOS INTERMEDIÁRIOS NEONATAL CONVENCIONAL (UCINCO)
+85   0202010430    1                          2362287                                                                                     DOSAGEM DE FOSFORO
+86   0202090140    2                          2362287                                                           DOSAGEM DE SODIO E CLORO NO SUOR (C/ COLETA)
+87   0202010732    2                          2362287                                     GASOMETRIA (PH PCO2 PO2 BICARBONATO AS2 (EXCESSO OU DEFICIT BASE )
+88   0202010538    2                          2362287                                                                                     DOSAGEM DE LACTATO
+89   0204030170    1                          2362287                                                                              RADIOGRAFIA DE TORAX (PA)
+90   0303160063    1           225124         2362287             TRATAMENTO DE TRANSTORNOS RESPIRATORIOS E CARDIOVASCULARES ESPECIFICOS DO PERIODO NEONATAL
+91   0802010245   10                          2362287                                 DIÁRIA DE UNIDADE DE CUIDADOS INTERMEDIÁRIOS NEONATAL CANGURU (UCINCA)
+92   0202020100    1                          2362287                                                            DETERMINAÇÃO DE TEMPO DE SANGRAMENTO DE IVY
+93   0205020070    1                          2362287                                                                     ULTRASSONOGRAFIA DE BOLSA ESCROTAL
+94   0603060013    2                          2362287                                                                              SURFACTANTE FRASCO-AMPOLA
+95   0303160020    1           225124         2362287                                               TRATAMENTO DE INFECCOES ESPECIFICAS DO PERIODO PERINATAL
+96   0303160055    1           225124         2362287               TRATAMENTO DE TRANSTORNOS RELACIONADOS C/ A DURACAO DA GESTACAO E C/ O CRESCIMENTO FETAL
+97   0202030300    1                          2362287                                                      PESQUISA DE ANTICORPOS ANTI-HIV-1 + HIV-2 (ELISA)
+98   0202090230    1                          2362287                                                               PESQUISA DE CARACTERES FISICOS NO LIQUOR
+99   0202080153    1                          2362287                                                                                            HEMOCULTURA
+100  0202030890    1                          2362287               PESQUISA DE ANTICORPOS IGM CONTRA ANTIGENO CENTRAL DO VIRUS DA HEPATITE B (ANTI-HBC-IGM)
+101  0202010325    2                          2362287                                                                  DOSAGEM DE CREATINOFOSFOQUINASE (CPK)
+102  0310010055    1           223545         2362287                                                           PARTO NORMAL EM CENTRO DE PARTO NORMAL (CPN)
+103  0211040061    1                          2362287                                                                            TOCOCARDIOGRAFIA ANTE-PARTO
+104  0603030017    1                          2362287                                         IMUNOGLOBULINA ANTI-RHO (D) (FRASCO AMPOLA DE 2 ML E 1.250 UI)
+105  0202120090    1                          2362287                                                           TESTE INDIRETO DE ANTIGLOBULINA HUMANA (TIA)
+106  0302040021    9           223605         2362287       ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE COM TRANSTORNO RESPIRATÓRIO SEM COMPLICAÇÕES SISTÊMICAS
+107  0409060186    1           225151         2362287                                                                                     LAQUEADURA TUBARIA
+108  0202031101    2                          2362287                                                                                REAÇÃO DE MONTENEGRO ID
+109  0702040118    1                                                                         CATETER DE ACESSO VENOSO CENTRAL POR INSERÇÃO PERIFÉRICA (PICC)
+110  0202010341    7                          2362287                                                          DOSAGEM DE DESIDROGENASE ALFA-HIDROXIBUTIRICA
+111  0202080080    1                          2362287                                                                  CULTURA DE BACTERIAS P/ IDENTIFICACAO
+112  0407010190    1           225151         2362287                                                                                           GASTRORRAFIA
+113  0603070019    2                          2362287                                                  ALBUMINA HUMANA 20 POR CENTO (FRASCO-AMPOLA DE 50 ML)
+114  0202010619    1                          2362287                                                                            DOSAGEM DE PROTEINAS TOTAIS
+115  0202120082    1                          2362287                                                                  PESQUISA DE FATOR RH (INCLUI D FRACO)
+116  0303110058    1           225124         2362287                                                         TRATAMENTO DE FENDA LABIAL E/OU FENDA PALATINA
+117  0202010350    2                          2362287                                                                     DOSAGEM DE DESIDROGENASE GLUTAMICA
+118  0205020038    1                          2362287                                                                   ULTRASSONOGRAFIA DE ABDÔMEN SUPERIOR
+119  0204050138    1                          2362287                                                                    RADIOGRAFIA DE ABDOMEN SIMPLES (AP)
+120  0202020304    1                          2362287                                                                                 DOSAGEM DE HEMOGLOBINA
+121  0303070110    1           225124         2362287                                                              TRATAMENTO DE OUTRAS DOENCAS DO INTESTINO
+122  0202010228    2                          2362287                                                                            DOSAGEM DE CALCIO IONIZAVEL
+123  0202010414    2                          2362287                                                                       DOSAGEM DE FOSFATASE ACIDA TOTAL
+124  0202050025    1                          2362287                                                                                CLEARANCE DE CREATININA
+125  0202050114    1                          2362287                                                               DOSAGEM DE PROTEINAS (URINA DE 24 HORAS)
+126  0214010112    1                          2362287                                                                   TESTE RÁPIDO PARA VÍRUS ZIKA IGG/IGM
+127  0214010139    1                          2362287                                                                TESTE RÁPIDO PARA FEBRE CHIKUNGUNYA IGM
+128  0214010120    1                          2362287                                                                       TESTE RÁPIDO PARA DENGUE IGG/IGM
+129  0202010333    1                          2362287                                                              DOSAGEM DE CREATINOFOSFOQUINASE FRACAO MB
+130  0202031209    1                          2362287                                                                                   DOSAGEM DE TROPONINA
+131  0202010031    2                          2362287                                                           DETERMINACAO DE CROMATOGRAFIA DE AMINOACIDOS
+132  0409070157    1           225151         2362287                                                               EXERESE DE GLÂNDULA DE BARTHOLIN / SKENE
+133  0202040127    2                          2362287                                                                 PESQUISA DE OVOS E CISTOS DE PARASITAS
+134  0205020062    1                          2362287                                                                        ULTRASSONOGRAFIA DE ARTICULACAO
+135  0303060107    1           225125         2362287                                                                       TRATAMENTO DE CRISE HIPERTENSIVA
+136  0205020097    1                          2362287                                                                     ULTRASSONOGRAFIA MAMARIA BILATERAL
+137  0202040046    1                          2362287                                                               IDENTIFICACAO DE FRAGMENTOS DE HELMINTOS
+138  0205020127    1                          2362287                                                                           ULTRASSONOGRAFIA DE TIREOIDE
+139  0303030038    1           225125         2362287                                                                        TRATAMENTO DE DIABETES MELLITUS
+140  0202010376    1                          2362287                                               DOSAGEM DE DESIDROGENASE LATICA (ISOENZIMAS FRACIONADAS)
+141  0303110031    1           225124         2362287                                                                           TRATAMENTO DE ESPINHA BIFIDA
+142  0303070102    1           225124         2362287                                                     TRATAMENTO DE OUTRAS DOENCAS DO APARELHO DIGESTIVO
+143  0603040012    2                          2362287                                                                    CABERGOLINA 0,5 MG (POR COMPRIMIDO)
+144  0409060127    1           225151         2362287                                                                                 HISTERECTOMIA SUBTOTAL
+145  0212010026    1                          2362287                                                                            EXAMES PRE-TRANSFUSIONAIS I
+146  0202020487    1                          2362287                                                                        PROVA DE CONSUMO DE PROTROMBINA
+147  0202010180    1                          2362287                                                                                     DOSAGEM DE AMILASE
+148  0411020048    1           225151         2362287                                                              TRATAMENTO CIRURGICO DE GRAVIDEZ ECTOPICA
+149  0409060232    1           225151         2362287                                                                         SALPINGECTOMIA UNI / BILATERAL
+150  0301060010    1           225124         2362287                                         DIAGNOSTICO E/OU ATENDIMENTO DE URGENCIA EM CLINICA PEDIATRICA
+151  0204030080    1                          2362287                                                                                 RADIOGRAFIA DE ESOFAGO
+152  0202030229    1                          2362287                                                                         IMUNOELETROFORESE DE PROTEINAS
+153  0407040161    1           225151         2362287                                                                                LAPAROTOMIA EXPLORADORA
+154  0202010570    1                          2362287                                                                              DOSAGEM DE MUCO-PROTEINAS
+155  0303040157    1           225124         2362287                                                             TRATAMENTO DE COMPLICAÇÕES DA HIDROCEFALIA
+156  0202010759    1                          2362287                                                TESTE DE TOLERANCIA A INSULINA / HIPOGLICEMIANTES ORAIS
+157  0202030059    1                          2362287                                                   DETECÇÃO DE RNA DO VÍRUS DA HEPATITE C (QUALITATIVO)
+158  0202010112    1                          2362287                                                                             DOSAGEM DE ACIDO ASCORBICO
+159  0301040141    1                          2362287                                                            INSERÇÃO DO DISPOSITIVO INTRA-UTERINO (DIU)
+160  0306020106    2           225125         2362287                                                                            TRANSFUSAO DE PLASMA FRESCO
+161  0303140135    1           225124         2362287                                                  TRATAMENTO DE OUTRAS DOENCAS DO APARELHO RESPIRATORIO
+162  0202020010    2                          2362287                                                                               CITOQUIMICA HEMATOLOGICA
+163  0411010077    1           225151         2362287                                                                SUTURA DE LACERACOES DE TRAJETO PELVICO
+164  0303110112    1           225124         2362287                                     TRATAMENTO DE OUTRAS MALFORMACOES CONGENITAS DO APARELHO DIGESTIVO
+165  0303110015    1           225124         2362287                         TRATAMENTO DAS MALFORMACOES E DEFORMIDADES CONGENITAS DO SISTEMA OSTEOMUSCULAR
+166  0303110090    1           225124         2362287                                           TRATAMENTO DE OUTRAS ANOMALIAS CONGENITAS DO SISTEMA NERVOSO
+167  0409060216    1           225151         2362287                                                                           OOFORECTOMIA / OOFOROPLASTIA
+168  0403010233    1           225151         2362287                                                              TRATAMENTO CIRÚRGICO DE DISRAFISMO OCULTO
+169  0411010018    1           225151         2362287                                                                        DESCOLAMENTO MANUAL DE PLACENTA
+170  0407020039    1           225250         2362287                                                                                         APENDICECTOMIA
+171  0409060313    1           225151         2362287                                                 LAQUEADURA TUBÁRIA NA MESMA INTERNAÇÃO DE PARTO NORMAL
+172  0407040030    1           225151         2362287                                                         DRENAGEM DE HEMATOMA / ABSCESSO PRE-PERITONEAL
+173  0306020076    1           225185         2362287                                                                 TRANSFUSAO DE CONCENTRADO DE PLAQUETAS
+174  0407020101    1           225151         2362287                                                                                             COLOSTOMIA
+175  0407040242    1           225151         2362287                                     RESSUTURA DE PAREDE ABDOMINAL (POR DEISCENCIA TOTAL / EVISCERAÇÃO)
+176  0409060046    1           225151         2362287                                                CURETAGEM SEMIOTICA C/ OU S/ DILATACAO DO COLO DO UTERO
+177  0403010101    1           225151         2362287                                          DERIVAÇÃO VENTRICULAR PARA PERITÔNEO / ÁTRIO / PLEURA / RAQUE
+178  0407020306    1           225151         2362287                                                                              JEJUNOSTOMIA / ILEOSTOMIA
+179  0401010015    5           225125         2362287                                                                 CURATIVO GRAU II C/ OU S/ DEBRIDAMENTO
+180  0214010074    1                          2362287                                                                              TESTE RÁPIDO PARA SÍFILIS
+181  0407010084    1           225151         2362287                                                                         ESOFAGOPLASTIA / GASTROPLASTIA
+182  0407040188    1           225151         2362287                                                                    LIBERAÇÃO DE ADERÊNCIAS INTESTINAIS
+183  0407020420    1           225151         2362287                                            TRATAMENTO CIRÚRGICO DE ANOMALIAS CONGENITAS DO ANUS E RETO
+184  0202020525    1                          2362287                                                                        TESTE DE AGREGACAO DE PLAQUETAS
+185  0202080196    1                          2362287                                                  PESQUISA DE ESTREPTOCOCOS BETA-HEMOLITICOS DO GRUPO A
+186  0415040027    1           225151         2362287                                                                  DEBRIDAMENTO DE FASCEITE NECROTIZANTE
+187  0202031098    1                          2362287                                                               TESTE TREPONEMICO P/ DETECÇÃO DE SIFILIS
+188  0202030083    1                          2362287                                                        DETERMINAÇÃO QUANTITATIVA DE PROTEÍNA C REATIVA
+189  0407020179    1           225151         2362287                                                                                           ENTERECTOMIA
+190  0407020462    1           225151         2362287                                                          TRATAMENTO CIRÚRGICO DE MA ROTAÇÃO INTESTINAL
+191  0308040015    1           225124         2362287                                     TRATAMENTO DE COMPLICACOES DE PROCEDIMENTOS CIRURGICOS OU CLINICOS
+192  0411020030    1           225151         2362287                                                                                HISTERECTOMIA PUERPERAL

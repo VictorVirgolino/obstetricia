@@ -436,6 +436,7 @@ view = st.sidebar.radio(
         "ISEA - Pacientes e Cidades",
         "ISEA - Consulta Prontuario",
         "Tabela SIGTAP",
+        "Entradas com Problemas",
     ],
 )
 
@@ -1752,20 +1753,28 @@ elif view == "ISEA - Consulta Prontuario":
         conn.close()
         st.stop()
 
+    comp_sel = st.selectbox("Competencia", competencias, key="pront_comp")
+
+    # Carregar prontuarios com nome do paciente
+    df_pront = pd.read_sql_query("""
+        SELECT DISTINCT r.prontuario, COALESCE(p.nome, 'N/A') as nome
+        FROM aih_records r
+        LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+        WHERE r.competencia = ?
+        ORDER BY p.nome, r.prontuario
+    """, conn, params=[comp_sel])
+
     col_f1, col_f2 = st.columns(2)
     with col_f1:
-        comp_sel = st.selectbox("Competencia", competencias, key="pront_comp")
+        pront_digitado = st.text_input("Buscar por codigo do prontuario", key="pront_cod")
     with col_f2:
-        # Carregar prontuarios com nome do paciente para facilitar a busca
-        df_pront = pd.read_sql_query("""
-            SELECT DISTINCT r.prontuario, COALESCE(p.nome, 'N/A') as nome
-            FROM aih_records r
-            LEFT JOIN pacientes p ON r.cns_paciente = p.cns
-            WHERE r.competencia = ?
-            ORDER BY p.nome, r.prontuario
-        """, conn, params=[comp_sel])
         opcoes = [f"{row['prontuario']} - {row['nome']}" for _, row in df_pront.iterrows()]
-        sel = st.selectbox("Prontuario", opcoes, key="pront_sel")
+        sel = st.selectbox("Ou selecionar por nome do paciente", opcoes, key="pront_sel")
+
+    # Prioriza o campo digitado; se vazio, usa o selectbox
+    if pront_digitado.strip():
+        pront_sel = pront_digitado.strip()
+    else:
         pront_sel = sel.split(" - ")[0] if sel else None
 
     if not pront_sel:
@@ -1804,7 +1813,8 @@ elif view == "ISEA - Consulta Prontuario":
 
     # Para cada AIH do prontuario nessa competencia
     for idx, aih in df_aih.iterrows():
-        st.subheader(f"AIH: {aih['id_aih']}")
+        aih_display = "Sem AIH" if str(aih['id_aih']).startswith('SEM_AIH_') else aih['id_aih']
+        st.subheader(f"AIH: {aih_display}")
 
         ca1, ca2, ca3, ca4 = st.columns(4)
         ca1.markdown(f"**Entrada:** {aih['data_ent'] or 'N/A'}")
@@ -2008,3 +2018,152 @@ elif view == "Tabela SIGTAP":
                         "Serv. Hosp.", "Serv. Prof.", "Total Hosp.", "Serv. Amb.", "Total Amb.",
                         "Idade Min", "Idade Max", "Sexo", "Perm. Media (dias)"]
     st.dataframe(df_show, use_container_width=True, hide_index=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ENTRADAS COM PROBLEMAS
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "Entradas com Problemas":
+    st.title("Entradas com Problemas")
+    st.caption("Registros com inconsistencias: sem AIH, sem CNS, sem CID, duplicados")
+
+    DB_PATH = os.path.join(DATA_DIR, "saude_real.db")
+    if not os.path.exists(DB_PATH):
+        st.error("Banco de dados nao encontrado.")
+        st.stop()
+
+    conn_prob = sqlite3.connect(DB_PATH)
+
+    # Carregar todos os registros de aih_records com dados do paciente
+    df_all = pd.read_sql_query("""
+        SELECT r.prontuario, r.competencia, r.id_aih, r.cns_paciente,
+               r.data_ent, r.data_sai, r.cid_principal, r.observacao,
+               COALESCE(p.nome, '') as paciente
+        FROM aih_records r
+        LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+        ORDER BY SUBSTR(r.competencia, 4, 4) || SUBSTR(r.competencia, 1, 2), r.prontuario
+    """, conn_prob)
+    conn_prob.close()
+
+    if df_all.empty:
+        st.warning("Nenhum registro encontrado no banco de dados.")
+        st.stop()
+
+    # Identificar problemas
+    df_all["tipo_problema"] = ""
+
+    # SEM AIH
+    mask_sem_aih = df_all["id_aih"].str.startswith("SEM_AIH_", na=False)
+    # SEM CNS
+    mask_sem_cns = (df_all["cns_paciente"].isna()) | (df_all["cns_paciente"] == "")
+    # SEM CID
+    mask_sem_cid = (df_all["cid_principal"].isna()) | (df_all["cid_principal"] == "")
+    # Duplicados: prontuario aparece mais de uma vez na mesma competencia
+    dup_counts = df_all.groupby(["prontuario", "competencia"]).size().reset_index(name="cnt")
+    dup_keys = dup_counts[dup_counts["cnt"] > 1][["prontuario", "competencia"]]
+    df_all = df_all.merge(dup_keys.assign(_dup=True), on=["prontuario", "competencia"], how="left")
+    mask_dup = df_all["_dup"].fillna(False).astype(bool)
+    df_all.drop(columns=["_dup"], inplace=True)
+
+    # Construir coluna tipo_problema (pode ter multiplos)
+    tipos = []
+    for i in range(len(df_all)):
+        t = []
+        if mask_sem_aih.iloc[i]:
+            t.append("SEM AIH")
+        if mask_sem_cns.iloc[i]:
+            t.append("SEM CNS")
+        if mask_sem_cid.iloc[i]:
+            t.append("SEM CID")
+        if mask_dup.iloc[i]:
+            t.append("Duplicado")
+        tipos.append(" | ".join(t) if t else "")
+    df_all["tipo_problema"] = tipos
+
+    # Filtrar apenas os com problema
+    df_prob = df_all[df_all["tipo_problema"] != ""].copy()
+
+    if df_prob.empty:
+        st.success("Nenhuma entrada com problema encontrada!")
+        st.stop()
+
+    # ── Filtros ────────────────────────────────────────────────────────────────
+    col_f1, col_f2 = st.columns(2)
+    with col_f1:
+        competencias_prob = sorted(df_prob["competencia"].unique().tolist(),
+                                   key=lambda c: c[3:] + c[:2])
+        comp_sel_prob = st.selectbox("Competencia", ["Todas"] + competencias_prob, key="prob_comp")
+    with col_f2:
+        tipo_filtro = st.selectbox("Tipo de Problema", ["Todos", "SEM AIH", "SEM CNS", "SEM CID", "Duplicado"], key="prob_tipo")
+
+    df_filt_prob = df_prob.copy()
+    if comp_sel_prob != "Todas":
+        df_filt_prob = df_filt_prob[df_filt_prob["competencia"] == comp_sel_prob]
+    if tipo_filtro != "Todos":
+        df_filt_prob = df_filt_prob[df_filt_prob["tipo_problema"].str.contains(tipo_filtro, na=False)]
+
+    # ── KPIs ───────────────────────────────────────────────────────────────────
+    total_prob = len(df_filt_prob)
+    cnt_sem_aih = df_filt_prob["tipo_problema"].str.contains("SEM AIH", na=False).sum()
+    cnt_sem_cns = df_filt_prob["tipo_problema"].str.contains("SEM CNS", na=False).sum()
+    cnt_dup = df_filt_prob["tipo_problema"].str.contains("Duplicado", na=False).sum()
+    cnt_sem_cid = df_filt_prob["tipo_problema"].str.contains("SEM CID", na=False).sum()
+
+    c1, c2, c3, c4, c5 = st.columns(5)
+    c1.metric("Total com Problemas", fmt_int(total_prob))
+    c2.metric("SEM AIH", fmt_int(cnt_sem_aih))
+    c3.metric("SEM CNS", fmt_int(cnt_sem_cns))
+    c4.metric("SEM CID", fmt_int(cnt_sem_cid))
+    c5.metric("Duplicados", fmt_int(cnt_dup))
+
+    st.divider()
+
+    # ── Graficos ───────────────────────────────────────────────────────────────
+    col_g1, col_g2 = st.columns(2)
+
+    with col_g1:
+        st.subheader("Problemas por Tipo")
+        df_tipo_chart = pd.DataFrame({
+            "Tipo": ["SEM AIH", "SEM CNS", "SEM CID", "Duplicado"],
+            "Quantidade": [cnt_sem_aih, cnt_sem_cns, cnt_sem_cid, cnt_dup],
+        })
+        df_tipo_chart = df_tipo_chart[df_tipo_chart["Quantidade"] > 0]
+        if not df_tipo_chart.empty:
+            fig_tipo = px.bar(df_tipo_chart, x="Tipo", y="Quantidade",
+                              color="Tipo", text="Quantidade",
+                              color_discrete_sequence=["#e53935", "#fb8c00", "#fdd835", "#1e88e5"],
+                              height=400)
+            fig_tipo.update_traces(textposition="outside")
+            fig_tipo.update_layout(showlegend=False)
+            st.plotly_chart(fig_tipo, use_container_width=True)
+        else:
+            st.info("Nenhum problema encontrado com os filtros selecionados.")
+
+    with col_g2:
+        st.subheader("Problemas por Competencia")
+        df_comp_chart = df_filt_prob.groupby("competencia").size().reset_index(name="Quantidade")
+        df_comp_chart = df_comp_chart.sort_values("competencia",
+                                                   key=lambda s: s.str[3:] + s.str[:2])
+        if not df_comp_chart.empty:
+            fig_comp = px.bar(df_comp_chart, x="competencia", y="Quantidade",
+                              text="Quantidade", color_discrete_sequence=["#1976D2"],
+                              height=400)
+            fig_comp.update_traces(textposition="outside")
+            fig_comp.update_layout(xaxis_title="Competencia", yaxis_title="Quantidade")
+            st.plotly_chart(fig_comp, use_container_width=True)
+        else:
+            st.info("Nenhum problema encontrado com os filtros selecionados.")
+
+    st.divider()
+
+    # ── Tabela ─────────────────────────────────────────────────────────────────
+    st.subheader("Registros com Problemas")
+    df_display = df_filt_prob[["prontuario", "competencia", "paciente", "cns_paciente",
+                                "id_aih", "data_ent", "data_sai", "cid_principal",
+                                "observacao", "tipo_problema"]].copy()
+    df_display.columns = ["Prontuario", "Competencia", "Paciente", "CNS", "AIH",
+                          "Data Entrada", "Data Saida", "CID", "Observacao", "Tipo Problema"]
+    st.dataframe(df_display, use_container_width=True, hide_index=True, height=600)
+
+    # Resumo
+    st.caption(f"Total de registros exibidos: {len(df_display)} de {len(df_prob)} com problemas ({len(df_all)} registros totais)")

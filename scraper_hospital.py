@@ -77,7 +77,7 @@ async def extract_record_data(detail_page, record_id, month, year, data_ent_url,
         }
 
         # 2. AIH Record Data
-        id_aih = await safe_get_value(detail_page, 'input#AIH_NUM_AIH', f"P{record_id}")
+        id_aih = await safe_get_value(detail_page, 'input#AIH_NUM_AIH', "")
 
         data_ent_page = await safe_get_value(detail_page, 'input#AIH_DT_INT')
         data_sai_page = await safe_get_value(detail_page, 'input#AIH_DT_SAI')
@@ -86,8 +86,14 @@ async def extract_record_data(detail_page, record_id, month, year, data_ent_url,
         data_ent = data_ent_url or data_ent_page
         data_sai = data_sai_url or data_sai_page
 
+        # Generate synthetic id_aih when empty (e.g. RN patients without AIH)
+        # Uses composite key to guarantee uniqueness per patient/internment
+        id_aih_clean = id_aih.strip()
+        if not id_aih_clean:
+            id_aih_clean = f"SEM_AIH_{record_id}_{data_ent}_{data_sai}"
+
         aih_data = {
-            'id_aih': id_aih.strip(),
+            'id_aih': id_aih_clean,
             'prontuario': record_id,
             'cns_paciente': p_cns.strip(),
             'data_ent': data_ent,
@@ -132,12 +138,12 @@ async def extract_record_data(detail_page, record_id, month, year, data_ent_url,
         if not procs_raw:
             main_proc = await safe_get_value(detail_page, 'input#AIH_PROC_REA')
             if main_proc and re.match(r'^\d{10}$', main_proc.strip()):
-                procs_list.append({'id_aih': id_aih.strip(), 'code': main_proc.strip(), 'qty': 1, 'cbo': '', 'cnes': ''})
+                procs_list.append({'id_aih': id_aih_clean, 'code': main_proc.strip(), 'qty': 1, 'cbo': '', 'cnes': ''})
             await _log(f"  {index_label}+ EXTRAIDO: {record_id} - {p_name.strip()} | {len(procs_list)} proc (fallback)")
         else:
             for proc in procs_raw:
                 qty = int(proc['qty']) if proc['qty'].isdigit() else 1
-                procs_list.append({'id_aih': id_aih.strip(), 'code': proc['code'], 'qty': qty, 'cbo': proc['cbo'], 'cnes': proc['cnes']})
+                procs_list.append({'id_aih': id_aih_clean, 'code': proc['code'], 'qty': qty, 'cbo': proc['cbo'], 'cnes': proc['cnes']})
             await _log(f"  {index_label}+ EXTRAIDO: {record_id} - {p_name.strip()} | {cidade} | {len(procs_list)} procs | {data_ent} -> {data_sai}")
 
         return "saved", patient_data, aih_data, procs_list
@@ -331,7 +337,7 @@ async def run_scraper(competences=None, max_concurrent=5):
                                 observacoes = []
                                 if prontuario_count.get(record_id, 1) > 1:
                                     observacoes.append(f"INTERNACAO MULTIPLA ({prontuario_count[record_id]}x no site)")
-                                if not aih_data.get('id_aih') or aih_data['id_aih'].startswith('P'):
+                                if not aih_data.get('id_aih') or aih_data['id_aih'].startswith('SEM_AIH_'):
                                     observacoes.append("SEM AIH")
                                 if not patient_data.get('cns'):
                                     observacoes.append("SEM CNS")
