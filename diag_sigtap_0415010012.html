@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<link rel="stylesheet" href="/tabela-unificada/faces/myFacesExtensionResource/org.apache.myfaces.renderkit.html.util.MyFacesResourceLoader/17690051/tabbedpane.HtmlTabbedPaneRenderer/defaultStyles.css" type="text/css">
+<script type="text/javascript" src="/tabela-unificada/faces/myFacesExtensionResource/org.apache.myfaces.renderkit.html.util.MyFacesResourceLoader/17690051/tabbedpane.HtmlTabbedPaneRenderer/dynamicTabs.js"><!--
+
+//--></script>
+<style rel="stylesheet" type="text/css"><!--
+#_idJsp247 .myFaces_panelTabbedPane_activeHeaderCell input,
+#_idJsp247 .myFaces_panelTabbedPane_pane,
+#_idJsp247 .myFaces_panelTabbedPane_subHeaderCell{
+background-color:white;
+}
+
+--></style>
+<style rel="stylesheet" type="text/css"><!--
+#_idJsp254__idJsp255 .myFaces_panelTabbedPane_activeHeaderCell input,
+#_idJsp254__idJsp255 .myFaces_panelTabbedPane_pane,
+#_idJsp254__idJsp255 .myFaces_panelTabbedPane_subHeaderCell{
+background-color:white;
+}
+
+--></style>
+<style rel="stylesheet" type="text/css"><!--
+#_idJsp272__idJsp273 .myFaces_panelTabbedPane_activeHeaderCell input,
+#_idJsp272__idJsp273 .myFaces_panelTabbedPane_pane,
+#_idJsp272__idJsp273 .myFaces_panelTabbedPane_subHeaderCell{
+background-color:white;
+}
+
+--></style>
+<style rel="stylesheet" type="text/css"><!--
+#_idJsp308__idJsp309 .myFaces_panelTabbedPane_activeHeaderCell input,
+#_idJsp308__idJsp309 .myFaces_panelTabbedPane_pane,
+#_idJsp308__idJsp309 .myFaces_panelTabbedPane_subHeaderCell{
+background-color:white;
+}
+
+--></style>
+<style rel="stylesheet" type="text/css"><!--
+#_idJsp352__idJsp353 .myFaces_panelTabbedPane_activeHeaderCell input,
+#_idJsp352__idJsp353 .myFaces_panelTabbedPane_pane,
+#_idJsp352__idJsp353 .myFaces_panelTabbedPane_subHeaderCell{
+background-color:white;
+}
+
+--></style>
+ 
+ <title>SIGTAP - Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e OPM do SUS  </title>
+ <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+ <meta http-equiv="X-Frame-Options" content="deny">	
+ <link type="text/css" rel="stylesheet" href="/tabela-unificada/css/ms.css">
+ <link rel="stylesheet" type="text/css" href="/tabela-unificada/css/tabelaUnificada.css">
+ <link rel="stylesheet" type="text/css" href="/tabela-unificada/css/tabelaUnificadaDeepBlue.css">
+ <link rel="stylesheet" type="text/css" href="/tabela-unificada/css/basic.css">
+ <link rel="alternate" type="application/rss+xml" title="Competências para Download" href="/tabela-unificada/competencias.rss">
+ <link href="/tabela-unificada/images/16/bandeirinha.ico" rel="shortcut icon" type="image/x-icon">
+
+ <script type="text/javascript" src="/tabela-unificada/js/general.js"></script>
+ <script type="text/javascript">addOnloadListener(pintaTabelasDeDados)</script>
+ <script type="text/javascript" src="/tabela-unificada/js/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript" src="/tabela-unificada/js/jquery.mask.min.js"></script>
+<script>
+	window.onload = function(){
+		runOnloadListeners();	
+	};
+	
+
+	$(document).ready(function() {
+
+	  $(".codidoProcedimento").mask("99.99.99.999-9");
+	});
+</script></head>
+
+
+
+<body>
+<div id="container">
+
+ <div id="header-wrapper">
+
+
+
+
+
+
+
+<div> 
+
+	<div id="banner">
+	
+	<a href="http://www.saude.gov.br/" id="r0" target="_blank" title="Ministério da Saúde" tabindex="1">
+	  <img src="/tabela-unificada/images/ms/bandeira.png" alt="Ministério da Saúde" longdesc="http://www.saude.gov.br/" border="0">Ministério da Saúde</a>
+	</div>
+	<div id="ms_Topo">
+		<a href="/tabela-unificada/app/sec/inicio.jsp" title="Início"><span id="ms_Imagem_topo">SIGTAP - Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e OPM do SUS  </span></a>
+	</div>
+
+	<div class="ms_Novo_caixa_topo">
+	    
+		<form id="_idJsp0:formMenuSec" name="_idJsp0:formMenuSec" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025" enctype="application/x-www-form-urlencoded" target="">
+			<div>
+				
+				<span>
+					<a href="/tabela-unificada/app/download.jsp" title="Download" tabindex="8">Download</a>
+					<span>|</span>
+					<a href="https://wiki.saude.gov.br/sigtap" target="_blank" title="Wiki" tabindex="7">Wiki</a>
+					<span>|</span>
+					<a href="mailto:cgsi@saude.gov.br" title="Fale Conosco" tabindex="7">Fale Conosco</a>
+				</span>
+				
+				
+					<span>|</span>
+					<span>
+						<script type="text/javascript"><!--
+
+
+	function oamSetHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]=='undefined')
+		{
+			var newInput = document.createElement('input');
+			newInput.setAttribute('type','hidden');
+			newInput.setAttribute('id',name);
+			newInput.setAttribute('name',name);
+			newInput.setAttribute('value',value);
+			form.appendChild(newInput);
+		}
+		else
+		{
+			form.elements[name].value=value;
+		}
+		
+	}
+	
+	
+	function oamClearHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]!='undefined')
+		{
+			form.elements[name].value=null;
+		}
+		
+	}
+	
+	function oamSubmitForm(formName, linkId, target, params)
+	{
+		
+		var clearFn = 'clearFormHiddenParams_'+formName.replace(/-/g, '\$:').replace(/:/g,'_');
+		if(typeof eval('window.'+clearFn)!='undefined')
+		{
+			eval('window.'+clearFn+'(formName)');
+		}
+		
+		if(typeof window.getScrolling!='undefined')
+		{
+			oamSetHiddenInput(formName,'autoScroll',getScrolling());
+		}
+		
+		var oldTarget = '';
+		if((typeof target!='undefined') && target != null)
+		{
+			oldTarget=document.forms[formName].target;
+			document.forms[formName].target=target;
+		}
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamSetHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamSetHiddenInput(formName,formName +':'+'_idcl',linkId);
+		
+		if(document.forms[formName].onsubmit)
+		{
+			var result=document.forms[formName].onsubmit();
+			if((typeof result=='undefined')||result)
+			{
+				document.forms[formName].submit();
+			}
+			
+		}
+		else 
+		{
+			document.forms[formName].submit();
+		}
+		if(oldTarget==null) oldTarget='';
+		document.forms[formName].target=oldTarget;
+		if((typeof params!='undefined') && params != null)
+		{
+			for(var i=0; i<params.length; i++)
+			{
+				oamClearHiddenInput(formName,params[i][0], params[i][1]);
+			}
+			
+		}
+		
+		oamClearHiddenInput(formName,formName +':'+'_idcl',linkId);return false;
+	}
+	
+
+//--></script><a href="#" onclick="return oamSubmitForm('_idJsp0:formMenuSec','_idJsp0:formMenuSec:_idJsp1');" id="_idJsp0:formMenuSec:_idJsp1">Sair</a>
+<input type="hidden" name="autoScroll">
+
+					</span>
+				
+			</div>
+		<input type="hidden" name="_idJsp0:formMenuSec_SUBMIT" value="1"><input type="hidden" name="_idJsp0:formMenuSec:_idcl" value=""><input type="hidden" name="_idJsp0:formMenuSec:_link_hidden_" value=""><script type="text/javascript"><!--
+
+	function clear__5FidJsp0_3AformMenuSec()
+	{
+		clearFormHiddenParams__idJsp0_formMenuSec('_idJsp0:formMenuSec');
+	}
+	
+	function clearFormHiddenParams__idJsp0_formMenuSec(currFormName)
+	{
+		var f = document.forms['_idJsp0:formMenuSec'];
+		f.elements['_idJsp0:formMenuSec:_idcl'].value='';
+		f.elements['_idJsp0:formMenuSec:_link_hidden_'].value='';
+		f.target='';
+	}
+	
+	clearFormHiddenParams__idJsp0_formMenuSec();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></form>
+	</div><!--Fecha JANELA PRINCIPAL-->
+
+	
+		<div id="ms_mapa_topo">
+			<img src="/tabela-unificada/images/ms/menu_superior.gif" alt="menu superior" class="image_topo">
+			<span>
+				<label for="_idJsp0:nomeUsuario">Usuário:</label>
+				<span id="_idJsp0:nomeDoUsuario">publico</span>
+			</span>
+		</div>
+	
+	
+		<script type="text/javascript">
+		
+		function acessar(){
+		   var formularioAnonimo = document.getElementById('Formulario Login Anonimo');
+		   formularioAnonimo.submit();
+		}
+	</script>
+	
+
+	<form action="j_security_check" id="Formulario Login Anonimo" method="post" style="margin:0;padding:0">
+		<input type="hidden" name="j_username" value="publico">
+		<input type="hidden" name="j_password" value="publico">
+	</form>
+</div><!--fecha BARRA SUPERIOR-->
+</div>
+ <div id="container_menu">
+
+
+
+<form id="formMenu" name="formMenu" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025" enctype="application/x-www-form-urlencoded" target="">
+	<div id="menu">
+
+		
+<ul>
+<li class="off"><a href="#" onclick="return oamSubmitForm('formMenu','formMenu:_idJsp4:_idJsp5');" id="formMenu:_idJsp4:_idJsp5" class="off">Procedimento</a>
+<input type="hidden" name="autoScroll">
+</li>
+<li class="off"><a href="#" onclick="return oamSubmitForm('formMenu','formMenu:_idJsp4:_idJsp35');" id="formMenu:_idJsp4:_idJsp35" class="off">Compatibilidades</a></li>
+<li class="off"><a href="#" onclick="return oamSubmitForm('formMenu','formMenu:_idJsp4:nav_tabela_menu_principal');" id="formMenu:_idJsp4:nav_tabela_menu_principal" class="off">Tabelas</a><ul></ul></li>
+<li class="off"><a href="#" onclick="return oamSubmitForm('formMenu','formMenu:_idJsp4:_idJsp54');" id="formMenu:_idJsp4:_idJsp54" class="off">Relatórios</a><ul></ul></li>
+</ul>
+	</div>
+<input type="hidden" name="formMenu_SUBMIT" value="1"><input type="hidden" name="formMenu:_idcl" value=""><input type="hidden" name="formMenu:_link_hidden_" value=""><script type="text/javascript"><!--
+
+	function clear_formMenu()
+	{
+		clearFormHiddenParams_formMenu('formMenu');
+	}
+	
+	function clearFormHiddenParams_formMenu(currFormName)
+	{
+		var f = document.forms['formMenu'];
+		f.elements['formMenu:_idcl'].value='';
+		f.elements['formMenu:_link_hidden_'].value='';
+		f.target='';
+	}
+	
+	clearFormHiddenParams_formMenu();
+//--></script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></form>
+
+</div>
+ <div id="content">
+  <div id="messagePanel">
+    
+  </div>
+  <h1>Procedimento</h1><fieldset style="font-size:1.1em"><table><tbody><tr><td><label for="procedimento">Procedimento:</label></td><td><span id="procedimento">04.15.01.001-2 - TRATAMENTO C/ CIRURGIAS MULTIPLAS</span></td></tr>
+</tbody></table></fieldset><fieldset><table><tbody><tr><td><label for="grupo">Grupo:</label></td><td><span id="grupo">04 - Procedimentos cirúrgicos</span></td></tr>
+<tr><td><label for="subgrupo">Sub-Grupo:</label></td><td><span id="subgrupo">15 - Outras cirurgias</span></td></tr>
+<tr><td><label for="formaOrganizacao">Forma de Organização:</label></td><td><span id="formaOrganizacao">01 - Múltiplas</span></td></tr>
+</tbody></table></fieldset><fieldset><table><tbody><tr><td><label for="competencia">Competência:</label></td><td><table style="vertical-align:middle"><tbody><tr><td><span id="competencia" style="margin:1em">12/2025</span></td><td></td><td></td></tr>
+</tbody></table></td><td><a id="_idJsp205" name="_idJsp205" href="/tabela-unificada/app/sec/procedimento/exibir/0415010012" title="Histórico do Procedimento"><img src="/tabela-unificada/images/16/edit-select-all.png" style="border-style:none; vertical-align:middle">Histórico de alterações</a></td></tr>
+</tbody></table></fieldset><fieldset><table><tbody><tr><td><label for="modalidades">Modalidade de Atendimento:</label></td><td><span style="margin-right:2.5em">Hospitalar</span></td></tr>
+<tr><td><label for="tipoComplexidade">Complexidade:</label></td><td><span id="tipoComplexidade">Não se Aplica</span></td></tr>
+<tr><td><label for="financiamento">Financiamento:</label></td><td><span id="financiamento">Média e Alta Complexidade (MAC)</span></td></tr>
+<tr><td><label for="rubrica">Sub-Tipo de Financiamento:</label></td><td><span id="rubrica"></span></td></tr>
+<tr><td><label for="registros">Instrumento de Registro:</label></td><td><span style="margin-right:2.5em">AIH (Proc. Principal)</span></td></tr>
+<tr><td><label for="sexo">Sexo:</label></td><td><span id="sexo">Ambos</span></td></tr>
+<tr><td><label for="qtdDiasPermanencia">Média de Permanência:</label></td><td><span id="qtdDiasPermanencia"></span></td></tr>
+<tr><td><label for="qtdTempoPermanencia">Tempo de Permanência:</label></td><td><span id="qtdTempoPermanencia"></span></td></tr>
+<tr><td><label for="qtdMaximaExecucao">Quantidade Máxima:</label></td><td><span id="qtdMaximaExecucao">1</span></td></tr>
+<tr><td><label for="idadeMinima">Idade Mínima:</label></td><td><span id="idadeMinima">0 meses</span></td></tr>
+<tr><td><label for="idadeMaxima">Idade Máxima:</label></td><td><span id="idadeMaxima">130 anos</span></td></tr>
+<tr><td><label for="qtdPontos">Pontos:</label></td><td><span id="qtdPontos"></span></td></tr>
+<tr><td><label for="detalhes">Atributos Complementares:</label></td><td><span style="margin-right:2.5em">Admite permanência à maior</span><span style="margin-right:2.5em">CNRAC</span><span style="margin-right:2.5em">Programa Mais Acesso a Especialistas - Componente Cirurgias Hospitalares </span></td></tr>
+</tbody></table><fieldset><legend>Valores</legend><table><tbody><tr><td><label for="valorSA">Serviço Ambulatorial:</label></td><td><span style="margin-right:3em"><span id="valorSA" class="dinheiro">R$ </span>0,00</span></td><td><label for="valorSH">Serviço Hospitalar:</label></td><td>R$ <span id="valorSH" class="dinheiro">0,00</span></td></tr>
+<tr><td><label for="valorSA_Total">Total Ambulatorial:</label></td><td><span style="margin-right:3em">R$ <span id="valorSA_Total" class="dinheiro">0,00</span></span></td><td><label for="valorSP">Serviço Profissional:</label></td><td>R$ <span id="valorSP" class="dinheiro">0,00</span></td></tr>
+<tr><td></td><td></td><td><label for="totalInternacao">Total Hospitalar:</label></td><td>R$ <span id="totalInternacao" class="dinheiro">0,00</span></td></tr>
+</tbody></table></fieldset></fieldset>
+<form name="_idJsp247.autoform" style="display:inline" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025">
+<script type="text/javascript"><!--
+
+panelTabbedPane_5F_5FidJsp247_5FHeadersIDs= new Array("_idJsp248_headerCell","_idJsp287_headerCell","_idJsp308_headerCell","_idJsp352_headerCell","_idJsp373_headerCell","_idJsp381_headerCell");
+panelTabbedPane_5F_5FidJsp247_5FIDs= new Array("_idJsp248.content","_idJsp254.content","_idJsp272.content","_idJsp287.content","_idJsp295.content","_idJsp308.content","_idJsp345.content","_idJsp352.content","_idJsp373.content","_idJsp381.content","_idJsp389.content");
+
+//--></script>
+<input id="_idJsp247_indexSubmit" name="_idJsp247_indexSubmit" style="display:none"><table id="_idJsp247" cellspacing="0" frame="box" rules="all" style="width:50em;max-width:50em" class="myFaces_panelTabbedPane procedimentoPanel">
+<tbody><tr class="myFaces_pannelTabbedPane_HeaderRow">
+	<td id="_idJsp248_headerCell" class="myFaces_panelTabbedPane_activeHeaderCell panelActiveTab"><input type="submit" name="_idJsp247.0" value="Descrição" onclick="return myFaces_showPanelTab(0,'_idJsp247_indexSubmit','_idJsp248_headerCell','_idJsp248.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp254_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>CID</label></td>
+	<td id="_idJsp272_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>CBO</label></td>
+	<td id="_idJsp287_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp247.3" value="Leito" onclick="return myFaces_showPanelTab(3,'_idJsp247_indexSubmit','_idJsp287_headerCell','_idJsp287.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp295_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>Serviço Classificação</label></td>
+	<td id="_idJsp308_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp247.5" value="Habilitação" onclick="return myFaces_showPanelTab(5,'_idJsp247_indexSubmit','_idJsp308_headerCell','_idJsp308.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp345_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>Redes</label></td>
+	<td id="_idJsp352_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp247.7" value="Origem" onclick="return myFaces_showPanelTab(7,'_idJsp247_indexSubmit','_idJsp352_headerCell','_idJsp352.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp373_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp247.8" value="Regra Condicionada" onclick="return myFaces_showPanelTab(8,'_idJsp247_indexSubmit','_idJsp373_headerCell','_idJsp373.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp381_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp247.9" value="Renases" onclick="return myFaces_showPanelTab(9,'_idJsp247_indexSubmit','_idJsp381_headerCell','_idJsp381.content',panelTabbedPane_5F_5FidJsp247_5FHeadersIDs,panelTabbedPane_5F_5FidJsp247_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp389_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>TUSS</label></td>
+	<td class="myFaces_panelTabbedPane_emptyHeaderCell">&nbsp;</td>
+</tr>
+<tr class="myFaces_pannelTabbedPane_subHeaderRow">
+	<td id="_idJsp248_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_first panelActiveSub myFaces_panelTabbedPane_subHeaderCell_active">&nbsp;</td>
+	<td id="_idJsp254_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp272_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp287_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp295_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp308_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp345_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp352_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp373_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp381_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td id="_idJsp389_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_last panelInactiveSub">&nbsp;</td>
+</tr>
+<tr class="myFaces_panelTabbedPane_contentRow"><td colspan="12" class="myFaces_panelTabbedPane_pane panelTabContent">
+<div id="_idJsp248.content"><fieldset><legend>Descrição</legend><div style="font-style: italic; text-align: justify;">SAO ATOS CIRURGICOS SEM VINCULO DE CONTINUIDADE, INTERDEPENDENCIA OU COMPLEMENTARIDADE, REALIZADO EM CONJUNTO PELA MESMA EQUIPE OU EQUIPES DISTINTAS, APLICADOS A ORGAO UNICO OU DIFERENTES ORGAOS LOCALIZADOS EM REGIAO ANATOMICA UNICA OU REGIOES DIVERSAS, BILATERAIS OU NAO, DEVIDOS A DIFERENTES DOENCAS, EXECUTADOS ATRAVES DE UNICA OU VARIAS VIAS DE ACESSO E PRATICADOS SOB O MESMO ATO ANESTESICO.  A COMPLEXIDADE DESTE PROCEDIMENTO, DEPENDE DAS CIRURGIAS QUE FOREM REALIZADAS.</div></fieldset></div><div id="_idJsp254.content" style="display:none">
+
+<script type="text/javascript"><!--
+
+panelTabbedPane_5F_5FidJsp254_3A_5FidJsp255_5FHeadersIDs= new Array();
+panelTabbedPane_5F_5FidJsp254_3A_5FidJsp255_5FIDs= new Array("_idJsp254:_idJsp256.content","_idJsp254:_idJsp264.content");
+
+//--></script>
+<input id="_idJsp254:_idJsp255_indexSubmit" name="_idJsp254:_idJsp255_indexSubmit" style="display:none"><table id="_idJsp254__idJsp255" cellspacing="0" frame="box" rules="all" style="width:100%;" class="myFaces_panelTabbedPane procedimentoPanel">
+<tbody><tr class="myFaces_pannelTabbedPane_HeaderRow">
+	<td id="_idJsp254:_idJsp256_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>CID Principal</label></td>
+	<td id="_idJsp254:_idJsp264_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>CID Secundário</label></td>
+	<td class="myFaces_panelTabbedPane_emptyHeaderCell">&nbsp;</td>
+</tr>
+<tr class="myFaces_pannelTabbedPane_subHeaderRow">
+	<td id="_idJsp254:_idJsp256_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_first panelActiveSub myFaces_panelTabbedPane_subHeaderCell_active">&nbsp;</td>
+	<td id="_idJsp254:_idJsp264_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_last panelInactiveSub">&nbsp;</td>
+</tr>
+<tr class="myFaces_panelTabbedPane_contentRow"><td colspan="3" class="myFaces_panelTabbedPane_pane panelTabContent">
+<div id="_idJsp254:_idJsp256.content"></div><div id="_idJsp254:_idJsp264.content" style="display:none"></div></td></tr>
+</tbody></table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></div><div id="_idJsp272.content" style="display:none">
+<form name="_idJsp272:_idJsp273.autoform" style="display:inline" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025">
+<script type="text/javascript"><!--
+
+panelTabbedPane_5F_5FidJsp272_3A_5FidJsp273_5FHeadersIDs= new Array();
+panelTabbedPane_5F_5FidJsp272_3A_5FidJsp273_5FIDs= new Array("_idJsp272:_idJsp274.content","_idJsp272:_idJsp282.content");
+
+//--></script>
+<input id="_idJsp272:_idJsp273_indexSubmit" name="_idJsp272:_idJsp273_indexSubmit" style="display:none"><table id="_idJsp272__idJsp273" cellspacing="0" frame="box" rules="all" style="width:100%;" class="myFaces_panelTabbedPane procedimentoPanel">
+<tbody><tr class="myFaces_pannelTabbedPane_HeaderRow">
+	<td id="_idJsp272:_idJsp274_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>CBO</label></td>
+	<td id="_idJsp272:_idJsp282_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>Categoria Cbo</label></td>
+	<td class="myFaces_panelTabbedPane_emptyHeaderCell">&nbsp;</td>
+</tr>
+<tr class="myFaces_pannelTabbedPane_subHeaderRow">
+	<td id="_idJsp272:_idJsp274_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_first panelActiveSub myFaces_panelTabbedPane_subHeaderCell_active">&nbsp;</td>
+	<td id="_idJsp272:_idJsp282_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_last panelInactiveSub">&nbsp;</td>
+</tr>
+<tr class="myFaces_panelTabbedPane_contentRow"><td colspan="3" class="myFaces_panelTabbedPane_pane panelTabContent">
+<div id="_idJsp272:_idJsp274.content"></div><div id="_idJsp272:_idJsp282.content" style="display:none"></div></td></tr>
+</tbody></table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></form></div><div id="_idJsp287.content" style="display:none">
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Código</th><th>Nome</th></tr></thead>
+<tbody id="_idJsp287:_idJsp288:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">01</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">Cirúrgico</td></tr>
+<tr style="background-color: rgb(247, 252, 255);"><td class="codigoMedio" style="background-color: rgb(247, 252, 255);">07</td><td class="nomeMed" style="background-color: rgb(247, 252, 255);">Pediátricos </td></tr></tbody></table>
+</div><div id="_idJsp295.content" style="display:none"></div><div id="_idJsp308.content" style="display:none">
+<form name="_idJsp308:_idJsp309.autoform" style="display:inline" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025">
+<script type="text/javascript"><!--
+
+panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FHeadersIDs= new Array("_idJsp308:_idJsp310_headerCell","_idJsp308:_idJsp331_headerCell");
+panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FIDs= new Array("_idJsp308:_idJsp310.content","_idJsp308:_idJsp331.content");
+
+//--></script>
+<input id="_idJsp308:_idJsp309_indexSubmit" name="_idJsp308:_idJsp309_indexSubmit" style="display:none"><table id="_idJsp308__idJsp309" cellspacing="0" frame="box" rules="all" style="width:100%;" class="myFaces_panelTabbedPane procedimentoPanel">
+<tbody><tr class="myFaces_pannelTabbedPane_HeaderRow">
+	<td id="_idJsp308:_idJsp310_headerCell" class="myFaces_panelTabbedPane_activeHeaderCell panelActiveTab"><input type="submit" name="_idJsp308:_idJsp309.0" value="Habilitação" onclick="return myFaces_showPanelTab(0,'_idJsp308:_idJsp309_indexSubmit','_idJsp308:_idJsp310_headerCell','_idJsp308:_idJsp310.content',panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FHeadersIDs,panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td id="_idJsp308:_idJsp331_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp308:_idJsp309.1" value="Incremento" onclick="return myFaces_showPanelTab(1,'_idJsp308:_idJsp309_indexSubmit','_idJsp308:_idJsp331_headerCell','_idJsp308:_idJsp331.content',panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FHeadersIDs,panelTabbedPane_5F_5FidJsp308_3A_5FidJsp309_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td class="myFaces_panelTabbedPane_emptyHeaderCell">&nbsp;</td>
+</tr>
+<tr class="myFaces_pannelTabbedPane_subHeaderRow">
+	<td id="_idJsp308:_idJsp310_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_first panelActiveSub myFaces_panelTabbedPane_subHeaderCell_active">&nbsp;</td>
+	<td id="_idJsp308:_idJsp331_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_last panelInactiveSub">&nbsp;</td>
+</tr>
+<tr class="myFaces_panelTabbedPane_contentRow"><td colspan="3" class="myFaces_panelTabbedPane_pane panelTabContent">
+<div id="_idJsp308:_idJsp310.content"><fieldset><legend>Habilitações</legend>
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Código</th><th>Nome</th></tr></thead>
+<tbody id="_idJsp308:_idJsp310:_idJsp314:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">3802</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">Agora Tem Especialistas Modalidade 1</td></tr>
+<tr style="background-color: rgb(247, 252, 255);"><td class="codigoMedio" style="background-color: rgb(247, 252, 255);">3805</td><td class="nomeMed" style="background-color: rgb(247, 252, 255);">Agora Tem Especialistas - Componente Créditos Financeiro</td></tr>
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">3806</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">Agora Tem Especialistas - Componente Ressarcimento ao SUS</td></tr></tbody></table>
+</fieldset><fieldset><legend>Grupos Habilitação</legend></fieldset></div><div id="_idJsp308:_idJsp331.content" style="display:none">
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Descrição</th><th>%SH</th><th>%SA</th><th>%SP</th></tr></thead>
+<tbody id="_idJsp308:_idJsp331:_idJsp332:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="nomeMed" style="background-color: rgb(213, 224, 232);">27.01 - Hospital Tipo I em Urgência</td><td class="*" style="background-color: rgb(213, 224, 232);">20.0</td><td class="*" style="background-color: rgb(213, 224, 232);">0.0</td><td class="*" style="background-color: rgb(213, 224, 232);">20.0</td></tr>
+<tr style="background-color: rgb(247, 252, 255);"><td class="nomeMed" style="background-color: rgb(247, 252, 255);">27.02 - Hospital Tipo II em Urgência</td><td class="*" style="background-color: rgb(247, 252, 255);">35.0</td><td class="*" style="background-color: rgb(247, 252, 255);">0.0</td><td class="*" style="background-color: rgb(247, 252, 255);">35.0</td></tr>
+<tr style="background-color: rgb(213, 224, 232);"><td class="nomeMed" style="background-color: rgb(213, 224, 232);">27.03 - Hospital Tipo III em Urgência</td><td class="*" style="background-color: rgb(213, 224, 232);">50.0</td><td class="*" style="background-color: rgb(213, 224, 232);">0.0</td><td class="*" style="background-color: rgb(213, 224, 232);">50.0</td></tr></tbody></table>
+</div></td></tr>
+</tbody></table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></form></div><div id="_idJsp345.content" style="display:none"></div><div id="_idJsp352.content" style="display:none">
+<form name="_idJsp352:_idJsp353.autoform" style="display:inline" method="post" action="/tabela-unificada/app/sec/procedimento/exibir/0415010012/12/2025">
+<script type="text/javascript"><!--
+
+panelTabbedPane_5F_5FidJsp352_3A_5FidJsp353_5FHeadersIDs= new Array("_idJsp352:_idJsp362_headerCell");
+panelTabbedPane_5F_5FidJsp352_3A_5FidJsp353_5FIDs= new Array("_idJsp352:_idJsp354.content","_idJsp352:_idJsp362.content");
+
+//--></script>
+<input id="_idJsp352:_idJsp353_indexSubmit" name="_idJsp352:_idJsp353_indexSubmit" style="display:none"><table id="_idJsp352__idJsp353" cellspacing="0" frame="box" rules="all" style="width:100%;" class="myFaces_panelTabbedPane procedimentoPanel">
+<tbody><tr class="myFaces_pannelTabbedPane_HeaderRow">
+	<td id="_idJsp352:_idJsp354_headerCell" class="myFaces_panelTabbedPane_disabledHeaderCell panelDisabledTab"><label>Origem SIGTAP</label></td>
+	<td id="_idJsp352:_idJsp362_headerCell" class="myFaces_panelTabbedPane_inactiveHeaderCell panelInactiveTab"><input type="submit" name="_idJsp352:_idJsp353.1" value="Origem SIA/SIH" onclick="return myFaces_showPanelTab(1,'_idJsp352:_idJsp353_indexSubmit','_idJsp352:_idJsp362_headerCell','_idJsp352:_idJsp362.content',panelTabbedPane_5F_5FidJsp352_3A_5FidJsp353_5FHeadersIDs,panelTabbedPane_5F_5FidJsp352_3A_5FidJsp353_5FIDs,'panelActiveTab','panelInactiveTab','panelActiveSub','panelInactiveSub');"></td>
+	<td class="myFaces_panelTabbedPane_emptyHeaderCell">&nbsp;</td>
+</tr>
+<tr class="myFaces_pannelTabbedPane_subHeaderRow">
+	<td id="_idJsp352:_idJsp354_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_first panelActiveSub myFaces_panelTabbedPane_subHeaderCell_active">&nbsp;</td>
+	<td id="_idJsp352:_idJsp362_headerCell_sub" class="myFaces_panelTabbedPane_subHeaderCell panelInactiveSub myFaces_panelTabbedPane_subHeaderCell_inactive">&nbsp;</td>
+	<td class="myFaces_panelTabbedPane_subHeaderCell myFaces_panelTabbedPane_subHeaderCell_last panelInactiveSub">&nbsp;</td>
+</tr>
+<tr class="myFaces_panelTabbedPane_contentRow"><td colspan="3" class="myFaces_panelTabbedPane_pane panelTabContent">
+<div id="_idJsp352:_idJsp354.content"></div><div id="_idJsp352:_idJsp362.content" style="display:none">
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Tipo</th><th>Código</th><th>Nome</th></tr></thead>
+<tbody id="_idJsp352:_idJsp362:_idJsp363:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">Hospitalar</td><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">31000002</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">CIRURGIA MULTIPLA</td></tr>
+<tr style="background-color: rgb(247, 252, 255);"><td class="codigoMedio" style="background-color: rgb(247, 252, 255);">Hospitalar</td><td class="codigoMedio" style="background-color: rgb(247, 252, 255);">33000000</td><td class="nomeMed" style="background-color: rgb(247, 252, 255);">CIRURGIA MULTIPLA EM PACIENTE COM LESAO LABIO PALATAL E CRANIO FACIAL</td></tr></tbody></table>
+</div></td></tr>
+</tbody></table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="></form></div><div id="_idJsp373.content" style="display:none">
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Código</th><th>Nome</th></tr></thead>
+<tbody id="_idJsp373:_idJsp374:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">0013</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">GERA COMPENSAÇÃO FINANCEIRA</td></tr>
+<tr style="background-color: rgb(247, 252, 255);"><td class="codigoMedio" style="background-color: rgb(247, 252, 255);">0015</td><td class="nomeMed" style="background-color: rgb(247, 252, 255);">CONDICIONA O TIPO DE FINANCIAMENTO EM FAEC</td></tr></tbody></table>
+</div><div id="_idJsp381.content" style="display:none">
+<table cellpadding="4" frame="box" rules="all" class="dados">
+<thead>
+<tr><th>Código</th><th>Nome</th></tr></thead>
+<tbody id="_idJsp381:_idJsp382:tbody_element">
+<tr style="background-color: rgb(213, 224, 232);"><td class="codigoMedio" style="background-color: rgb(213, 224, 232);">139</td><td class="nomeMed" style="background-color: rgb(213, 224, 232);">Cirurgias em  Politraumatizados</td></tr></tbody></table>
+</div><div id="_idJsp389.content" style="display:none"></div></td></tr>
+</tbody></table><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="pMbfU9UaNfSQpjORSFlIu5M9/8/b9dIWLHAUy1EeDD5lR8mEVylXJYXU0u6Fm36hn1Xs8KtHxz7i58F4VRy+iA02Kzxo5jk7g4in6LBON+aV1sZjs7UoVN+6/dvF+cAGHGlpCG9JvvdyyUQxJgjua7+x9r6fI245pi8WXw=="><span style="margin-top:1em" class="botoes"><a id="_idJsp416" name="_idJsp416" href="javascript:history.back()" title="Voltar"><img src="/tabela-unificada/images/32/go-previous.png" class="button"></a></span>
+
+
+
+
+	
+	
+
+
+	
+		
+
+
+
+
+	
+
+
+
+	
+
+
+	
+
+	
+	
+		
+	
+			
+	
+		
+
+       
+			
+				
+			
+				
+			
+       
+
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+ </form></div>
+
+</div>
+
+<script type="text/javascript"><!--
+
+	function getScrolling()
+	{
+		var x = 0; var y = 0;if (self.pageXOffset || self.pageYOffset)
+		{
+			x = self.pageXOffset;
+			y = self.pageYOffset;
+		}
+		 else if ((document.documentElement && document.documentElement.scrollLeft)||(document.documentElement && document.documentElement.scrollTop))
+		{
+			x = document.documentElement.scrollLeft;
+			y = document.documentElement.scrollTop;
+		}
+		 else if (document.body) 
+		{
+			x = document.body.scrollLeft;
+			y = document.body.scrollTop;
+		}
+		return x + "," + y;
+	}
+	
+//--></script>
+
+</body></html>

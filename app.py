@@ -6,6 +6,7 @@ import re
 import os
 import unicodedata
 import hashlib
+import sqlite3
 import streamlit.components.v1 as components
 
 st.set_page_config(
@@ -74,6 +75,16 @@ def fmt_brl(valor):
 def fmt_int(valor):
     """Formata inteiro com separador de milhar."""
     return f"{int(valor):,}".replace(",", ".")
+
+
+def fmt_valor_grafico(v):
+    """Formata valor para labels de graficos: M para milhoes, k para mil."""
+    if abs(v) >= 1_000_000:
+        return f"R$ {v / 1_000_000:,.1f}M"
+    elif abs(v) >= 1_000:
+        return f"R$ {v / 1_000:,.0f}k"
+    else:
+        return f"R$ {v:,.0f}"
 
 
 def normalize_name(name: str) -> str:
@@ -224,6 +235,70 @@ def load_excel():
     return data
 
 
+@st.cache_data(ttl=300)
+def load_isea_data():
+    DB_PATH = os.path.join(DATA_DIR, "saude_real.db")
+    if not os.path.exists(DB_PATH):
+        return None, None, None
+    conn = sqlite3.connect(DB_PATH)
+
+    df_resumo = pd.read_sql_query("""
+        SELECT r.competencia,
+               COUNT(DISTINCT r.prontuario) as pacientes,
+               COUNT(*) as registros,
+               SUM(ap.qtd) as procedimentos,
+               SUM(ap.qtd * COALESCE(sm.s_hosp, 0)) as total_sh,
+               SUM(ap.qtd * COALESCE(sm.s_prof, 0)) as total_sp,
+               SUM(ap.qtd * COALESCE(sm.t_hosp, 0)) as total_th
+        FROM aih_records r
+        LEFT JOIN aih_procedimentos ap ON r.id_aih = ap.id_aih
+        LEFT JOIN sigtap_metadata sm ON sm.proc_cod = ap.proc_cod AND sm.competencia = r.competencia
+        GROUP BY r.competencia
+        ORDER BY SUBSTR(r.competencia, 4, 4) || SUBSTR(r.competencia, 1, 2)
+    """, conn)
+
+    df_procs = pd.read_sql_query("""
+        SELECT r.competencia, ap.proc_cod,
+               COALESCE(sm.nome, sm_any.nome, '') as proc_nome,
+               COALESCE(sm.complexidade, sm_any.complexidade, '') as complexidade,
+               sm.s_hosp, sm.s_prof, sm.t_hosp,
+               SUM(ap.qtd) as qtd_total,
+               SUM(ap.qtd * COALESCE(sm.s_hosp, 0)) as val_sh,
+               SUM(ap.qtd * COALESCE(sm.s_prof, 0)) as val_sp,
+               SUM(ap.qtd * COALESCE(sm.t_hosp, 0)) as val_th,
+               COUNT(DISTINCT r.prontuario) as num_pacientes
+        FROM aih_procedimentos ap
+        JOIN aih_records r ON r.id_aih = ap.id_aih
+        LEFT JOIN sigtap_metadata sm ON sm.proc_cod = ap.proc_cod AND sm.competencia = r.competencia
+        LEFT JOIN (
+            SELECT proc_cod, nome, complexidade FROM sigtap_metadata
+            GROUP BY proc_cod
+        ) sm_any ON sm_any.proc_cod = ap.proc_cod
+        GROUP BY r.competencia, ap.proc_cod
+        ORDER BY val_th DESC
+    """, conn)
+
+    df_cidades = pd.read_sql_query("""
+        SELECT r.competencia,
+               COALESCE(p.cidade, 'Desconhecida') as cidade,
+               COUNT(DISTINCT r.prontuario) as pacientes,
+               COUNT(*) as registros,
+               SUM(ap.qtd) as procedimentos,
+               SUM(ap.qtd * COALESCE(sm.s_hosp, 0)) as total_sh,
+               SUM(ap.qtd * COALESCE(sm.s_prof, 0)) as total_sp,
+               SUM(ap.qtd * COALESCE(sm.t_hosp, 0)) as total_th
+        FROM aih_records r
+        LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+        LEFT JOIN aih_procedimentos ap ON r.id_aih = ap.id_aih
+        LEFT JOIN sigtap_metadata sm ON sm.proc_cod = ap.proc_cod AND sm.competencia = r.competencia
+        GROUP BY r.competencia, p.cidade
+        ORDER BY total_th DESC
+    """, conn)
+
+    conn.close()
+    return df_resumo, df_procs, df_cidades
+
+
 # ── Load all data ─────────────────────────────────────────────────────────────
 
 pactuacao = load_pactuacao()
@@ -355,6 +430,10 @@ view = st.sidebar.radio(
         "Por Municipio",
         "Pactuacao vs Realizado",
         "Custos Detalhados (SUS)",
+        "Custos Reais (SIGTAP)",
+        "ISEA - Producao Mensal",
+        "ISEA - Procedimentos",
+        "ISEA - Pacientes e Cidades",
     ],
 )
 
@@ -491,7 +570,7 @@ elif view == "Por Hospital":
     with col_i:
         st.subheader("ISEA")
         st.metric("Procedimentos", fmt_int(isea_qty_total))
-        st.metric("Receita SUS", fmt_brl(isea_val_total))
+        st.metric("Custo SUS", fmt_brl(isea_val_total))
         st.metric("Ticket Medio", fmt_brl(isea_val_total / isea_qty_total if isea_qty_total else 0))
         st.metric("Tipos de Procedimento", len(isea_pq))
         st.metric("Municipios Atendidos", len(isea_mq))
@@ -499,9 +578,9 @@ elif view == "Por Hospital":
     with col_c:
         st.subheader("CLIPSI")
         st.metric("Procedimentos", fmt_int(clipsi_qty_total))
-        st.metric("Receita SUS", fmt_brl(clipsi_val_total))
+        st.metric("Custo SUS", fmt_brl(clipsi_val_total))
         st.metric("Bonificacao CLIPSI", fmt_brl(clipsi_qty_total * BONUS_CLIPSI))
-        st.metric("Receita SUS + Bonificacao", fmt_brl(clipsi_val_total + clipsi_qty_total * BONUS_CLIPSI))
+        st.metric("Custo SUS + Bonificacao", fmt_brl(clipsi_val_total + clipsi_qty_total * BONUS_CLIPSI))
         st.metric("Ticket Medio (SUS)", fmt_brl(clipsi_val_total / clipsi_qty_total if clipsi_qty_total else 0))
         st.metric("Ticket Medio (SUS + Bonif.)", fmt_brl((clipsi_val_total / clipsi_qty_total if clipsi_qty_total else 0) + BONUS_CLIPSI))
         st.metric("Tipos de Procedimento", len(clipsi_pq))
@@ -662,9 +741,9 @@ elif view == "Por Procedimento":
     c2.metric("Media Mensal", fmt_int(row_q["total"] / 12))
     if has_val:
         rv = row_v.iloc[0]
-        c3.metric("Receita Total", fmt_brl(rv["total"]))
+        c3.metric("Custo Total SUS", fmt_brl(rv["total"]))
         ticket = rv["total"] / row_q["total"] if row_q["total"] > 0 else 0
-        c4.metric("Valor Medio/Proc", fmt_brl(ticket))
+        c4.metric("Custo Medio/Proc", fmt_brl(ticket))
 
     # Trend mensal (qty + valor)
     df_trend = pd.DataFrame({
@@ -672,14 +751,14 @@ elif view == "Por Procedimento":
         "Quantidade": [row_q[m] for m in MESES],
     })
     if has_val:
-        df_trend["Valor (R$)"] = [rv[m] for m in MESES]
+        df_trend["Custo (R$)"] = [rv[m] for m in MESES]
 
     fig = go.Figure()
     fig.add_trace(go.Bar(x=df_trend["Mes"], y=df_trend["Quantidade"], name="Quantidade", marker_color="#1976D2"))
     if has_val:
-        fig.add_trace(go.Scatter(x=df_trend["Mes"], y=df_trend["Valor (R$)"], name="Valor (R$)",
+        fig.add_trace(go.Scatter(x=df_trend["Mes"], y=df_trend["Custo (R$)"], name="Custo (R$)",
                                  yaxis="y2", mode="lines+markers", line=dict(color="#E91E63", width=2)))
-        fig.update_layout(yaxis2=dict(title="Valor (R$)", overlaying="y", side="right"))
+        fig.update_layout(yaxis2=dict(title="Custo (R$)", overlaying="y", side="right"))
     fig.update_layout(title=f"{selected}", height=400, yaxis_title="Quantidade")
     st.plotly_chart(fig, use_container_width=True)
 
@@ -693,7 +772,7 @@ elif view == "Por Procedimento":
 
     # Valor medio por procedimento
     if has_val:
-        st.subheader("Valor Medio por Procedimento")
+        st.subheader("Custo Medio por Procedimento")
         merged_pv = pq[["codigo", "descricao", "total"]].merge(
             pv[["codigo", "total"]].rename(columns={"total": "valor_total"}),
             on="codigo", how="inner",
@@ -701,9 +780,9 @@ elif view == "Por Procedimento":
         merged_pv["valor_medio"] = merged_pv["valor_total"] / merged_pv["total"].replace(0, 1)
         merged_pv = merged_pv.sort_values("valor_medio", ascending=True)
         fig3 = px.bar(merged_pv, x="valor_medio", y="descricao", orientation="h",
-                      title=f"Valor Medio por Procedimento - {hospital}", height=500,
+                      title=f"Custo Medio por Procedimento - {hospital}", height=500,
                       color="valor_medio", color_continuous_scale="Viridis")
-        fig3.update_layout(yaxis_title="", xaxis_title="Valor Medio (R$)")
+        fig3.update_layout(yaxis_title="", xaxis_title="Custo Medio (R$)")
         st.plotly_chart(fig3, use_container_width=True)
 
     # Tabela itens de programacao
@@ -1062,3 +1141,584 @@ elif view == "Custos Detalhados (SUS)":
         fin_show = fin_mun[["municipio", "isea_sus", "clipsi_sus", "clipsi_bonus", "custo_total"]].copy()
         fin_show.columns = ["Municipio", "ISEA (SUS)", "CLIPSI (SUS)", "CLIPSI (Bonif.)", "Custo Total"]
         st.dataframe(fin_show, use_container_width=True, hide_index=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 7. CUSTOS REAIS (SIGTAP) - Dados do web scraping
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "Custos Reais (SIGTAP)":
+    st.title("Custos Reais - Tabela SIGTAP")
+    st.caption("Custos extraidos diretamente do SIGTAP/DataSUS com detalhamento por procedimento")
+
+    DB_PATH = "saude_real.db"
+    if not os.path.exists(DB_PATH):
+        st.error("Banco de dados saude_real.db nao encontrado. Execute o scraper primeiro.")
+        st.stop()
+
+    conn = sqlite3.connect(DB_PATH)
+
+    # Load data
+    df_aih = pd.read_sql_query("""
+        SELECT r.id_aih, r.prontuario, r.cns_paciente, r.data_ent, r.data_sai,
+               r.cid_principal, r.competencia, r.data_atendimento,
+               p.nome as paciente, p.cidade, p.estado
+        FROM aih_records r
+        LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+    """, conn)
+
+    df_procs = pd.read_sql_query("""
+        SELECT ap.id_aih, ap.proc_cod, ap.qtd, ap.custo_unitario, ap.custo_total,
+               COALESCE(s.nome, '') as proc_nome
+        FROM aih_procedimentos ap
+        LEFT JOIN aih_records r ON ap.id_aih = r.id_aih
+        LEFT JOIN sigtap_metadata s ON ap.proc_cod = s.proc_cod AND r.competencia = s.competencia
+    """, conn)
+
+    df_sigtap = pd.read_sql_query("SELECT * FROM sigtap_metadata", conn)
+    conn.close()
+
+    if df_aih.empty:
+        st.warning("Nenhum dado encontrado no banco. Execute o scraper primeiro.")
+        st.stop()
+
+    # Compute total cost per AIH
+    aih_costs = df_procs.groupby("id_aih").agg(
+        custo_aih=("custo_total", "sum"),
+        num_procs=("proc_cod", "count")
+    ).reset_index()
+    df_aih = df_aih.merge(aih_costs, on="id_aih", how="left").fillna({"custo_aih": 0, "num_procs": 0})
+
+    # Data quality
+    total_aihs = len(df_aih)
+    total_procs = len(df_procs)
+    procs_sem_custo = (df_procs["custo_unitario"] == 0).sum() if "custo_unitario" in df_procs.columns else 0
+    custo_total_geral = df_procs["custo_total"].sum() if "custo_total" in df_procs.columns else 0
+
+    # KPIs
+    c1, c2, c3, c4 = st.columns(4)
+    c1.markdown(f"**Custo Total Real (SIGTAP)**<br><h2 style='color: #1976D2; margin-top: 0;'>{fmt_brl(custo_total_geral)}</h2>", unsafe_allow_html=True)
+    c2.markdown(f"**Total AIHs**<br><h2 style='margin-top: 0;'>{fmt_int(total_aihs)}</h2>", unsafe_allow_html=True)
+    c3.markdown(f"**Total Procedimentos**<br><h2 style='margin-top: 0;'>{fmt_int(total_procs)}</h2>", unsafe_allow_html=True)
+    c4.markdown(f"**Custo Medio/AIH**<br><h2 style='margin-top: 0;'>{fmt_brl(custo_total_geral / total_aihs if total_aihs else 0)}</h2>", unsafe_allow_html=True)
+
+    if procs_sem_custo > 0:
+        st.info(f"{procs_sem_custo} procedimentos sem custo no SIGTAP (valor R$ 0,00 na tabela ou dados pendentes)")
+
+    st.divider()
+
+    # Custo por competencia (mes de faturamento)
+    st.subheader("Custo por Competencia (Mes de Faturamento)")
+    custo_comp = df_aih.groupby("competencia").agg(
+        aihs=("id_aih", "count"),
+        custo=("custo_aih", "sum")
+    ).reset_index().sort_values("competencia")
+
+    fig_comp = go.Figure()
+    fig_comp.add_trace(go.Bar(x=custo_comp["competencia"], y=custo_comp["custo"],
+                              name="Custo Real", marker_color="#1976D2",
+                              text=custo_comp["custo"].apply(fmt_valor_grafico),
+                              textposition="outside"))
+    fig_comp.add_trace(go.Scatter(x=custo_comp["competencia"], y=custo_comp["aihs"],
+                                  name="Qtd AIHs", yaxis="y2",
+                                  mode="lines+markers", line=dict(color="#FF9800", width=3)))
+    fig_comp.update_layout(
+        title="Custo Real vs Quantidade de AIHs por Competencia",
+        yaxis=dict(title="Custo (R$)"),
+        yaxis2=dict(title="Qtd AIHs", overlaying="y", side="right"),
+        height=450
+    )
+    st.plotly_chart(fig_comp, use_container_width=True)
+
+    # Custo por cidade
+    st.subheader("Custo por Cidade")
+    top_n_cid = st.sidebar.slider("Top N cidades (Custos Reais)", 10, 50, 20, key="top_n_real")
+
+    custo_cidade = df_aih.groupby("cidade").agg(
+        aihs=("id_aih", "count"),
+        custo=("custo_aih", "sum")
+    ).reset_index().sort_values("custo", ascending=False)
+
+    custo_cidade_top = custo_cidade.head(top_n_cid)
+    fig_cid = px.bar(custo_cidade_top, x="cidade", y="custo",
+                     title=f"Top {top_n_cid} Cidades - Custo Real SIGTAP",
+                     color="custo", color_continuous_scale="Blues", height=500,
+                     text=custo_cidade_top["custo"].apply(fmt_valor_grafico))
+    fig_cid.update_layout(xaxis_tickangle=-45, xaxis_title="", yaxis_title="Custo Real (R$)")
+    fig_cid.update_traces(textposition="outside")
+    st.plotly_chart(fig_cid, use_container_width=True)
+
+    # Top procedimentos por custo total
+    st.subheader("Procedimentos com Maior Custo")
+    proc_custo = df_procs.groupby(["proc_cod", "proc_nome"]).agg(
+        qtd_total=("qtd", "sum"),
+        custo_total=("custo_total", "sum"),
+        ocorrencias=("id_aih", "count")
+    ).reset_index().sort_values("custo_total", ascending=False)
+
+    proc_custo["custo_medio"] = proc_custo["custo_total"] / proc_custo["qtd_total"].replace(0, 1)
+    proc_custo["label"] = proc_custo["proc_cod"] + " - " + proc_custo["proc_nome"]
+
+    col_a, col_b = st.columns(2)
+    with col_a:
+        top_procs = proc_custo.head(15)
+        fig_procs = px.bar(top_procs, x="custo_total", y="label", orientation="h",
+                          title="Top 15 Procedimentos por Custo Total",
+                          color="custo_total", color_continuous_scale="Viridis", height=500)
+        fig_procs.update_layout(yaxis_title="", xaxis_title="Custo Total (R$)")
+        st.plotly_chart(fig_procs, use_container_width=True)
+
+    with col_b:
+        top_freq = proc_custo.sort_values("ocorrencias", ascending=False).head(15)
+        fig_freq = px.bar(top_freq, x="ocorrencias", y="label", orientation="h",
+                         title="Top 15 Procedimentos por Frequencia",
+                         color="custo_medio", color_continuous_scale="Oranges", height=500)
+        fig_freq.update_layout(yaxis_title="", xaxis_title="Ocorrencias")
+        st.plotly_chart(fig_freq, use_container_width=True)
+
+    # Comparativo: Custo Estimado (Excel) vs Custo Real (SIGTAP)
+    st.divider()
+    st.subheader("Comparativo: Custo Estimado vs Custo Real")
+
+    # Custo estimado do Excel (ja calculado acima)
+    custo_estimado_total = isea_pv[MESES].sum().sum() + clipsi_pv[MESES].sum().sum()
+    custo_real_total = custo_total_geral
+
+    comp_c1, comp_c2, comp_c3 = st.columns(3)
+    comp_c1.markdown(f"**Custo Estimado (Excel/SUS)**<br><h2 style='color: #FF9800; margin-top: 0;'>{fmt_brl(custo_estimado_total)}</h2>", unsafe_allow_html=True)
+    comp_c2.markdown(f"**Custo Real (SIGTAP Detalhado)**<br><h2 style='color: #1976D2; margin-top: 0;'>{fmt_brl(custo_real_total)}</h2>", unsafe_allow_html=True)
+    diff = custo_real_total - custo_estimado_total
+    cor_diff = "#dc3545" if diff > 0 else "#28a745"
+    comp_c3.markdown(f"**Diferenca**<br><h2 style='color: {cor_diff}; margin-top: 0;'>{fmt_brl(diff)}</h2>", unsafe_allow_html=True)
+
+    st.caption("O custo real inclui TODOS os procedimentos detalhados (exames, diarias, materiais, etc.) "
+               "que nao estao contemplados no custo estimado baseado apenas nos procedimentos principais.")
+
+    # Tabela detalhada de AIHs
+    with st.expander("Tabela de AIHs Detalhada"):
+        df_show = df_aih[["prontuario", "paciente", "cidade", "data_ent", "data_sai",
+                          "cid_principal", "competencia", "num_procs", "custo_aih"]].copy()
+        df_show["custo_aih"] = df_show["custo_aih"].apply(fmt_brl)
+        df_show["num_procs"] = df_show["num_procs"].astype(int)
+        df_show.columns = ["Prontuario", "Paciente", "Cidade", "Entrada", "Saida",
+                          "CID", "Competencia", "Num Procs", "Custo Total"]
+        st.dataframe(df_show.sort_values("Competencia"), use_container_width=True, hide_index=True)
+
+    # Tabela de procedimentos SIGTAP
+    with st.expander("Tabela de Custos SIGTAP"):
+        sigtap_show = df_sigtap[["proc_cod", "nome", "competencia", "s_amb", "s_hosp", "s_prof", "t_hosp"]].copy()
+        sigtap_show.columns = ["Codigo", "Nome", "Competencia", "Serv. Ambulatorial", "Serv. Hospitalar",
+                              "Serv. Profissional", "Total Hospitalar"]
+        for col in ["Serv. Ambulatorial", "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar"]:
+            sigtap_show[col] = sigtap_show[col].apply(fmt_brl)
+        st.dataframe(sigtap_show.sort_values(["Competencia", "Codigo"]),
+                    use_container_width=True, hide_index=True)
+
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 8. ISEA - PRODUCAO MENSAL
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "ISEA - Producao Mensal":
+    st.title("ISEA - Producao Mensal (Dados Scrapeados)")
+    st.caption("Dados extraidos diretamente do sistema hospitalar ISEA com valores SIGTAP")
+
+    df_resumo, df_procs, df_cidades = load_isea_data()
+    if df_resumo is None or df_resumo.empty:
+        st.error("Banco de dados nao encontrado ou vazio. Execute o scraper primeiro.")
+        st.stop()
+
+    # KPIs gerais
+    tot_pac = df_resumo["pacientes"].sum()
+    tot_reg = df_resumo["registros"].sum()
+    tot_procs = df_resumo["procedimentos"].sum()
+    tot_sh = df_resumo["total_sh"].sum()
+    tot_sp = df_resumo["total_sp"].sum()
+    tot_th = df_resumo["total_th"].sum()
+
+    c1, c2, c3 = st.columns(3)
+    c1.markdown(f"**Total Hospitalar (SH + SP)**<br><h2 style='color: #1976D2; margin-top: 0;'>{fmt_brl(tot_th)}</h2>", unsafe_allow_html=True)
+    c2.markdown(f"**Servico Hospitalar (SH)**<br><h2 style='margin-top: 0;'>{fmt_brl(tot_sh)}</h2>", unsafe_allow_html=True)
+    c3.markdown(f"**Servico Profissional (SP)**<br><h2 style='margin-top: 0;'>{fmt_brl(tot_sp)}</h2>", unsafe_allow_html=True)
+
+    c4, c5, c6, c7 = st.columns(4)
+    c4.metric("Pacientes (unicos)", fmt_int(tot_pac))
+    c5.metric("Registros (AIHs)", fmt_int(tot_reg))
+    c6.metric("Procedimentos", fmt_int(tot_procs))
+    c7.metric("Ticket Medio/Paciente", fmt_brl(tot_th / tot_pac if tot_pac else 0))
+
+    st.divider()
+
+    # Grafico evolucao mensal - Custo
+    st.subheader("Evolucao Mensal - Custo Total Hospitalar")
+    fig_custo = go.Figure()
+    fig_custo.add_trace(go.Bar(
+        x=df_resumo["competencia"], y=df_resumo["total_sh"],
+        name="Servico Hospitalar (SH)", marker_color="#1976D2",
+    ))
+    fig_custo.add_trace(go.Bar(
+        x=df_resumo["competencia"], y=df_resumo["total_sp"],
+        name="Servico Profissional (SP)", marker_color="#FF9800",
+    ))
+    fig_custo.add_trace(go.Scatter(
+        x=df_resumo["competencia"], y=df_resumo["total_th"],
+        name="Total Hospitalar (TH)", mode="lines+markers+text",
+        line=dict(color="#E91E63", width=3),
+        text=df_resumo["total_th"].apply(fmt_valor_grafico),
+        textposition="top center",
+    ))
+    fig_custo.update_layout(barmode="stack", height=450, yaxis_title="Valor (R$)")
+    st.plotly_chart(fig_custo, use_container_width=True)
+
+    # Grafico evolucao mensal - Quantidade
+    st.subheader("Evolucao Mensal - Pacientes e Procedimentos")
+    fig_qty = go.Figure()
+    fig_qty.add_trace(go.Bar(
+        x=df_resumo["competencia"], y=df_resumo["pacientes"],
+        name="Pacientes", marker_color="#4CAF50",
+        text=df_resumo["pacientes"], textposition="outside",
+    ))
+    fig_qty.add_trace(go.Scatter(
+        x=df_resumo["competencia"], y=df_resumo["procedimentos"],
+        name="Procedimentos", yaxis="y2",
+        mode="lines+markers", line=dict(color="#9C27B0", width=3),
+    ))
+    fig_qty.update_layout(
+        yaxis=dict(title="Pacientes"),
+        yaxis2=dict(title="Procedimentos", overlaying="y", side="right"),
+        height=400,
+    )
+    st.plotly_chart(fig_qty, use_container_width=True)
+
+    # Tabela resumo
+    st.subheader("Tabela Resumo Mensal")
+    df_tab = df_resumo.copy()
+    df_tab["media_proc_pac"] = (df_tab["procedimentos"] / df_tab["pacientes"].replace(0, 1)).round(1)
+    df_tab["ticket_medio"] = df_tab["total_th"] / df_tab["pacientes"].replace(0, 1)
+
+    # Totais
+    totais = pd.DataFrame([{
+        "competencia": "TOTAL",
+        "pacientes": tot_pac,
+        "registros": tot_reg,
+        "procedimentos": tot_procs,
+        "total_sh": tot_sh,
+        "total_sp": tot_sp,
+        "total_th": tot_th,
+        "media_proc_pac": tot_procs / tot_pac if tot_pac else 0,
+        "ticket_medio": tot_th / tot_pac if tot_pac else 0,
+    }])
+    df_tab = pd.concat([df_tab, totais], ignore_index=True)
+
+    df_tab["total_sh"] = df_tab["total_sh"].apply(fmt_brl)
+    df_tab["total_sp"] = df_tab["total_sp"].apply(fmt_brl)
+    df_tab["total_th"] = df_tab["total_th"].apply(fmt_brl)
+    df_tab["ticket_medio"] = df_tab["ticket_medio"].apply(fmt_brl)
+    df_tab.columns = ["Competencia", "Pacientes", "Registros", "Procedimentos",
+                       "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar",
+                       "Media Proc/Pac", "Ticket Medio"]
+    st.dataframe(df_tab, use_container_width=True, hide_index=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 9. ISEA - PROCEDIMENTOS
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "ISEA - Procedimentos":
+    st.title("ISEA - Analise de Procedimentos (SIGTAP)")
+    st.caption("Procedimentos realizados no ISEA com valores da tabela SIGTAP")
+
+    df_resumo, df_procs, df_cidades = load_isea_data()
+    if df_procs is None or df_procs.empty:
+        st.error("Banco de dados nao encontrado ou vazio.")
+        st.stop()
+
+    # Filtro de competencia
+    competencias = ["Todas"] + sorted(df_procs["competencia"].unique().tolist(),
+                                       key=lambda c: c[3:] + c[:2])
+    comp_sel = st.selectbox("Competencia", competencias)
+
+    if comp_sel != "Todas":
+        df_p = df_procs[df_procs["competencia"] == comp_sel].copy()
+    else:
+        df_p = df_procs.groupby(["proc_cod", "proc_nome", "complexidade"]).agg(
+            s_hosp=("s_hosp", "first"),
+            s_prof=("s_prof", "first"),
+            t_hosp=("t_hosp", "first"),
+            qtd_total=("qtd_total", "sum"),
+            val_sh=("val_sh", "sum"),
+            val_sp=("val_sp", "sum"),
+            val_th=("val_th", "sum"),
+            num_pacientes=("num_pacientes", "sum"),
+        ).reset_index()
+
+    tot_th = df_p["val_th"].sum()
+    tot_qty = df_p["qtd_total"].sum()
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.markdown(f"**Total Hospitalar**<br><h2 style='color: #1976D2; margin-top: 0;'>{fmt_brl(tot_th)}</h2>", unsafe_allow_html=True)
+    c2.metric("Procedimentos Realizados", fmt_int(tot_qty))
+    c3.metric("Tipos Distintos", fmt_int(len(df_p)))
+    c4.metric("Custo Medio/Proc", fmt_brl(tot_th / tot_qty if tot_qty else 0))
+
+    st.divider()
+
+    # Top 20 por custo total
+    st.subheader("Top 20 Procedimentos por Custo Total")
+    top20 = df_p.nlargest(20, "val_th").copy()
+    top20["label"] = top20["proc_cod"] + " - " + top20["proc_nome"].str[:40]
+
+    fig = px.bar(top20, x="val_th", y="label", orientation="h",
+                 color="val_th", color_continuous_scale="Blues", height=600,
+                 text=top20["val_th"].apply(fmt_valor_grafico))
+    fig.update_layout(yaxis_title="", xaxis_title="Custo Total Hospitalar (R$)",
+                      yaxis=dict(autorange="reversed"))
+    fig.update_traces(textposition="outside")
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Procedimentos por quantidade e custo (todos, agrupando <= 4% como "Outros")
+    st.subheader("Procedimentos")
+    col_a, col_b = st.columns(2)
+
+    with col_a:
+        pie_qty = df_p[["proc_cod", "proc_nome", "qtd_total"]].copy()
+        pie_qty = pie_qty.sort_values("qtd_total", ascending=False)
+        # Top 10 + agrupar o resto como "Outros"
+        main_qty = pie_qty.head(10).copy()
+        outros_qty = pie_qty.iloc[10:]
+        if not outros_qty.empty:
+            outros_row = pd.DataFrame([{
+                "proc_cod": ", ".join(outros_qty["proc_cod"].tolist()),
+                "proc_nome": "Outros",
+                "qtd_total": outros_qty["qtd_total"].sum(),
+            }])
+            main_qty = pd.concat([main_qty, outros_row], ignore_index=True)
+        main_qty["label"] = main_qty["proc_nome"].str[:40]
+        main_qty["hover"] = main_qty.apply(
+            lambda r: f"{r['proc_cod']}<br>{r['proc_nome']}<br>Qtd: {r['qtd_total']:,.0f}", axis=1)
+        fig = px.pie(main_qty, values="qtd_total", names="label",
+                     title="Por Quantidade", hole=0.4,
+                     color_discrete_sequence=px.colors.qualitative.Set3)
+        fig.update_traces(textinfo="percent+value",
+                          hovertemplate="%{customdata[0]}<extra></extra>",
+                          customdata=main_qty[["hover"]].values)
+        fig.update_layout(legend=dict(font=dict(size=9), orientation="h", y=-0.3), height=550)
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col_b:
+        pie_val = df_p[["proc_cod", "proc_nome", "val_th"]].copy()
+        pie_val = pie_val.sort_values("val_th", ascending=False)
+        # Top 10 + agrupar o resto como "Outros"
+        main_val = pie_val.head(10).copy()
+        outros_val = pie_val.iloc[10:]
+        if not outros_val.empty:
+            outros_row = pd.DataFrame([{
+                "proc_cod": ", ".join(outros_val["proc_cod"].tolist()),
+                "proc_nome": "Outros",
+                "val_th": outros_val["val_th"].sum(),
+            }])
+            main_val = pd.concat([main_val, outros_row], ignore_index=True)
+        main_val["label"] = main_val["proc_nome"].str[:40]
+        main_val["hover"] = main_val.apply(
+            lambda r: f"{r['proc_cod']}<br>{r['proc_nome']}<br>R$ {r['val_th']:,.2f}", axis=1)
+        fig = px.pie(main_val, values="val_th", names="label",
+                     title="Por Custo Total", hole=0.4,
+                     color_discrete_sequence=px.colors.qualitative.Set3)
+        fig.update_traces(textinfo="percent+value", texttemplate="%{percent}<br>R$ %{value:,.0f}",
+                          hovertemplate="%{customdata[0]}<extra></extra>",
+                          customdata=main_val[["hover"]].values)
+        fig.update_layout(legend=dict(font=dict(size=9), orientation="h", y=-0.3), height=550)
+        st.plotly_chart(fig, use_container_width=True)
+
+    # % Execucao da Pactuacao
+    st.divider()
+    st.subheader("Execucao da Pactuacao por Procedimento")
+
+    # Cruzar com itens de programacao
+    pact_itens = load_itens_programacao()
+    pact_df = load_pactuacao()
+
+    # Agrupar pactuacao por procedimento (codigo esta nos itens)
+    # A pactuacao tem valor_unitario por procedimento
+    pact_por_proc = pact_df.groupby("municipio_encaminhador").agg(
+        pactuado_total=("pactuado", "sum"),
+        valor_pactuado_total=("valor_pactuado", "sum"),
+    ).reset_index()
+
+    # Para comparar com ISEA, preciso a pactuacao total (todos municipios)
+    total_pactuado_qty = pact_df["pactuado"].sum()
+    total_pactuado_val = pact_df["valor_pactuado"].sum()
+
+    # Comparar procedimento a procedimento: realizado vs pactuado
+    # Os itens de programacao tem codigo + descricao
+    df_exec = df_p[["proc_cod", "proc_nome", "qtd_total", "val_th"]].copy()
+    df_exec = df_exec.merge(pact_itens.rename(columns={"codigo": "proc_cod"}), on="proc_cod", how="left")
+    df_exec["na_pactuacao"] = df_exec["descricao"].notna()
+
+    # Procedimentos que estao na pactuacao
+    df_pact_procs = df_exec[df_exec["na_pactuacao"]].copy()
+
+    if not df_pact_procs.empty:
+        # % do total realizado que cada proc representa
+        df_pact_procs["pct_qty"] = (df_pact_procs["qtd_total"] / tot_qty * 100).round(1)
+        df_pact_procs["pct_val"] = (df_pact_procs["val_th"] / tot_th * 100).round(1)
+        df_pact_procs["label"] = df_pact_procs["proc_cod"] + " - " + df_pact_procs["proc_nome"].str[:40]
+        df_pact_procs = df_pact_procs.sort_values("qtd_total", ascending=True)
+
+        col_c, col_d = st.columns(2)
+        with col_c:
+            fig = px.bar(df_pact_procs, x="qtd_total", y="label", orientation="h",
+                         title="Quantidade Realizada (Procedimentos Pactuados)",
+                         color="qtd_total", color_continuous_scale="Blues",
+                         text="qtd_total", height=max(400, len(df_pact_procs) * 30))
+            fig.update_layout(yaxis_title="", xaxis_title="Quantidade")
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(fig, use_container_width=True)
+
+        with col_d:
+            fig = px.bar(df_pact_procs, x="val_th", y="label", orientation="h",
+                         title="Custo Realizado (Procedimentos Pactuados)",
+                         color="val_th", color_continuous_scale="Oranges",
+                         text=df_pact_procs["val_th"].apply(fmt_valor_grafico),
+                         height=max(400, len(df_pact_procs) * 30))
+            fig.update_layout(yaxis_title="", xaxis_title="Custo Total (R$)")
+            fig.update_traces(textposition="outside")
+            st.plotly_chart(fig, use_container_width=True)
+
+        # Resumo
+        total_pact_qty = df_pact_procs["qtd_total"].sum()
+        total_pact_val = df_pact_procs["val_th"].sum()
+        st.markdown(f"""
+        **Resumo Pactuacao:**
+        - Procedimentos pactuados encontrados: **{len(df_pact_procs)}** de {len(df_p)} tipos
+        - Quantidade realizada (pactuados): **{fmt_int(total_pact_qty)}** ({total_pact_qty/tot_qty*100:.1f}% do total)
+        - Custo realizado (pactuados): **{fmt_brl(total_pact_val)}** ({total_pact_val/tot_th*100:.1f}% do total)
+        """)
+    else:
+        st.info("Nenhum procedimento da pactuacao encontrado nos dados do ISEA.")
+
+    # Tabela completa
+    with st.expander("Tabela Completa de Procedimentos"):
+        df_show = df_p[["proc_cod", "proc_nome", "qtd_total", "num_pacientes",
+                        "val_sh", "val_sp", "val_th"]].copy()
+        df_show = df_show.sort_values("val_th", ascending=False)
+        df_show["val_sh"] = df_show["val_sh"].apply(fmt_brl)
+        df_show["val_sp"] = df_show["val_sp"].apply(fmt_brl)
+        df_show["val_th"] = df_show["val_th"].apply(fmt_brl)
+        df_show.columns = ["Codigo", "Nome", "Qtd Total", "Pacientes",
+                           "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar"]
+        st.dataframe(df_show, use_container_width=True, hide_index=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 10. ISEA - PACIENTES E CIDADES
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "ISEA - Pacientes e Cidades":
+    st.title("ISEA - Pacientes por Cidade")
+    st.caption("Distribuicao de pacientes e custos por cidade de origem")
+
+    df_resumo, df_procs, df_cidades = load_isea_data()
+    if df_cidades is None or df_cidades.empty:
+        st.error("Banco de dados nao encontrado ou vazio.")
+        st.stop()
+
+    # Filtros
+    col_f1, col_f2 = st.columns([3, 1])
+    with col_f1:
+        competencias = ["Todas"] + sorted(df_cidades["competencia"].unique().tolist(),
+                                           key=lambda c: c[3:] + c[:2])
+        comp_sel = st.selectbox("Competencia", competencias, key="cidade_comp")
+    with col_f2:
+        excluir_cg = st.checkbox("Excluir Campina Grande", key="excluir_cg_cidades")
+
+    df_filt = df_cidades.copy()
+    if excluir_cg:
+        df_filt = df_filt[~df_filt["cidade"].str.upper().str.contains("CAMPINA GRANDE", na=False)]
+
+    if comp_sel != "Todas":
+        df_c = df_filt[df_filt["competencia"] == comp_sel].copy()
+    else:
+        df_c = df_filt.groupby("cidade").agg(
+            pacientes=("pacientes", "sum"),
+            registros=("registros", "sum"),
+            procedimentos=("procedimentos", "sum"),
+            total_sh=("total_sh", "sum"),
+            total_sp=("total_sp", "sum"),
+            total_th=("total_th", "sum"),
+        ).reset_index()
+
+    tot_pac = df_c["pacientes"].sum()
+    tot_th = df_c["total_th"].sum()
+    tot_cidades = len(df_c[df_c["pacientes"] > 0])
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.markdown(f"**Custo Total**<br><h2 style='color: #1976D2; margin-top: 0;'>{fmt_brl(tot_th)}</h2>", unsafe_allow_html=True)
+    c2.metric("Total Pacientes", fmt_int(tot_pac))
+    c3.metric("Cidades Atendidas", fmt_int(tot_cidades))
+    c4.metric("Custo Medio/Paciente", fmt_brl(tot_th / tot_pac if tot_pac else 0))
+
+    st.divider()
+
+    # Top 20 cidades por custo
+    st.subheader("Top 20 Cidades por Custo Total")
+    top20_c = df_c.nlargest(20, "total_th")
+    fig = px.bar(top20_c, x="cidade", y="total_th",
+                 color="total_th", color_continuous_scale="Blues", height=500,
+                 text=top20_c["total_th"].apply(fmt_valor_grafico))
+    fig.update_layout(xaxis_tickangle=-45, xaxis_title="", yaxis_title="Custo Total (R$)")
+    fig.update_traces(textposition="outside")
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Top 20 cidades por pacientes
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.subheader("Top 15 Cidades por Pacientes")
+        top15_pac = df_c.nlargest(15, "pacientes")
+        fig = px.bar(top15_pac, x="pacientes", y="cidade", orientation="h",
+                     color="pacientes", color_continuous_scale="Greens", height=500,
+                     text="pacientes")
+        fig.update_layout(yaxis_title="", xaxis_title="Pacientes",
+                          yaxis=dict(autorange="reversed"))
+        fig.update_traces(textposition="outside")
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col_b:
+        st.subheader("Ticket Medio por Cidade (Top 15)")
+        df_ticket = df_c[df_c["pacientes"] >= 5].copy()
+        df_ticket["ticket"] = df_ticket["total_th"] / df_ticket["pacientes"]
+        top15_ticket = df_ticket.nlargest(15, "ticket")
+        fig = px.bar(top15_ticket, x="ticket", y="cidade", orientation="h",
+                     color="ticket", color_continuous_scale="Oranges", height=500,
+                     text=top15_ticket["ticket"].apply(lambda v: fmt_brl(v)))
+        fig.update_layout(yaxis_title="", xaxis_title="Ticket Medio (R$)",
+                          yaxis=dict(autorange="reversed"))
+        fig.update_traces(textposition="outside")
+        st.plotly_chart(fig, use_container_width=True)
+
+    # Heatmap cidade x mes (se "Todas" selecionado)
+    if comp_sel == "Todas":
+        st.subheader("Mapa de Calor - Pacientes por Cidade x Mes")
+        top10_cidades = df_filt.groupby("cidade")["pacientes"].sum().nlargest(10).index.tolist()
+        df_heat = df_filt[df_filt["cidade"].isin(top10_cidades)].pivot_table(
+            index="cidade", columns="competencia", values="pacientes", aggfunc="sum", fill_value=0
+        )
+        # Ordenar colunas por data
+        cols_sorted = sorted(df_heat.columns, key=lambda c: c[3:] + c[:2])
+        df_heat = df_heat[cols_sorted]
+        fig = px.imshow(df_heat, aspect="auto", color_continuous_scale="YlOrRd",
+                        title="Top 10 Cidades - Pacientes por Competencia", height=400)
+        fig.update_layout(xaxis_title="Competencia", yaxis_title="")
+        st.plotly_chart(fig, use_container_width=True)
+
+    # Tabela completa
+    with st.expander("Tabela Completa por Cidade"):
+        df_show = df_c.sort_values("total_th", ascending=False).copy()
+        df_show["ticket_medio"] = df_show["total_th"] / df_show["pacientes"].replace(0, 1)
+        df_show["total_sh"] = df_show["total_sh"].apply(fmt_brl)
+        df_show["total_sp"] = df_show["total_sp"].apply(fmt_brl)
+        df_show["total_th"] = df_show["total_th"].apply(fmt_brl)
+        df_show["ticket_medio"] = df_show["ticket_medio"].apply(fmt_brl)
+        df_show.columns = ["Cidade", "Pacientes", "Registros", "Procedimentos",
+                           "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar", "Ticket Medio"]
+        st.dataframe(df_show, use_container_width=True, hide_index=True)

@@ -1,0 +1,38 @@
+Ministério da Saúde
+SIGTAP - Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e OPM do SUS
+Download | Wiki | Fale Conosco | Sair
+ Usuário: publico
+Procedimento
+Compatibilidades
+Tabelas
+Relatórios
+Procedimento
+Procedimento:	04.11.01.003-4 - OPERAÇÃO CESARIANA
+Grupo:	04 - Procedimentos cirúrgicos
+Sub-Grupo:	11 - Cirurgia obstétrica
+Forma de Organização:	01 - Parto
+Competência:	
+03/2026		
+	Histórico de alterações
+Modalidade de Atendimento:	Hospitalar
+Complexidade:	Média Complexidade
+Financiamento:	Média e Alta Complexidade (MAC)
+Sub-Tipo de Financiamento:	
+Instrumento de Registro:	AIH (Proc. Principal)
+Sexo:	Ambos
+Média de Permanência:	2
+Tempo de Permanência:	
+Quantidade Máxima:	1
+Idade Mínima:	9 anos
+Idade Máxima:	60 anos
+Pontos:	600
+Atributos Complementares:	Permite Informação de Equipe CirúrgicaAdmite permanência à maiorNão Admite Liberação de Crítica de Idade
+Valores
+Serviço Ambulatorial:	R$ 0,00	Serviço Hospitalar:	R$ 395,68
+Total Ambulatorial:	R$ 0,00	Serviço Profissional:	R$ 150,05
+		Total Hospitalar:	R$ 545,73
+				Serviço Classificação		Redes		Regra Condicionada		TUSS	 
+ 	 	 	 	 	 	 	 	 	 	 	 
+
+Descrição
+A OPERAÇÃO CESARIANA É A EXTRAÇÃO FETAL ATRAVÉS DE CIRURGIA QUE CONSISTE NA ABERTURA E FECHAMENTO DA PAREDE ABDOMINAL E UTERINA.

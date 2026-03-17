@@ -1,0 +1,2543 @@
+====================================================================================================
+RELATORIO SIGTAP - COMPETENCIA 06/2025
+Valores extraidos do site SIGTAP para validacao
+====================================================================================================
+
+Total de procedimentos no SIGTAP para 06/2025: 125
+
+==================================================================================================================================
+TABELA COMPLETA DE PROCEDIMENTOS SIGTAP
+==================================================================================================================================
+Codigo       Nome                                               SA         SH         TA         SP         TH Complexidade          
+                                                           Srv.Amb   Srv.Hosp    Tot.Amb   Srv.Prof   Tot.Hosp
+----------------------------------------------------------------------------------------------------------------------------------
+0202010040   DETERMINACAO DE CURVA GLICEMICA (2 DOSAGEN       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010120   DOSAGEM DE ACIDO URICO                           0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010201   DOSAGEM DE BILIRRUBINA TOTAL E FRACOES           0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010210   DOSAGEM DE CALCIO                                0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010260   DOSAGEM DE CLORETO                               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010279   DOSAGEM DE COLESTEROL HDL                        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010287   DOSAGEM DE COLESTEROL LDL                        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010295   DOSAGEM DE COLESTEROL TOTAL                      0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010317   DOSAGEM DE CREATININA                            0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010341   DOSAGEM DE DESIDROGENASE ALFA-HIDROXIBUTIR       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010368   DOSAGEM DE DESIDROGENASE LATICA                  0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010376   DOSAGEM DE DESIDROGENASE LATICA (ISOENZIMA       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010392   DOSAGEM DE FERRO SERICO                          0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010422   DOSAGEM DE FOSFATASE ALCALINA                    0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010430   DOSAGEM DE FOSFORO                               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010465   DOSAGEM DE GAMA-GLUTAMIL-TRANSFERASE (GAMA       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010473   DOSAGEM DE GLICOSE                               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010503   DOSAGEM DE HEMOGLOBINA GLICOSILADA               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010562   DOSAGEM DE MAGNESIO                              0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010600   DOSAGEM DE POTASSIO                              0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010627   DOSAGEM DE PROTEINAS TOTAIS E FRACOES            0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010635   DOSAGEM DE SODIO                                 0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010643   DOSAGEM DE TRANSAMINASE GLUTAMICO-OXALACET       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010651   DOSAGEM DE TRANSAMINASE GLUTAMICO-PIRUVICA       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010678   DOSAGEM DE TRIGLICERIDEOS                        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202010694   DOSAGEM DE UREIA                                 0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020029   CONTAGEM DE PLAQUETAS                            0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020070   DETERMINAÇÃO DE TEMPO DE COAGULAÇÃO              0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020096   DETERMINAÇÃO DE TEMPO DE SANGRAMENTO -DUKE       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020100   DETERMINAÇÃO DE TEMPO DE SANGRAMENTO DE IV       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020134   DETERMINAÇÃO DE TEMPO DE TROMBOPLASTINA PA       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020142   DETERMINAÇÃO DE TEMPO E ATIVIDADE DA PROTR       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020150   DETERMINAÇÃO DE VELOCIDADE DE HEMOSSEDIMEN       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020290   DOSAGEM DE FIBRINOGENIO                          0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020380   HEMOGRAMA COMPLETO                               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020479   PROVA DE COMPATIBILIDADE PRE-TRANSFUSIONAL       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020487   PROVA DE CONSUMO DE PROTROMBINA                  0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202020541   TESTE DIRETO DE ANTIGLOBULINA HUMANA (TAD)       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030040   DETECÇÃO DE ÁCIDOS NUCLEICOS DO HIV-1 (QUA       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030202   DOSAGEM DE PROTEINA C REATIVA                    0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030300   PESQUISA DE ANTICORPOS ANTI-HIV-1 + HIV-2        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030474   PESQUISA DE ANTICORPOS ANTIESTREPTOLISINA        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030636   PESQUISA DE ANTICORPOS CONTRA ANTIGENO DE        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030644   PESQUISA DE ANTICORPOS CONTRA ANTIGENO E D       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030679   PESQUISA DE ANTICORPOS CONTRA O VIRUS DA H       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030806   PESQUISA DE ANTICORPOS IGG CONTRA O VIRUS        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030890   PESQUISA DE ANTICORPOS IGM CONTRA ANTIGENO       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030970   PESQUISA DE ANTIGENO DE SUPERFICIE DO VIRU       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202030989   PESQUISA DE ANTIGENO E DO VIRUS DA HEPATIT       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202031071   QUANTIFICAÇÃO DE RNA DO HIV-1                    0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202031110   TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFIL       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202031179   TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFIL       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202050017   ANALISE DE CARACTERES FISICOS, ELEMENTOS E       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202050041   CLEARANCE DE UREIA                               0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202050114   DOSAGEM DE PROTEINAS (URINA DE 24 HORAS)         0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202060217   DOSAGEM DE GONADOTROFINA CORIONICA HUMANA        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202070026   DOSAGEM DE ACIDO HIPURICO                        0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202080196   PESQUISA DE ESTREPTOCOCOS BETA-HEMOLITICOS       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202090086   DOSAGEM DE CREATININA NO LIQUIDO AMNIOTICO       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202120023   DETERMINACAO DIRETA E REVERSA DE GRUPO ABO       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202120082   PESQUISA DE FATOR RH (INCLUI D FRACO)            0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0202120090   TESTE INDIRETO DE ANTIGLOBULINA HUMANA (TI       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0205010032   ECOCARDIOGRAFIA TRANSTORACICA                    0.00      67.86      67.86       0.00      67.86 Média Complexidade    
+0205010059   ULTRASSONOGRAFIA DOPPLER DE FLUXO OBSTETRI       0.00      42.90      42.90       0.00      42.90 Média Complexidade    
+0205020046   ULTRASSONOGRAFIA DE ABDOMEN TOTAL                0.00      37.95      37.95       0.00      37.95 Média Complexidade    
+0205020054   ULTRASSONOGRAFIA DE APARELHO URINÁRIO            0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0205020089   ULTRASSONOGRAFIA DE GLOBO OCULAR / ORBITA        0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0205020097   ULTRASSONOGRAFIA MAMARIA BILATERAL               0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0205020143   ULTRASSONOGRAFIA OBSTETRICA                      0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0205020151   ULTRASSONOGRAFIA OBSTETRICA C/ DOPPLER COL       0.00      39.60      39.60       0.00      39.60 Média Complexidade    
+0205020160   ULTRASSONOGRAFIA PELVICA (GINECOLOGICA)          0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0205020186   ULTRASSONOGRAFIA TRANSVAGINAL                    0.00      24.20      24.20       0.00      24.20 Média Complexidade    
+0211020036   ELETROCARDIOGRAMA                                0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0211040061   TOCOCARDIOGRAFIA ANTE-PARTO                      0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0214010015   GLICEMIA CAPILAR                                 0.00       0.00       0.00       0.00       0.00 Atenção Básica        
+0214010040   TESTE RAPIDO PARA DETECCAO DE HIV NA GESTA       0.00       1.00       1.00       0.00       1.00 Média Complexidade    
+0214010058   TESTE RÁPIDO PARA DETECÇÃO DE INFECÇÃO PEL       0.00       1.00       1.00       0.00       1.00 Média Complexidade    
+0301010048   CONSULTA DE PROFISSIONAIS DE NIVEL SUPERIO       0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0301010145   PRIMEIRA CONSULTA DE PEDIATRIA AO RECEM-NA       0.00       0.00       0.00      10.00      10.00 Média Complexidade    
+0301010170   CONSULTA/AVALIAÇÃO EM PACIENTE INTERNADO         0.00       0.00       0.00       0.00       0.00 Média Complexidade    
+0301060088   DIAGNOSTICO E/OU ATENDIMENTO DE URGENCIA E       0.00      33.34       0.00      10.88      44.22 Média Complexidade    
+0302010033   ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE N       0.00       6.35       0.00       0.00       6.35 Média Complexidade    
+0302040013   ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE C       0.00       6.35       6.35       0.00       6.35 Média Complexidade    
+0302040021   ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE C       0.00       4.67       4.67       0.00       4.67 Média Complexidade    
+0302050019   ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTES        0.00       6.35       6.35       0.00       6.35 Média Complexidade    
+0302050027   ATENDIMENTO FISIOTERAPÊUTICO NAS ALTERAÇÕE       4.67       0.00       4.67       0.00       0.00 Média Complexidade    
+0303030038   TRATAMENTO DE DIABETES MELLITUS                  0.00     310.79       0.00      50.01     360.80 Média Complexidade    
+0303100010   TRATAMENTO DE COMPLICACOES RELACIONADAS PR       0.00     131.89       0.00      22.41     154.30 Média Complexidade    
+0303100036   TRATAMENTO DE EDEMA, PROTEINURIA E TRANSTO       0.00      97.01       0.00      26.98     123.99 Média Complexidade    
+0303100044   TRATAMENTO DE INTERCORRENCIAS CLINICAS NA        0.00      85.25       0.00      23.99     109.24 Média Complexidade    
+0303150033   TRATAMENTO DE DOENCAS INFLAMATORIAS DOS OR       0.00     171.65       0.00      27.16     198.81 Média Complexidade    
+0303150050   TRATAMENTO DE OUTRAS DOENCAS DO APARELHO U       0.00     188.00       0.00      30.68     218.68 Média Complexidade    
+0305020013   TRATAMENTO DA PIELONEFRITE                       0.00     176.56       0.00      27.94     204.50 Média Complexidade    
+0306020068   TRANSFUSAO DE CONCENTRADO DE HEMACIAS            0.00       8.39       8.09       0.00       8.39 Média Complexidade    
+0306020106   TRANSFUSAO DE PLASMA FRESCO                      0.00       8.39       8.09       0.00       8.39 Alta Complexidade     
+0310010020   ATENDIMENTO AO RECEM-NASCIDO NO MOMENTO DO       0.00       0.00       0.00      55.20      55.20 Média Complexidade    
+0310010039   PARTO NORMAL                                     0.00     267.60       0.00     175.80     443.40 Média Complexidade    
+0310010047   PARTO NORMAL EM GESTACAO DE ALTO RISCO           0.00     374.41       0.00     242.78     617.19 Média Complexidade    
+0310010055   PARTO NORMAL EM CENTRO DE PARTO NORMAL (CP       0.00     267.60       0.00     175.80     443.40 Média Complexidade    
+0401010015   CURATIVO GRAU II C/ OU S/ DEBRIDAMENTO           0.00      32.40      32.40       0.00      32.40 Média Complexidade    
+0407040161   LAPAROTOMIA EXPLORADORA                          0.00     497.20       0.00     139.99     637.19 Média Complexidade    
+0409060011   CERCLAGEM DE COLO DO UTERO                       0.00      97.31      12.97      80.70     178.01 Média Complexidade    
+0409060070   ESVAZIAMENTO DE UTERO POS-ABORTO POR ASPIR       0.00      66.32       0.00      76.52     142.84 Média Complexidade    
+0409060135   HISTERECTOMIA TOTAL                              0.00     590.44       0.00     317.49     907.93 Média Complexidade    
+0409060216   OOFORECTOMIA / OOFOROPLASTIA                     0.00     358.00       0.00     151.86     509.86 Média Complexidade    
+0409070190   MARSUPIALIZACAO DE GLÂNDULA DE BARTOLIN          0.00      94.14       0.00      45.82     139.96 Média Complexidade    
+0410010014   DRENAGEM DE ABSCESSO DE MAMA                     0.00     122.58      20.74      48.93     171.51 Média Complexidade    
+0411010026   PARTO CESARIANO EM GESTACAO DE ALTO RISCO        0.00     660.79       0.00     230.15     890.94 Média Complexidade    
+0411010034   PARTO CESARIANO                                  0.00     395.68       0.00     150.05     545.73 Média Complexidade    
+0411010042   PARTO CESARIANO C/ LAQUEADURA TUBARIA            0.00     395.68       0.00     150.05     545.73 Média Complexidade    
+0411020013   CURETAGEM POS-ABORTAMENTO / PUERPERAL            0.00     109.21      19.79      70.41     179.62 Média Complexidade    
+0411020048   TRATAMENTO CIRURGICO DE GRAVIDEZ ECTOPICA        0.00     330.48       0.00     128.70     459.18 Média Complexidade    
+0417010010   ANESTESIA OBSTETRICA P/ CESARIANA                0.00       0.00       0.00      61.18      61.18 Média Complexidade    
+0417010036   ANESTESIA OBSTETRICA P/CESARIANA EM GESTAC       0.00       0.00       0.00      96.60      96.60 Média Complexidade    
+0501070036   TIPAGEM SANGUINEA ABO E OUTROS EXAMES HEMA       0.00      15.00       0.00       0.00      15.00 Média Complexidade    
+0503040045   DIARIA DE UNIDADE DE TERAPIA INTENSIVA DE        0.00     436.61       0.00      72.02     508.63 Não se Aplica         
+0603030017   IMUNOGLOBULINA ANTI-RHO (D) (FRASCO AMPOLA       0.00      93.28       0.00       0.00      93.28 Alta Complexidade     
+0603030025   IMUNOGLOBULINA G 250 MG INJETAVEL (POR FRA       0.00       0.00       0.00       0.00       0.00                       
+0801010039   INCENTIVO AO PARTO - PHPN (COMPONENTE I)         0.00      40.00       0.00       0.00      40.00 Não se Aplica         
+0801010047   INCENTIVO AO REGISTRO CIVIL DE NASCIMENTO        0.00       5.00       0.00       0.00       5.00 Não se Aplica         
+0802010016   DIARIA DE ACOMPANHANTE ADULTO (COM PERNOIT       0.00       8.00       0.00       0.00       8.00 Não se Aplica         
+0802010024   DIARIA DE ACOMPANHANTE CRIANCA/ADOLESCENTE       0.00       8.00       0.00       0.00       8.00 Não se Aplica         
+0802010032   DIARIA DE ACOMPANHANTE DE GESTANTE C/ PERN       0.00       8.00       0.00       0.00       8.00 Não se Aplica         
+0802010083   DIARIA DE UNIDADE DE TERAPIA INTENSIVA ADU       0.00     510.00       0.00      90.00     600.00 Não se Aplica         
+0802010199   DIÁRIA DE PERMANÊNCIA A MAIOR                    0.00      16.19       0.00       3.87      20.06 Não se Aplica         
+
+==================================================================================================================================
+DETALHAMENTO COMPLETO POR PROCEDIMENTO
+==================================================================================================================================
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010040
+  Nome:                            DETERMINACAO DE CURVA GLICEMICA (2 DOSAGENS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010120
+  Nome:                            DOSAGEM DE ACIDO URICO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010201
+  Nome:                            DOSAGEM DE BILIRRUBINA TOTAL E FRACOES
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010210
+  Nome:                            DOSAGEM DE CALCIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010260
+  Nome:                            DOSAGEM DE CLORETO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010279
+  Nome:                            DOSAGEM DE COLESTEROL HDL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010287
+  Nome:                            DOSAGEM DE COLESTEROL LDL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010295
+  Nome:                            DOSAGEM DE COLESTEROL TOTAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010317
+  Nome:                            DOSAGEM DE CREATININA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010341
+  Nome:                            DOSAGEM DE DESIDROGENASE ALFA-HIDROXIBUTIRICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010368
+  Nome:                            DOSAGEM DE DESIDROGENASE LATICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010376
+  Nome:                            DOSAGEM DE DESIDROGENASE LATICA (ISOENZIMAS FRACIONADAS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010392
+  Nome:                            DOSAGEM DE FERRO SERICO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010422
+  Nome:                            DOSAGEM DE FOSFATASE ALCALINA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010430
+  Nome:                            DOSAGEM DE FOSFORO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010465
+  Nome:                            DOSAGEM DE GAMA-GLUTAMIL-TRANSFERASE (GAMA GT)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010473
+  Nome:                            DOSAGEM DE GLICOSE
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010503
+  Nome:                            DOSAGEM DE HEMOGLOBINA GLICOSILADA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010562
+  Nome:                            DOSAGEM DE MAGNESIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010600
+  Nome:                            DOSAGEM DE POTASSIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010627
+  Nome:                            DOSAGEM DE PROTEINAS TOTAIS E FRACOES
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010635
+  Nome:                            DOSAGEM DE SODIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010643
+  Nome:                            DOSAGEM DE TRANSAMINASE GLUTAMICO-OXALACETICA (TGO)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010651
+  Nome:                            DOSAGEM DE TRANSAMINASE GLUTAMICO-PIRUVICA (TGP)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010678
+  Nome:                            DOSAGEM DE TRIGLICERIDEOS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202010694
+  Nome:                            DOSAGEM DE UREIA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020029
+  Nome:                            CONTAGEM DE PLAQUETAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020070
+  Nome:                            DETERMINAÇÃO DE TEMPO DE COAGULAÇÃO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020096
+  Nome:                            DETERMINAÇÃO DE TEMPO DE SANGRAMENTO -DUKE
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020100
+  Nome:                            DETERMINAÇÃO DE TEMPO DE SANGRAMENTO DE IVY
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020134
+  Nome:                            DETERMINAÇÃO DE TEMPO DE TROMBOPLASTINA PARCIAL ATIVADA (TTP ATIVADA)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020142
+  Nome:                            DETERMINAÇÃO DE TEMPO E ATIVIDADE DA PROTROMBINA (TAP)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020150
+  Nome:                            DETERMINAÇÃO DE VELOCIDADE DE HEMOSSEDIMENTAÇÃO (VHS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020290
+  Nome:                            DOSAGEM DE FIBRINOGENIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020380
+  Nome:                            HEMOGRAMA COMPLETO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020479
+  Nome:                            PROVA DE COMPATIBILIDADE PRE-TRANSFUSIONAL (MEIOS SALINOS, ALBUMINOSO E COOMBS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020487
+  Nome:                            PROVA DE CONSUMO DE PROTROMBINA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202020541
+  Nome:                            TESTE DIRETO DE ANTIGLOBULINA HUMANA (TAD)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030040
+  Nome:                            DETECÇÃO DE ÁCIDOS NUCLEICOS DO HIV-1 (QUALITATIVO)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030202
+  Nome:                            DOSAGEM DE PROTEINA C REATIVA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030300
+  Nome:                            PESQUISA DE ANTICORPOS ANTI-HIV-1 + HIV-2 (ELISA)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030474
+  Nome:                            PESQUISA DE ANTICORPOS ANTIESTREPTOLISINA O (ASLO)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030636
+  Nome:                            PESQUISA DE ANTICORPOS CONTRA ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (ANTI-HBS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030644
+  Nome:                            PESQUISA DE ANTICORPOS CONTRA ANTIGENO E DO VIRUS DA HEPATITE B (ANTI-HBE)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030679
+  Nome:                            PESQUISA DE ANTICORPOS CONTRA O VIRUS DA HEPATITE C (ANTI-HCV)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030806
+  Nome:                            PESQUISA DE ANTICORPOS IGG CONTRA O VIRUS DA HEPATITE A (ANTI-HAV-IGG)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030890
+  Nome:                            PESQUISA DE ANTICORPOS IGM CONTRA ANTIGENO CENTRAL DO VIRUS DA HEPATITE B (ANTI-HBC-IGM)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030970
+  Nome:                            PESQUISA DE ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (HBSAG)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202030989
+  Nome:                            PESQUISA DE ANTIGENO E DO VIRUS DA HEPATITE B (HBEAG)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202031071
+  Nome:                            QUANTIFICAÇÃO DE RNA DO HIV-1
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202031110
+  Nome:                            TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202031179
+  Nome:                            TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS EM GESTANTES
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    8 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202050017
+  Nome:                            ANALISE DE CARACTERES FISICOS, ELEMENTOS E SEDIMENTO DA URINA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202050041
+  Nome:                            CLEARANCE DE UREIA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202050114
+  Nome:                            DOSAGEM DE PROTEINAS (URINA DE 24 HORAS)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202060217
+  Nome:                            DOSAGEM DE GONADOTROFINA CORIONICA HUMANA (HCG, BETA HCG)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202070026
+  Nome:                            DOSAGEM DE ACIDO HIPURICO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202080196
+  Nome:                            PESQUISA DE ESTREPTOCOCOS BETA-HEMOLITICOS DO GRUPO A
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202090086
+  Nome:                            DOSAGEM DE CREATININA NO LIQUIDO AMNIOTICO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    10 anos
+  Idade Maxima:                    49 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202120023
+  Nome:                            DETERMINACAO DIRETA E REVERSA DE GRUPO ABO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202120082
+  Nome:                            PESQUISA DE FATOR RH (INCLUI D FRACO)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0202120090
+  Nome:                            TESTE INDIRETO DE ANTIGLOBULINA HUMANA (TIA)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205010032
+  Nome:                            ECOCARDIOGRAFIA TRANSTORACICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 67.86
+  Total Ambulatorial (TA):         R$ 67.86
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 67.86
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205010059
+  Nome:                            ULTRASSONOGRAFIA DOPPLER DE FLUXO OBSTETRICO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 42.90
+  Total Ambulatorial (TA):         R$ 42.90
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 42.90
+  Idade Minima:                    8 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020046
+  Nome:                            ULTRASSONOGRAFIA DE ABDOMEN TOTAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 37.95
+  Total Ambulatorial (TA):         R$ 37.95
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 37.95
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020054
+  Nome:                            ULTRASSONOGRAFIA DE APARELHO URINÁRIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020089
+  Nome:                            ULTRASSONOGRAFIA DE GLOBO OCULAR / ORBITA (MONOCULAR)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020097
+  Nome:                            ULTRASSONOGRAFIA MAMARIA BILATERAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    10 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020143
+  Nome:                            ULTRASSONOGRAFIA OBSTETRICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    8 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020151
+  Nome:                            ULTRASSONOGRAFIA OBSTETRICA C/ DOPPLER COLORIDO E PULSADO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 39.60
+  Total Ambulatorial (TA):         R$ 39.60
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 39.60
+  Idade Minima:                    8 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020160
+  Nome:                            ULTRASSONOGRAFIA PELVICA (GINECOLOGICA)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0205020186
+  Nome:                            ULTRASSONOGRAFIA TRANSVAGINAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 24.20
+  Total Ambulatorial (TA):         R$ 24.20
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 24.20
+  Idade Minima:                    9 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0211020036
+  Nome:                            ELETROCARDIOGRAMA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0211040061
+  Nome:                            TOCOCARDIOGRAFIA ANTE-PARTO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0214010015
+  Nome:                            GLICEMIA CAPILAR
+  Descricao:                       N/A
+  Complexidade:                    Atenção Básica
+  Financiamento:                   Atenção Básica (PAB)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0214010040
+  Nome:                            TESTE RAPIDO PARA DETECCAO DE HIV NA GESTANTE OU PAI/PARCEIRO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 1.00
+  Total Ambulatorial (TA):         R$ 1.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 1.00
+  Idade Minima:                    9 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0214010058
+  Nome:                            TESTE RÁPIDO PARA DETECÇÃO DE INFECÇÃO PELO HIV
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 1.00
+  Total Ambulatorial (TA):         R$ 1.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 1.00
+  Idade Minima:                    2 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0301010048
+  Nome:                            CONSULTA DE PROFISSIONAIS DE NIVEL SUPERIOR NA ATENÇÃO ESPECIALIZADA (EXCETO MÉDICO)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0301010145
+  Nome:                            PRIMEIRA CONSULTA DE PEDIATRIA AO RECEM-NASCIDO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 10.00
+  Total Hospitalar (TH = SH + SP): R$ 10.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    0 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0301010170
+  Nome:                            CONSULTA/AVALIAÇÃO EM PACIENTE INTERNADO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0301060088
+  Nome:                            DIAGNOSTICO E/OU ATENDIMENTO DE URGENCIA EM CLINICA MEDICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 33.34
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 10.88
+  Total Hospitalar (TH = SH + SP): R$ 44.22
+  Idade Minima:                    19 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0302010033
+  Nome:                            ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE NEONATO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 6.35
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 6.35
+  Idade Minima:                    0 anos
+  Idade Maxima:                    1 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0302040013
+  Nome:                            ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE COM TRANSTORNO RESPIRATÓRIO COM COMPLICAÇÕES SISTÊMICAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 6.35
+  Total Ambulatorial (TA):         R$ 6.35
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 6.35
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0302040021
+  Nome:                            ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTE COM TRANSTORNO RESPIRATÓRIO SEM COMPLICAÇÕES SISTÊMICAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 4.67
+  Total Ambulatorial (TA):         R$ 4.67
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 4.67
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0302050019
+  Nome:                            ATENDIMENTO FISIOTERAPÊUTICO EM PACIENTES NO PRÉ E PÓS-OPERATÓRIO NAS DISFUNÇÕES MÚSCULO ESQUELÉTICAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 6.35
+  Total Ambulatorial (TA):         R$ 6.35
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 6.35
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0302050027
+  Nome:                            ATENDIMENTO FISIOTERAPÊUTICO NAS ALTERAÇÕES MOTORAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 4.67
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 4.67
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303030038
+  Nome:                            TRATAMENTO DE DIABETES MELLITUS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 310.79
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 50.01
+  Total Hospitalar (TH = SH + SP): R$ 360.80
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303100010
+  Nome:                            TRATAMENTO DE COMPLICACOES RELACIONADAS PREDOMINANTEMENTE AO PUERPERIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 131.89
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 22.41
+  Total Hospitalar (TH = SH + SP): R$ 154.30
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303100036
+  Nome:                            TRATAMENTO DE EDEMA, PROTEINURIA E TRANSTORNOS HIPERTENSIVOS NA GRAVIDEZ PARTO E PUERPERIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 97.01
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 26.98
+  Total Hospitalar (TH = SH + SP): R$ 123.99
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303100044
+  Nome:                            TRATAMENTO DE INTERCORRENCIAS CLINICAS NA GRAVIDEZ
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 85.25
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 23.99
+  Total Hospitalar (TH = SH + SP): R$ 109.24
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303150033
+  Nome:                            TRATAMENTO DE DOENCAS INFLAMATORIAS DOS ORGAOS PELVICOS FEMININOS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 171.65
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 27.16
+  Total Hospitalar (TH = SH + SP): R$ 198.81
+  Idade Minima:                    12 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0303150050
+  Nome:                            TRATAMENTO DE OUTRAS DOENCAS DO APARELHO URINARIO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 188.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 30.68
+  Total Hospitalar (TH = SH + SP): R$ 218.68
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0305020013
+  Nome:                            TRATAMENTO DA PIELONEFRITE
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 176.56
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 27.94
+  Total Hospitalar (TH = SH + SP): R$ 204.50
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0306020068
+  Nome:                            TRANSFUSAO DE CONCENTRADO DE HEMACIAS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 8.39
+  Total Ambulatorial (TA):         R$ 8.09
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 8.39
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0306020106
+  Nome:                            TRANSFUSAO DE PLASMA FRESCO
+  Descricao:                       N/A
+  Complexidade:                    Alta Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 8.39
+  Total Ambulatorial (TA):         R$ 8.09
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 8.39
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0310010020
+  Nome:                            ATENDIMENTO AO RECEM-NASCIDO NO MOMENTO DO NASCIMENTO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 55.20
+  Total Hospitalar (TH = SH + SP): R$ 55.20
+  Idade Minima:                    0 anos
+  Idade Maxima:                    0 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0310010039
+  Nome:                            PARTO NORMAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 267.60
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 175.80
+  Total Hospitalar (TH = SH + SP): R$ 443.40
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0310010047
+  Nome:                            PARTO NORMAL EM GESTACAO DE ALTO RISCO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 374.41
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 242.78
+  Total Hospitalar (TH = SH + SP): R$ 617.19
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0310010055
+  Nome:                            PARTO NORMAL EM CENTRO DE PARTO NORMAL (CPN)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 267.60
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 175.80
+  Total Hospitalar (TH = SH + SP): R$ 443.40
+  Idade Minima:                    15 anos
+  Idade Maxima:                    40 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0401010015
+  Nome:                            CURATIVO GRAU II C/ OU S/ DEBRIDAMENTO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 32.40
+  Total Ambulatorial (TA):         R$ 32.40
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 32.40
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0407040161
+  Nome:                            LAPAROTOMIA EXPLORADORA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 497.20
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 139.99
+  Total Hospitalar (TH = SH + SP): R$ 637.19
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0409060011
+  Nome:                            CERCLAGEM DE COLO DO UTERO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 97.31
+  Total Ambulatorial (TA):         R$ 12.97
+  Servico Profissional (SP):       R$ 80.70
+  Total Hospitalar (TH = SH + SP): R$ 178.01
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0409060070
+  Nome:                            ESVAZIAMENTO DE UTERO POS-ABORTO POR ASPIRACAO MANUAL INTRA-UTERINA (AMIU)
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 66.32
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 76.52
+  Total Hospitalar (TH = SH + SP): R$ 142.84
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0409060135
+  Nome:                            HISTERECTOMIA TOTAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 590.44
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 317.49
+  Total Hospitalar (TH = SH + SP): R$ 907.93
+  Idade Minima:                    12 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0409060216
+  Nome:                            OOFORECTOMIA / OOFOROPLASTIA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 358.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 151.86
+  Total Hospitalar (TH = SH + SP): R$ 509.86
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0409070190
+  Nome:                            MARSUPIALIZACAO DE GLÂNDULA DE BARTOLIN
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 94.14
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 45.82
+  Total Hospitalar (TH = SH + SP): R$ 139.96
+  Idade Minima:                    12 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0410010014
+  Nome:                            DRENAGEM DE ABSCESSO DE MAMA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 122.58
+  Total Ambulatorial (TA):         R$ 20.74
+  Servico Profissional (SP):       R$ 48.93
+  Total Hospitalar (TH = SH + SP): R$ 171.51
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0411010026
+  Nome:                            PARTO CESARIANO EM GESTACAO DE ALTO RISCO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 660.79
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 230.15
+  Total Hospitalar (TH = SH + SP): R$ 890.94
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0411010034
+  Nome:                            PARTO CESARIANO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 395.68
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 150.05
+  Total Hospitalar (TH = SH + SP): R$ 545.73
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0411010042
+  Nome:                            PARTO CESARIANO C/ LAQUEADURA TUBARIA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 395.68
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 150.05
+  Total Hospitalar (TH = SH + SP): R$ 545.73
+  Idade Minima:                    21 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0411020013
+  Nome:                            CURETAGEM POS-ABORTAMENTO / PUERPERAL
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 109.21
+  Total Ambulatorial (TA):         R$ 19.79
+  Servico Profissional (SP):       R$ 70.41
+  Total Hospitalar (TH = SH + SP): R$ 179.62
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0411020048
+  Nome:                            TRATAMENTO CIRURGICO DE GRAVIDEZ ECTOPICA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 330.48
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 128.70
+  Total Hospitalar (TH = SH + SP): R$ 459.18
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0417010010
+  Nome:                            ANESTESIA OBSTETRICA P/ CESARIANA
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 61.18
+  Total Hospitalar (TH = SH + SP): R$ 61.18
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0417010036
+  Nome:                            ANESTESIA OBSTETRICA P/CESARIANA EM GESTACAO DE ALTO RISCO
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 96.60
+  Total Hospitalar (TH = SH + SP): R$ 96.60
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0501070036
+  Nome:                            TIPAGEM SANGUINEA ABO E OUTROS EXAMES HEMATOLOGICOS EM POSSIVEL DOADOR DE ORGAOS
+  Descricao:                       N/A
+  Complexidade:                    Média Complexidade
+  Financiamento:                   Fundo de Ações Estratégicas e Compensações (FAEC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 15.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 15.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    90 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0503040045
+  Nome:                            DIARIA DE UNIDADE DE TERAPIA INTENSIVA DE PROVÁVEL DOADOR DE ÓRGÃOS
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Fundo de Ações Estratégicas e Compensações (FAEC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 436.61
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 72.02
+  Total Hospitalar (TH = SH + SP): R$ 508.63
+  Idade Minima:                    0 anos
+  Idade Maxima:                    90 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0603030017
+  Nome:                            IMUNOGLOBULINA ANTI-RHO (D) (FRASCO AMPOLA DE 2 ML E 1.250 UI)
+  Descricao:                       N/A
+  Complexidade:                    Alta Complexidade
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 93.28
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 93.28
+  Idade Minima:                    0 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0603030025
+  Nome:                            IMUNOGLOBULINA G 250 MG INJETAVEL (POR FRASCO)
+  Descricao:                       N/A
+  Complexidade:                    N/A
+  Financiamento:                   N/A
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 0.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 0.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    0 anos
+  Sexo:                            N/A
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0801010039
+  Nome:                            INCENTIVO AO PARTO - PHPN (COMPONENTE I)
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 40.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 40.00
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0801010047
+  Nome:                            INCENTIVO AO REGISTRO CIVIL DE NASCIMENTO
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 5.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 5.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    0 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0802010016
+  Nome:                            DIARIA DE ACOMPANHANTE ADULTO (COM PERNOITE)
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 8.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 8.00
+  Idade Minima:                    18 anos
+  Idade Maxima:                    59 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0802010024
+  Nome:                            DIARIA DE ACOMPANHANTE CRIANCA/ADOLESCENTE C/PERNOITE
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 8.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 8.00
+  Idade Minima:                    0 anos
+  Idade Maxima:                    18 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0802010032
+  Nome:                            DIARIA DE ACOMPANHANTE DE GESTANTE C/ PERNOITE
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 8.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 0.00
+  Total Hospitalar (TH = SH + SP): R$ 8.00
+  Idade Minima:                    9 anos
+  Idade Maxima:                    60 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0802010083
+  Nome:                            DIARIA DE UNIDADE DE TERAPIA INTENSIVA ADULTO (UTI II)
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 510.00
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 90.00
+  Total Hospitalar (TH = SH + SP): R$ 600.00
+  Idade Minima:                    12 anos
+  Idade Maxima:                    130 anos
+  Sexo:                            Ambos
+  Permanencia Media:               0 dias
+
+  ------------------------------------------------------------------------------------------------------------------------------
+  Codigo:                          0802010199
+  Nome:                            DIÁRIA DE PERMANÊNCIA A MAIOR
+  Descricao:                       N/A
+  Complexidade:                    Não se Aplica
+  Financiamento:                   Média e Alta Complexidade (MAC)
+  Servico Ambulatorial (SA):       R$ 0.00
+  Servico Hospitalar (SH):         R$ 16.19
+  Total Ambulatorial (TA):         R$ 0.00
+  Servico Profissional (SP):       R$ 3.87
+  Total Hospitalar (TH = SH + SP): R$ 20.06
+  Idade Minima:                    0 anos
+  Idade Maxima:                    0 anos
+  Sexo:                            N/A
+  Permanencia Media:               0 dias
+
+====================================================================================================
+PROCEDIMENTOS UTILIZADOS EM AIHs DE 06/2025
+====================================================================================================
+
+Total de procedimentos distintos usados: 198
+
+Legenda: SA=Servico Ambulatorial | SH=Servico Hospitalar | TA=Total Ambulatorial | SP=Servico Profissional | TH=Total Hospitalar
+
+Codigo       Nome                                     Qtd    SA Unit    SH Unit    TA Unit    SP Unit    TH Unit       TH Total
+----------------------------------------------------------------------------------------------------------------------------------
+0411010026   PARTO CESARIANO EM GESTACAO DE ALTO RI   439 R$    0.00 R$  660.79 R$    0.00 R$  230.15 R$  890.94 R$   391122.66
+0310010047   PARTO NORMAL EM GESTACAO DE ALTO RISCO   273 R$    0.00 R$  374.41 R$    0.00 R$  242.78 R$  617.19 R$   168492.87
+0411010042   PARTO CESARIANO C/ LAQUEADURA TUBARIA    300 R$    0.00 R$  395.68 R$    0.00 R$  150.05 R$  545.73 R$   163719.00
+0802010083   DIARIA DE UNIDADE DE TERAPIA INTENSIVA   256 R$    0.00 R$  510.00 R$    0.00 R$   90.00 R$  600.00 R$   153600.00
+0411010034   PARTO CESARIANO                          281 R$    0.00 R$  395.68 R$    0.00 R$  150.05 R$  545.73 R$   153350.13
+0407040161   LAPAROTOMIA EXPLORADORA                  217 R$    0.00 R$  497.20 R$    0.00 R$  139.99 R$  637.19 R$   138270.23
+0310010039   PARTO NORMAL                             281 R$    0.00 R$  267.60 R$    0.00 R$  175.80 R$  443.40 R$   124595.40
+0409060216   OOFORECTOMIA / OOFOROPLASTIA             216 R$    0.00 R$  358.00 R$    0.00 R$  151.86 R$  509.86 R$   110129.76
+0310010055   PARTO NORMAL EM CENTRO DE PARTO NORMAL   233 R$    0.00 R$  267.60 R$    0.00 R$  175.80 R$  443.40 R$   103312.20
+0411020048   TRATAMENTO CIRURGICO DE GRAVIDEZ ECTOP   223 R$    0.00 R$  330.48 R$    0.00 R$  128.70 R$  459.18 R$   102397.14
+0802010199   DIÁRIA DE PERMANÊNCIA A MAIOR           4740 R$    0.00 R$   16.19 R$    0.00 R$    3.87 R$   20.06 R$    95084.40
+0303030038   TRATAMENTO DE DIABETES MELLITUS          219 R$    0.00 R$  310.79 R$    0.00 R$   50.01 R$  360.80 R$    79015.20
+0417010036   ANESTESIA OBSTETRICA P/CESARIANA EM GE   468 R$    0.00 R$    0.00 R$    0.00 R$   96.60 R$   96.60 R$    45208.80
+0303150033   TRATAMENTO DE DOENCAS INFLAMATORIAS DO   216 R$    0.00 R$  171.65 R$    0.00 R$   27.16 R$  198.81 R$    42942.96
+0411020013   CURETAGEM POS-ABORTAMENTO / PUERPERAL    236 R$    0.00 R$  109.21 R$   19.79 R$   70.41 R$  179.62 R$    42390.32
+0310010020   ATENDIMENTO AO RECEM-NASCIDO NO MOMENT   719 R$    0.00 R$    0.00 R$    0.00 R$   55.20 R$   55.20 R$    39688.80
+0409060011   CERCLAGEM DE COLO DO UTERO               216 R$    0.00 R$   97.31 R$   12.97 R$   80.70 R$  178.01 R$    38450.16
+0303100010   TRATAMENTO DE COMPLICACOES RELACIONADA   235 R$    0.00 R$  131.89 R$    0.00 R$   22.41 R$  154.30 R$    36260.50
+0303100044   TRATAMENTO DE INTERCORRENCIAS CLINICAS   304 R$    0.00 R$   85.25 R$    0.00 R$   23.99 R$  109.24 R$    33208.96
+0409060070   ESVAZIAMENTO DE UTERO POS-ABORTO POR A   223 R$    0.00 R$   66.32 R$    0.00 R$   76.52 R$  142.84 R$    31853.32
+0801010039   INCENTIVO AO PARTO - PHPN (COMPONENTE    698 R$    0.00 R$   40.00 R$    0.00 R$    0.00 R$   40.00 R$    27920.00
+0302050019   ATENDIMENTO FISIOTERAPÊUTICO EM PACIEN  3599 R$    0.00 R$    6.35 R$    6.35 R$    0.00 R$    6.35 R$    22853.65
+0603030017   IMUNOGLOBULINA ANTI-RHO (D) (FRASCO AM   241 R$    0.00 R$   93.28 R$    0.00 R$    0.00 R$   93.28 R$    22480.48
+0417010010   ANESTESIA OBSTETRICA P/ CESARIANA        338 R$    0.00 R$    0.00 R$    0.00 R$   61.18 R$   61.18 R$    20678.84
+0205010032   ECOCARDIOGRAFIA TRANSTORACICA            219 R$    0.00 R$   67.86 R$   67.86 R$    0.00 R$   67.86 R$    14861.34
+0205010059   ULTRASSONOGRAFIA DOPPLER DE FLUXO OBST   334 R$    0.00 R$   42.90 R$   42.90 R$    0.00 R$   42.90 R$    14328.60
+0802010032   DIARIA DE ACOMPANHANTE DE GESTANTE C/   1701 R$    0.00 R$    8.00 R$    0.00 R$    0.00 R$    8.00 R$    13608.00
+0205020151   ULTRASSONOGRAFIA OBSTETRICA C/ DOPPLER   339 R$    0.00 R$   39.60 R$   39.60 R$    0.00 R$   39.60 R$    13424.40
+0302040021   ATENDIMENTO FISIOTERAPÊUTICO EM PACIEN  2346 R$    0.00 R$    4.67 R$    4.67 R$    0.00 R$    4.67 R$    10955.82
+0301060088   DIAGNOSTICO E/OU ATENDIMENTO DE URGENC   240 R$    0.00 R$   33.34 R$    0.00 R$   10.88 R$   44.22 R$    10612.80
+0205020046   ULTRASSONOGRAFIA DE ABDOMEN TOTAL        225 R$    0.00 R$   37.95 R$   37.95 R$    0.00 R$   37.95 R$     8538.75
+0302010033   ATENDIMENTO FISIOTERAPÊUTICO EM PACIEN  1321 R$    0.00 R$    6.35 R$    0.00 R$    0.00 R$    6.35 R$     8388.35
+0205020143   ULTRASSONOGRAFIA OBSTETRICA              327 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$     7913.40
+0301010145   PRIMEIRA CONSULTA DE PEDIATRIA AO RECE   716 R$    0.00 R$    0.00 R$    0.00 R$   10.00 R$   10.00 R$     7160.00
+0205020186   ULTRASSONOGRAFIA TRANSVAGINAL            283 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$     6848.60
+0205020054   ULTRASSONOGRAFIA DE APARELHO URINÁRIO    245 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$     5929.00
+0802010024   DIARIA DE ACOMPANHANTE CRIANCA/ADOLESC   679 R$    0.00 R$    8.00 R$    0.00 R$    0.00 R$    8.00 R$     5432.00
+0205020097   ULTRASSONOGRAFIA MAMARIA BILATERAL       217 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$     5251.40
+0205020160   ULTRASSONOGRAFIA PELVICA (GINECOLOGICA   216 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$     5227.20
+0302040013   ATENDIMENTO FISIOTERAPÊUTICO EM PACIEN   696 R$    0.00 R$    6.35 R$    6.35 R$    0.00 R$    6.35 R$     4419.60
+0306020068   TRANSFUSAO DE CONCENTRADO DE HEMACIAS    445 R$    0.00 R$    8.39 R$    8.09 R$    0.00 R$    8.39 R$     3733.55
+0306020106   TRANSFUSAO DE PLASMA FRESCO              431 R$    0.00 R$    8.39 R$    8.09 R$    0.00 R$    8.39 R$     3616.09
+0801010047   INCENTIVO AO REGISTRO CIVIL DE NASCIME   696 R$    0.00 R$    5.00 R$    0.00 R$    0.00 R$    5.00 R$     3480.00
+0802010016   DIARIA DE ACOMPANHANTE ADULTO (COM PER   257 R$    0.00 R$    8.00 R$    0.00 R$    0.00 R$    8.00 R$     2056.00
+0305020013   TRATAMENTO DA PIELONEFRITE                 9 R$    0.00 R$  176.56 R$    0.00 R$   27.94 R$  204.50 R$     1840.50
+0409060135   HISTERECTOMIA TOTAL                        1 R$    0.00 R$  590.44 R$    0.00 R$  317.49 R$  907.93 R$      907.93
+0410010014   DRENAGEM DE ABSCESSO DE MAMA               4 R$    0.00 R$  122.58 R$   20.74 R$   48.93 R$  171.51 R$      686.04
+0303150050   TRATAMENTO DE OUTRAS DOENCAS DO APAREL     3 R$    0.00 R$  188.00 R$    0.00 R$   30.68 R$  218.68 R$      656.04
+0214010040   TESTE RAPIDO PARA DETECCAO DE HIV NA G   595 R$    0.00 R$    1.00 R$    1.00 R$    0.00 R$    1.00 R$      595.00
+0214010058   TESTE RÁPIDO PARA DETECÇÃO DE INFECÇÃO   545 R$    0.00 R$    1.00 R$    1.00 R$    0.00 R$    1.00 R$      545.00
+0503040045   DIARIA DE UNIDADE DE TERAPIA INTENSIVA     1 R$    0.00 R$  436.61 R$    0.00 R$   72.02 R$  508.63 R$      508.63
+0401010015   CURATIVO GRAU II C/ OU S/ DEBRIDAMENTO     8 R$    0.00 R$   32.40 R$   32.40 R$    0.00 R$   32.40 R$      259.20
+0409070190   MARSUPIALIZACAO DE GLÂNDULA DE BARTOLI     1 R$    0.00 R$   94.14 R$    0.00 R$   45.82 R$  139.96 R$      139.96
+0303100036   TRATAMENTO DE EDEMA, PROTEINURIA E TRA     1 R$    0.00 R$   97.01 R$    0.00 R$   26.98 R$  123.99 R$      123.99
+0205020089   ULTRASSONOGRAFIA DE GLOBO OCULAR / ORB     1 R$    0.00 R$   24.20 R$   24.20 R$    0.00 R$   24.20 R$       24.20
+0501070036   TIPAGEM SANGUINEA ABO E OUTROS EXAMES      1 R$    0.00 R$   15.00 R$    0.00 R$    0.00 R$   15.00 R$       15.00
+0802010245   SEM DADOS SIGTAP                        2150 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0802010237   SEM DADOS SIGTAP                        1075 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0802010121   SEM DADOS SIGTAP                        1075 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0702040118   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0603070019   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0603060013   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0603040012   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0603030025   IMUNOGLOBULINA G 250 MG INJETAVEL (POR     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0411010077   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0411010018   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0409070157   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0409060232   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0409060186   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0409060127   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0407020039   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0407010190   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0403010233   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303160063   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303160055   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303160039   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303160020   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303140135   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303110112   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303110090   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303110058   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303110031   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303110015   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303070110   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303070102   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303060107   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303040157   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303010126   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0303010037   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0302050027   ATENDIMENTO FISIOTERAPÊUTICO NAS ALTER    13 R$    4.67 R$    0.00 R$    4.67 R$    0.00 R$    0.00 R$        0.00
+0301060010   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0301040141   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0301010170   CONSULTA/AVALIAÇÃO EM PACIENTE INTERNA   291 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0301010048   CONSULTA DE PROFISSIONAIS DE NIVEL SUP   249 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0214010139   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0214010120   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0214010112   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0214010015   GLICEMIA CAPILAR                           1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0212010026   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0211040061   TOCOCARDIOGRAFIA ANTE-PARTO              217 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0211020036   ELETROCARDIOGRAMA                        224 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0205020178   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0205020127   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0205020070   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0205020062   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0205020038   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0204050138   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0204030170   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0204030080   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202120090   TESTE INDIRETO DE ANTIGLOBULINA HUMANA   220 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202120082   PESQUISA DE FATOR RH (INCLUI D FRACO)    220 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202120023   DETERMINACAO DIRETA E REVERSA DE GRUPO  1079 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202090230   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202090140   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202090086   DOSAGEM DE CREATININA NO LIQUIDO AMNIO     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202080196   PESQUISA DE ESTREPTOCOCOS BETA-HEMOLIT     2 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202080153   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202080080   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202070026   DOSAGEM DE ACIDO HIPURICO                  1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202060217   DOSAGEM DE GONADOTROFINA CORIONICA HUM   241 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202050114   DOSAGEM DE PROTEINAS (URINA DE 24 HORA   217 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202050041   CLEARANCE DE UREIA                         2 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202050025   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202050017   ANALISE DE CARACTERES FISICOS, ELEMENT   485 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202040127   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202040046   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202031209   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202031179   TESTE NÃO TREPONEMICO P/ DETECÇÃO DE S   713 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202031110   TESTE NÃO TREPONEMICO P/ DETECÇÃO DE S   407 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202031101   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202031071   QUANTIFICAÇÃO DE RNA DO HIV-1              1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030989   PESQUISA DE ANTIGENO E DO VIRUS DA HEP     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030970   PESQUISA DE ANTIGENO DE SUPERFICIE DO    719 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030890   PESQUISA DE ANTICORPOS IGM CONTRA ANTI   216 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030806   PESQUISA DE ANTICORPOS IGG CONTRA O VI     2 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030679   PESQUISA DE ANTICORPOS CONTRA O VIRUS    730 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030644   PESQUISA DE ANTICORPOS CONTRA ANTIGENO     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030636   PESQUISA DE ANTICORPOS CONTRA ANTIGENO   221 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030474   PESQUISA DE ANTICORPOS ANTIESTREPTOLIS     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030300   PESQUISA DE ANTICORPOS ANTI-HIV-1 + HI   355 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030229   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030202   DOSAGEM DE PROTEINA C REATIVA            487 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030059   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202030040   DETECÇÃO DE ÁCIDOS NUCLEICOS DO HIV-1      4 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020541   TESTE DIRETO DE ANTIGLOBULINA HUMANA (   218 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020487   PROVA DE CONSUMO DE PROTROMBINA          431 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020479   PROVA DE COMPATIBILIDADE PRE-TRANSFUSI     1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020380   HEMOGRAMA COMPLETO                      2845 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020304   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020290   DOSAGEM DE FIBRINOGENIO                    3 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020150   DETERMINAÇÃO DE VELOCIDADE DE HEMOSSED   229 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020142   DETERMINAÇÃO DE TEMPO E ATIVIDADE DA P   228 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020134   DETERMINAÇÃO DE TEMPO DE TROMBOPLASTIN   229 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020100   DETERMINAÇÃO DE TEMPO DE SANGRAMENTO D   431 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020096   DETERMINAÇÃO DE TEMPO DE SANGRAMENTO -   433 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020070   DETERMINAÇÃO DE TEMPO DE COAGULAÇÃO      217 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020029   CONTAGEM DE PLAQUETAS                   2377 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202020010   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010759   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010732   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010694   DOSAGEM DE UREIA                        1856 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010678   DOSAGEM DE TRIGLICERIDEOS                223 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010651   DOSAGEM DE TRANSAMINASE GLUTAMICO-PIRU  1833 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010643   DOSAGEM DE TRANSAMINASE GLUTAMICO-OXAL  1833 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010635   DOSAGEM DE SODIO                         481 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010627   DOSAGEM DE PROTEINAS TOTAIS E FRACOES    218 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010619   SEM DADOS SIGTAP                         431 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010600   DOSAGEM DE POTASSIO                      481 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010570   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010562   DOSAGEM DE MAGNESIO                      659 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010554   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010538   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010503   DOSAGEM DE HEMOGLOBINA GLICOSILADA       217 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010473   DOSAGEM DE GLICOSE                       437 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010465   DOSAGEM DE GAMA-GLUTAMIL-TRANSFERASE (   224 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010430   DOSAGEM DE FOSFORO                       646 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010422   DOSAGEM DE FOSFATASE ALCALINA            436 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010414   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010392   DOSAGEM DE FERRO SERICO                    1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010376   DOSAGEM DE DESIDROGENASE LATICA (ISOEN   216 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010368   DOSAGEM DE DESIDROGENASE LATICA         1597 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010350   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010341   DOSAGEM DE DESIDROGENASE ALFA-HIDROXIB   646 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010333   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010325   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010317   DOSAGEM DE CREATININA                   1870 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010295   DOSAGEM DE COLESTEROL TOTAL              222 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010287   DOSAGEM DE COLESTEROL LDL                  1 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010279   DOSAGEM DE COLESTEROL HDL                217 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010260   DOSAGEM DE CLORETO                       224 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010228   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010210   DOSAGEM DE CALCIO                        649 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010201   DOSAGEM DE BILIRRUBINA TOTAL E FRACOES  1771 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010180   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010120   DOSAGEM DE ACIDO URICO                  1579 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010112   SEM DADOS SIGTAP                         215 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010040   DETERMINACAO DE CURVA GLICEMICA (2 DOS   431 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+0202010031   SEM DADOS SIGTAP                         430 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$    0.00 R$        0.00
+----------------------------------------------------------------------------------------------------
+                                                                       TOTAL GERAL R$  2349112.17
+
+  ATENCAO: 142 procedimentos sem valor no SIGTAP:
+    - 0802010245
+    - 0802010237
+    - 0802010121
+    - 0702040118
+    - 0603070019
+    - 0603060013
+    - 0603040012
+    - 0603030025
+    - 0411010077
+    - 0411010018
+    - 0409070157
+    - 0409060232
+    - 0409060186
+    - 0409060127
+    - 0407020039
+    - 0407010190
+    - 0403010233
+    - 0303160063
+    - 0303160055
+    - 0303160039
+    - 0303160020
+    - 0303140135
+    - 0303110112
+    - 0303110090
+    - 0303110058
+    - 0303110031
+    - 0303110015
+    - 0303070110
+    - 0303070102
+    - 0303060107
+    - 0303040157
+    - 0303010126
+    - 0303010037
+    - 0302050027
+    - 0301060010
+    - 0301040141
+    - 0301010170
+    - 0301010048
+    - 0214010139
+    - 0214010120
+    - 0214010112
+    - 0214010015
+    - 0212010026
+    - 0211040061
+    - 0211020036
+    - 0205020178
+    - 0205020127
+    - 0205020070
+    - 0205020062
+    - 0205020038
+    - 0204050138
+    - 0204030170
+    - 0204030080
+    - 0202120090
+    - 0202120082
+    - 0202120023
+    - 0202090230
+    - 0202090140
+    - 0202090086
+    - 0202080196
+    - 0202080153
+    - 0202080080
+    - 0202070026
+    - 0202060217
+    - 0202050114
+    - 0202050041
+    - 0202050025
+    - 0202050017
+    - 0202040127
+    - 0202040046
+    - 0202031209
+    - 0202031179
+    - 0202031110
+    - 0202031101
+    - 0202031071
+    - 0202030989
+    - 0202030970
+    - 0202030890
+    - 0202030806
+    - 0202030679
+    - 0202030644
+    - 0202030636
+    - 0202030474
+    - 0202030300
+    - 0202030229
+    - 0202030202
+    - 0202030059
+    - 0202030040
+    - 0202020541
+    - 0202020487
+    - 0202020479
+    - 0202020380
+    - 0202020304
+    - 0202020290
+    - 0202020150
+    - 0202020142
+    - 0202020134
+    - 0202020100
+    - 0202020096
+    - 0202020070
+    - 0202020029
+    - 0202020010
+    - 0202010759
+    - 0202010732
+    - 0202010694
+    - 0202010678
+    - 0202010651
+    - 0202010643
+    - 0202010635
+    - 0202010627
+    - 0202010619
+    - 0202010600
+    - 0202010570
+    - 0202010562
+    - 0202010554
+    - 0202010538
+    - 0202010503
+    - 0202010473
+    - 0202010465
+    - 0202010430
+    - 0202010422
+    - 0202010414
+    - 0202010392
+    - 0202010376
+    - 0202010368
+    - 0202010350
+    - 0202010341
+    - 0202010333
+    - 0202010325
+    - 0202010317
+    - 0202010295
+    - 0202010287
+    - 0202010279
+    - 0202010260
+    - 0202010228
+    - 0202010210
+    - 0202010201
+    - 0202010180
+    - 0202010120
+    - 0202010112
+    - 0202010040
+    - 0202010031
+
+====================================================================================================
+TOP 20 PROCEDIMENTOS POR VALOR TOTAL
+====================================================================================================
+
+  # Codigo       Nome                                  Qtd     SH Unit    SP Unit    TH Unit      SH Total     SP Total       TH Total
+----------------------------------------------------------------------------------------------------------------------------------
+  1 0411010026   PARTO CESARIANO EM GESTACAO DE ALTO   439  R$  660.79 R$  230.15 R$  890.94  R$ 290086.81 R$ 101035.85 R$   391122.66
+  2 0310010047   PARTO NORMAL EM GESTACAO DE ALTO RI   273  R$  374.41 R$  242.78 R$  617.19  R$ 102213.93 R$  66278.94 R$   168492.87
+  3 0411010042   PARTO CESARIANO C/ LAQUEADURA TUBAR   300  R$  395.68 R$  150.05 R$  545.73  R$ 118704.00 R$  45015.00 R$   163719.00
+  4 0802010083   DIARIA DE UNIDADE DE TERAPIA INTENS   256  R$  510.00 R$   90.00 R$  600.00  R$ 130560.00 R$  23040.00 R$   153600.00
+  5 0411010034   PARTO CESARIANO                       281  R$  395.68 R$  150.05 R$  545.73  R$ 111186.08 R$  42164.05 R$   153350.13
+  6 0407040161   LAPAROTOMIA EXPLORADORA               217  R$  497.20 R$  139.99 R$  637.19  R$ 107892.40 R$  30377.83 R$   138270.23
+  7 0310010039   PARTO NORMAL                          281  R$  267.60 R$  175.80 R$  443.40  R$  75195.60 R$  49399.80 R$   124595.40
+  8 0409060216   OOFORECTOMIA / OOFOROPLASTIA          216  R$  358.00 R$  151.86 R$  509.86  R$  77328.00 R$  32801.76 R$   110129.76
+  9 0310010055   PARTO NORMAL EM CENTRO DE PARTO NOR   233  R$  267.60 R$  175.80 R$  443.40  R$  62350.80 R$  40961.40 R$   103312.20
+ 10 0411020048   TRATAMENTO CIRURGICO DE GRAVIDEZ EC   223  R$  330.48 R$  128.70 R$  459.18  R$  73697.04 R$  28700.10 R$   102397.14
+ 11 0802010199   DIÁRIA DE PERMANÊNCIA A MAIOR        4740  R$   16.19 R$    3.87 R$   20.06  R$  76740.60 R$  18343.80 R$    95084.40
+ 12 0303030038   TRATAMENTO DE DIABETES MELLITUS       219  R$  310.79 R$   50.01 R$  360.80  R$  68063.01 R$  10952.19 R$    79015.20
+ 13 0417010036   ANESTESIA OBSTETRICA P/CESARIANA EM   468  R$    0.00 R$   96.60 R$   96.60  R$      0.00 R$  45208.80 R$    45208.80
+ 14 0303150033   TRATAMENTO DE DOENCAS INFLAMATORIAS   216  R$  171.65 R$   27.16 R$  198.81  R$  37076.40 R$   5866.56 R$    42942.96
+ 15 0411020013   CURETAGEM POS-ABORTAMENTO / PUERPER   236  R$  109.21 R$   70.41 R$  179.62  R$  25773.56 R$  16616.76 R$    42390.32
+ 16 0310010020   ATENDIMENTO AO RECEM-NASCIDO NO MOM   719  R$    0.00 R$   55.20 R$   55.20  R$      0.00 R$  39688.80 R$    39688.80
+ 17 0409060011   CERCLAGEM DE COLO DO UTERO            216  R$   97.31 R$   80.70 R$  178.01  R$  21018.96 R$  17431.20 R$    38450.16
+ 18 0303100010   TRATAMENTO DE COMPLICACOES RELACION   235  R$  131.89 R$   22.41 R$  154.30  R$  30994.15 R$   5266.35 R$    36260.50
+ 19 0303100044   TRATAMENTO DE INTERCORRENCIAS CLINI   304  R$   85.25 R$   23.99 R$  109.24  R$  25916.00 R$   7292.96 R$    33208.96
+ 20 0409060070   ESVAZIAMENTO DE UTERO POS-ABORTO PO   223  R$   66.32 R$   76.52 R$  142.84  R$  14789.36 R$  17063.96 R$    31853.32
+
+====================================================================================================
+RESUMO FINANCEIRO - 06/2025
+====================================================================================================
+
+  Pacientes (prontuarios unicos): 892
+  Total registros (incl. multiplas): 931
+  Procedimentos distintos:             198
+  Total de procedimentos realizados:   84567
+
+  Servico Ambulatorial (SA) total:     R$          60.71
+  Servico Hospitalar (SH) total:       R$   1,674,154.49
+  Total Ambulatorial (TA) total:       R$     136,677.63
+  Servico Profissional (SP) total:     R$     674,957.68
+  Total Hospitalar (TH = SH+SP) total: R$   2,349,112.17
+
+====================================================================================================
+FIM DO RELATORIO
+====================================================================================================

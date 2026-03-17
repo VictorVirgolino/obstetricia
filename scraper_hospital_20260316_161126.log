@@ -1,0 +1,40 @@
+Scraper Hospital - 2026-03-16 16:11:26
+Concorrencia: 5 abas simultaneas
+============================================================
+
+Logging in...
+Logged in!
+
+============================================================
+COMPETENCIA 07/2025
+============================================================
+  Site total: 892 | Links encontrados: 892
+  Ja registrados no banco: 0
+  --------------------------------------------------------
+  Ja no banco: 0 | A processar: 892
+  [2/892] + EXTRAIDO: 376444 - ADELAINE TAVARES DOS SANTOS | Queimadas | 22 procs | 2025-06-17 -> 2025-06-21
+  [1/892] + EXTRAIDO: 373972 - ADINA MONALIZE ALVARES DE SOUSA LIMA | Caraúbas | 17 procs | 2025-06-09 -> 2025-06-09
+  [3/892] + EXTRAIDO: 374980 - ADELIANE EVANGELISTA DA SILVA | Areia | 12 procs | 2025-06-12 -> 2025-06-14
+  [4/892] + EXTRAIDO: 378974 - ADELZA DO NASCIMENTO | Campina Grande | 10 procs | 2025-06-26 -> 2025-06-27
+  [5/892] + EXTRAIDO: 371430 - ADJA LAYANE DE BRITO CAMPOS | Areia | 13 procs | 2025-05-31 -> 2025-06-02
+  [7/892] + EXTRAIDO: 355163 - ADRIANA APARECIDA PEREIRA LEAL | Ingá | 10 procs | 2025-04-06 -> 2025-04-07
+  [7/892] !! PROBLEMAS: 355163 -> INTERNACAO MULTIPLA (2x no site)
+  [8/892] + EXTRAIDO: 373271 - ADRIANA DA SILVA SOUZA | Campina Grande | 20 procs | 2025-06-06 -> 2025-06-09
+  [6/892] + EXTRAIDO: 355163 - ADRIANA APARECIDA PEREIRA LEAL | Ingá | 17 procs | 2025-04-04 -> 2025-04-06
+  [6/892] !! PROBLEMAS: 355163 -> INTERNACAO MULTIPLA (2x no site) | SEM AIH
+  [9/892] + EXTRAIDO: 371852 - ADRIANA SILVA VELOSO | Campina Grande | 9 procs | 2025-06-02 -> 2025-06-04
+  [10/892] + EXTRAIDO: 353991 - ADRIANA SOUZA LIMA | Puxinanã | 20 procs | 2025-03-31 -> 2025-04-04
+  [12/892] + EXTRAIDO: 375688 - AGATHA COELHO SALES | Areia | 15 procs | 2025-06-14 -> 2025-06-17
+  [11/892] + EXTRAIDO: 376497 - ADRIELE RALLYNE COSTA SILVA | Campina Grande | 9 procs | 2025-06-17 -> 2025-06-18
+  [13/892] + EXTRAIDO: 372256 - AILZA DE FREITAS RIBEIRO | Queimadas | 12 procs | 2025-06-03 -> 2025-06-04
+  [15/892] + EXTRAIDO: 375266 - ALANA PRISCILA DE MELO LINS | Campina Grande | 18 procs | 2025-06-13 -> 2025-06-13
+  [14/892] + EXTRAIDO: 371923 - ALANA GABRIELLA DE MACEDO ALEXANDRE DA SILVA | Campina Grande | 12 procs | 2025-06-02 -> 2025-06-04
+  [16/892] + EXTRAIDO: 374026 - ALANE MARAVILHA DA SILVA | Campina Grande | 9 procs | 2025-06-09 -> 2025-06-10
+  [18/892] + EXTRAIDO: 377948 - ALANNE DE MELO NOBREGA | Campina Grande | 17 procs | 2025-06-22 -> 2025-06-23
+  [17/892] + EXTRAIDO: 371308 - ALANE SOARES DE OLIVEIRA LOPES | Campina Grande | 18 procs | 2025-05-30 -> 2025-06-02
+  [19/892] + EXTRAIDO: 371075 - ALCINEIDE SUELY DA MATA SILVA | Picuí | 14 procs | 2025-05-29 -> 2025-06-01
+  [20/892] + EXTRAIDO: 376617 - ALCIONE KELY BATISTA | Matinhas | 22 procs | 2025-06-17 -> 2025-06-23
+  [21/892] + EXTRAIDO: 379037 - ALEXSANDRA PEREIRA MEDEIROS | Campina Grande | 12 procs | 2025-06-26 -> 2025-06-28
+  [24/892] + EXTRAIDO: 375980 - ALINE BIANCA LIMA ALVES | Nova Floresta | 12 procs | 2025-06-15 -> 2025-06-18
+  [22/892] + EXTRAIDO: 379062 - ALEYNNE DAYANE ALVES DA SILVA | Arara | 7 procs | 2025-06-26 -> 2025-06-28
+  [25/892] ERRO DETALHE: 374763 - Page.evaluate: Target page, context or browser has been closed

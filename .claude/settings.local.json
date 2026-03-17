@@ -1,7 +1,24 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(cd \"D:/Documentos/saude\" && python3 -c \"\nimport sqlite3\nconn = sqlite3.connect\\('saude_real.db'\\)\nc = conn.cursor\\(\\)\nc.execute\\(\\\\\"SELECT name FROM sqlite_master WHERE type='table'\\\\\"\\)\nprint\\('Tables:', c.fetchall\\(\\)\\)\nfor t in ['pacientes','aih_records','aih_procedimentos','sigtap_metadata']:\n    try:\n        c.execute\\(f'SELECT COUNT\\(*\\) FROM {t}'\\)\n        print\\(f'{t}: {c.fetchone\\(\\)[0]} rows'\\)\n    except Exception as e: print\\(f'{t}: {e}'\\)\nconn.close\\(\\)\n\")",
+      "Bash(which python:*)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" -c \"\nimport sqlite3\nconn = sqlite3.connect\\('saude_real.db'\\)\nc = conn.cursor\\(\\)\n\nprint\\('=== AIH RECORDS sample ==='\\)\nc.execute\\('SELECT id_aih, prontuario, data_ent, data_sai, competencia FROM aih_records LIMIT 5'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== PROCEDIMENTOS sample ==='\\)\nc.execute\\('SELECT * FROM aih_procedimentos LIMIT 10'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== SIGTAP sample ==='\\)\nc.execute\\('SELECT proc_cod, competencia, nome, t_hosp, s_hosp, s_prof, s_amb, t_amb FROM sigtap_metadata'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== COMPETENCIAS ==='\\)\nc.execute\\('SELECT DISTINCT competencia FROM aih_records ORDER BY competencia'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== PACIENTES sample ==='\\)\nc.execute\\('SELECT cns, nome, cidade FROM pacientes LIMIT 5'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\nconn.close\\(\\))",
+      "WebFetch(domain:sigtap.datasus.gov.br)",
+      "Bash(cd \"D:/Documentos/saude\" && python -c \"\nimport sqlite3\nconn = sqlite3.connect\\('saude_real.db'\\)\nc = conn.cursor\\(\\)\n\nprint\\('=== TABLES ==='\\)\nc.execute\\(\\\\\"SELECT name FROM sqlite_master WHERE type='table'\\\\\"\\)\nprint\\(c.fetchall\\(\\)\\)\n\nprint\\('\\\\n=== SAMPLE aih_records ==='\\)\nc.execute\\('SELECT * FROM aih_records LIMIT 3'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== SAMPLE aih_procedimentos ==='\\)\nc.execute\\('SELECT * FROM aih_procedimentos LIMIT 5'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== ALL sigtap_metadata ==='\\)\nc.execute\\('SELECT proc_cod, competencia, nome, s_hosp, t_hosp, s_prof, s_amb, t_amb FROM sigtap_metadata'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== COUNTS ==='\\)\nfor t in ['pacientes','aih_records','aih_procedimentos','sigtap_metadata']:\n    c.execute\\(f'SELECT COUNT\\(*\\) FROM {t}'\\)\n    print\\(f'{t}: {c.fetchone\\(\\)[0]}'\\)\n\nprint\\('\\\\n=== SAMPLE pacientes ==='\\)\nc.execute\\('SELECT cns, nome, cidade, estado FROM pacientes LIMIT 3'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nprint\\('\\\\n=== data_ent/data_sai check ==='\\)\nc.execute\\(\\\\\"SELECT COUNT\\(*\\) FROM aih_records WHERE data_ent != '' AND data_ent IS NOT NULL\\\\\"\\)\nprint\\(f'Records with data_ent: {c.fetchone\\(\\)[0]}'\\)\nc.execute\\(\\\\\"SELECT COUNT\\(*\\) FROM aih_records WHERE data_sai != '' AND data_sai IS NOT NULL\\\\\"\\)\nprint\\(f'Records with data_sai: {c.fetchone\\(\\)[0]}'\\)\n\nprint\\('\\\\n=== UNIQUE proc codes ==='\\)\nc.execute\\('SELECT DISTINCT proc_cod FROM aih_procedimentos'\\)\nfor r in c.fetchall\\(\\): print\\(r\\)\n\nconn.close\\(\\)\n\")",
+      "Bash(where python:*)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" diag_sigtap.py 2>&1)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" -c \"\nwith open\\('C:/Users/Victor/.claude/projects/D--Documentos-saude/1e553143-87b0-453b-9b5c-f88e3fcac727/tool-results/bm2y0dum1.txt', 'r', encoding='utf-8'\\) as f:\n    content = f.read\\(\\)\nprint\\(content[:8000]\\)\n\")",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" db_manager.py 2>&1)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" scraper_sigtap.py 2>&1)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" diag_cpn.py 2>&1)",
+      "Bash(cd \"D:/Documentos/saude\" && \"/c/Users/Victor/AppData/Local/Programs/Python/Python313/python.exe\" diag_hospital.py 2>&1)",
+      "Bash(\"C:\\\\Users\\\\Victor\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m pip install playwright && \"C:\\\\Users\\\\Victor\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m playwright install chromium)",
+      "Bash(cd:*)",
+      "Bash(sqlite3:*)",
+      "Bash(find /d/Documentos/saude -name .cursorrules -o -name *.md -type f)",
+      "Bash(ls -la /d/Documentos/saude/.*)"
     ]
   }
 }

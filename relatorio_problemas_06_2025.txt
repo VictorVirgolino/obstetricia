@@ -1,0 +1,514 @@
+RELATORIO DE PROBLEMAS - COMPETENCIA 06/2025
+================================================================================
+
+Total de registros: 931
+Com problemas:      252
+Sem problemas:      679
+
+Tipos de problemas:
+  [166] SEM AIH
+  [ 41] INTERNACAO MULTIPLA (2x no site) | SEM AIH
+  [ 37] INTERNACAO MULTIPLA (2x no site)
+  [  8] SEM AIH | SEM CNS
+
+================================================================================
+  INTERNACAO MULTIPLA - 3 Exemplos
+================================================================================
+  Mesmo prontuario aparece 2x no site com datas/procedimentos diferentes.
+  Sao internacoes encadeadas do mesmo paciente.
+
+  --- Exemplo 1: Prontuario 342054 ---
+
+    INTERNACAO 1:
+      Prontuario:    342054
+      Paciente:      EDINETE JOSE DA SILVA
+      CNS:           702907574236375
+      Nascimento:    1986-06-06
+      Sexo:          F
+      Mae:           TEREZA SEVERINA DA CONCEICAO
+      Cidade:        Natuba - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-20
+      Data Saida:    2025-03-01
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2:
+      Prontuario:    342054
+      Paciente:      EDINETE JOSE DA SILVA
+      CNS:           702907574236375
+      Nascimento:    1986-06-06
+      Sexo:          F
+      Mae:           TEREZA SEVERINA DA CONCEICAO
+      Cidade:        Natuba - PB
+      AIH:           2524102292030
+      Data Entrada:  2025-03-01
+      Data Saida:    2025-03-03
+      CID Principal: O244
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (12):
+        - 0202030202 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0301010145 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0411010026 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0417010036 | qtd=1 | CBO=225151 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+  --- Exemplo 2: Prontuario 342320 ---
+
+    INTERNACAO 1:
+      Prontuario:    342320
+      Paciente:      JESSICA TAVARES SILVA
+      CNS:           702008330821588
+      Nascimento:    1996-11-30
+      Sexo:          F
+      Mae:           MARIA JOSE TAVARES GOMES
+      Cidade:        Puxinanã - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-21
+      Data Saida:    2025-03-09
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  ELSON DA C LIMA FILHO
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2:
+      Prontuario:    342320
+      Paciente:      JESSICA TAVARES SILVA
+      CNS:           702008330821588
+      Nascimento:    1996-11-30
+      Sexo:          F
+      Mae:           MARIA JOSE TAVARES GOMES
+      Cidade:        Puxinanã - PB
+      AIH:           2524102292382
+      Data Entrada:  2025-03-09
+      Data Saida:    2025-03-11
+      CID Principal: O429
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (10):
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0301010145 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010047 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+  --- Exemplo 3: Prontuario 343832 ---
+
+    INTERNACAO 1:
+      Prontuario:    343832
+      Paciente:      MARINA DA SILVA DIAS
+      CNS:           704605677969321
+      Nascimento:    2007-07-03
+      Sexo:          F
+      Mae:           MARIA APARECIDA DA SILVA
+      Cidade:        Itatuba - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-26
+      Data Saida:    2025-03-10
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  ANDREA S CAVALCANTI
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2:
+      Prontuario:    343832
+      Paciente:      MARINA DA SILVA DIAS
+      CNS:           704605677969321
+      Nascimento:    2007-07-03
+      Sexo:          F
+      Mae:           MARIA APARECIDA DA SILVA
+      Cidade:        Itatuba - PB
+      AIH:           2524102296606
+      Data Entrada:  2025-03-10
+      Data Saida:    2025-03-12
+      CID Principal: O439
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (11):
+        - 0202020380 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0411010026 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0417010036 | qtd=1 | CBO=225151 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+
+================================================================================
+  SEM AIH (sem internacao multipla) - 3 Exemplos
+================================================================================
+  Prontuario sem numero de AIH preenchido no sistema.
+
+  --- Exemplo 1: Prontuario 363412 ---
+
+      Prontuario:    363412
+      Paciente:      ANA CLARA MARIANO DA SILVA
+      CNS:           700400914067347
+      Nascimento:    2008-01-27
+      Sexo:          F
+      Mae:           ALCILENE ALMEIDA DA SILVA 
+      Cidade:        Riachão do Bacamarte - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-04
+      Data Saida:    2025-05-06
+      CID Principal: O429
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 2: Prontuario 365769 ---
+
+      Prontuario:    365769
+      Paciente:      ANA HELOISE DE MELO SILVA
+      CNS:           706001385243345
+      Nascimento:    2009-09-23
+      Sexo:          F
+      Mae:           ADRIANA DEODATO DE MELO SILVA 
+      Cidade:        Campina Grande - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-11
+      Data Saida:    2025-05-12
+      CID Principal: O998
+      Motivo Saida:  TRANSFERENCIA PARA OUTRO ESTABELECIMENTO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 3: Prontuario 363299 ---
+
+      Prontuario:    363299
+      Paciente:      BARBARA MARIA DA CONCEICAO
+      CNS:           700306963253732
+      Nascimento:    1988-04-06
+      Sexo:          F
+      Mae:           MARIA DE LOUREDES DA CONCEICAO
+      Cidade:        Campina Grande - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-03
+      Data Saida:    2025-05-06
+      CID Principal: O021
+      Motivo Saida:  ALTA MELHORADO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+
+================================================================================
+  SEM CNS - 3 Exemplos
+================================================================================
+  Paciente sem Cartao Nacional de Saude preenchido.
+
+  --- Exemplo 1: Prontuario 367731 ---
+
+      Prontuario:    367731
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-18
+      Data Saida:    2025-05-21
+      CID Principal: O149
+      Motivo Saida:  ALTA DA MAE / PUERPERA E DO RECEM-NASCIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 2: Prontuario 363871 ---
+
+      Prontuario:    363871
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-05
+      Data Saida:    2025-05-06
+      CID Principal: O021
+      Motivo Saida:  ALTA MELHORADO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 3: Prontuario 369140 ---
+
+      Prontuario:    369140
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-23
+      Data Saida:    2025-05-24
+      CID Principal: O800
+      Motivo Saida:  ALTA DA MAE / PUERPERA E DO RECEM-NASCIDO
+      Medico Solic:  JUSSARA L V DE NEGREIROS
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+
+================================================================================
+  INTERNACAO MULTIPLA + SEM AIH (combinado) - 3 Exemplos
+================================================================================
+  Prontuario com internacao multipla onde uma das entradas nao tem AIH.
+  Tipicamente: a primeira internacao (pre-parto) nao tem AIH,
+  e a segunda (parto/pos-parto) tem.
+
+  --- Exemplo 1: Prontuario 342054 ---
+
+    INTERNACAO 1 (SEM AIH):
+      Prontuario:    342054
+      Paciente:      EDINETE JOSE DA SILVA
+      CNS:           702907574236375
+      Nascimento:    1986-06-06
+      Sexo:          F
+      Mae:           TEREZA SEVERINA DA CONCEICAO
+      Cidade:        Natuba - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-20
+      Data Saida:    2025-03-01
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2 (COM AIH):
+      Prontuario:    342054
+      Paciente:      EDINETE JOSE DA SILVA
+      CNS:           702907574236375
+      Nascimento:    1986-06-06
+      Sexo:          F
+      Mae:           TEREZA SEVERINA DA CONCEICAO
+      Cidade:        Natuba - PB
+      AIH:           2524102292030
+      Data Entrada:  2025-03-01
+      Data Saida:    2025-03-03
+      CID Principal: O244
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (12):
+        - 0202030202 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0301010145 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0411010026 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0417010036 | qtd=1 | CBO=225151 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+  --- Exemplo 2: Prontuario 342320 ---
+
+    INTERNACAO 1 (SEM AIH):
+      Prontuario:    342320
+      Paciente:      JESSICA TAVARES SILVA
+      CNS:           702008330821588
+      Nascimento:    1996-11-30
+      Sexo:          F
+      Mae:           MARIA JOSE TAVARES GOMES
+      Cidade:        Puxinanã - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-21
+      Data Saida:    2025-03-09
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  ELSON DA C LIMA FILHO
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2 (COM AIH):
+      Prontuario:    342320
+      Paciente:      JESSICA TAVARES SILVA
+      CNS:           702008330821588
+      Nascimento:    1996-11-30
+      Sexo:          F
+      Mae:           MARIA JOSE TAVARES GOMES
+      Cidade:        Puxinanã - PB
+      AIH:           2524102292382
+      Data Entrada:  2025-03-09
+      Data Saida:    2025-03-11
+      CID Principal: O429
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (10):
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0301010145 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0310010047 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+  --- Exemplo 3: Prontuario 343832 ---
+
+    INTERNACAO 1 (SEM AIH):
+      Prontuario:    343832
+      Paciente:      MARINA DA SILVA DIAS
+      CNS:           704605677969321
+      Nascimento:    2007-07-03
+      Sexo:          F
+      Mae:           MARIA APARECIDA DA SILVA
+      Cidade:        Itatuba - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-02-26
+      Data Saida:    2025-03-10
+      CID Principal: O998
+      Motivo Saida:  PERMANENCIA POR INTERCORRENCIA
+      Medico Solic:  ANDREA S CAVALCANTI
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site) | SEM AIH
+      Procedimentos: NENHUM ENCONTRADO
+
+    INTERNACAO 2 (COM AIH):
+      Prontuario:    343832
+      Paciente:      MARINA DA SILVA DIAS
+      CNS:           704605677969321
+      Nascimento:    2007-07-03
+      Sexo:          F
+      Mae:           MARIA APARECIDA DA SILVA
+      Cidade:        Itatuba - PB
+      AIH:           2524102296606
+      Data Entrada:  2025-03-10
+      Data Saida:    2025-03-12
+      CID Principal: O439
+      Motivo Saida:  ALTA A PEDIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    INTERNACAO MULTIPLA (2x no site)
+      Procedimentos (11):
+        - 0202020380 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030679 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202030970 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202031179 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0202120023 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0214010040 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0310010020 | qtd=1 | CBO=225124 | CNES=2362287
+        - 0411010026 | qtd=1 | CBO=225250 | CNES=2362287
+        - 0417010036 | qtd=1 | CBO=225151 | CNES=2362287
+        - 0801010039 | qtd=1 | CBO=N/A | CNES=2362287
+        - 0801010047 | qtd=1 | CBO=N/A | CNES=2362287
+
+
+================================================================================
+  SEM AIH + SEM CNS (combinado) - 3 Exemplos
+================================================================================
+  Prontuario sem AIH e sem CNS do paciente.
+
+  --- Exemplo 1: Prontuario 367731 ---
+
+      Prontuario:    367731
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-18
+      Data Saida:    2025-05-21
+      CID Principal: O149
+      Motivo Saida:  ALTA DA MAE / PUERPERA E DO RECEM-NASCIDO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 2: Prontuario 363871 ---
+
+      Prontuario:    363871
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-05
+      Data Saida:    2025-05-06
+      CID Principal: O021
+      Motivo Saida:  ALTA MELHORADO
+      Medico Solic:  N/A
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+  --- Exemplo 3: Prontuario 369140 ---
+
+      Prontuario:    369140
+      Paciente:      VERONICA MENDES NASCIMENTO
+      CNS:           VAZIO
+      Nascimento:    1997-06-26
+      Sexo:          F
+      Mae:           MARIA DE LOURDES MENDES
+      Cidade:        Ingá - PB
+      AIH:           VAZIO
+      Data Entrada:  2025-05-23
+      Data Saida:    2025-05-24
+      CID Principal: O800
+      Motivo Saida:  ALTA DA MAE / PUERPERA E DO RECEM-NASCIDO
+      Medico Solic:  JUSSARA L V DE NEGREIROS
+      Medico Resp:   KAROLINNE SOUTO DE FIGUEIREDO
+      Observacao:    SEM AIH | SEM CNS
+      Procedimentos: NENHUM ENCONTRADO
+
+
+================================================================================
+FIM DO RELATORIO
+================================================================================

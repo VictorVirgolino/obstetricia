@@ -1,0 +1,126 @@
+PROCEDIMENTOS SIGTAP COM TODOS OS VALORES ZERADOS
+Gerado em: 16/03/2026 18:26
+Total: 117 registros
+====================================================================================================
+
+Procedimentos unicos: 17
+
+CODIGO: 0202020479
+  Nome: PROVA DE COMPATIBILIDADE PRE-TRANSFUSIONAL (MEIOS SALINOS, ALBUMINOSO E COOMBS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030300
+  Nome: PESQUISA DE ANTICORPOS ANTI-HIV-1 + HIV-2 (ELISA)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030679
+  Nome: PESQUISA DE ANTICORPOS CONTRA O VIRUS DA HEPATITE C (ANTI-HCV)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030970
+  Nome: PESQUISA DE ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (HBSAG)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031098
+  Nome: TESTE TREPONEMICO P/ DETECÇÃO DE SIFILIS
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090140
+  Nome: DOSAGEM DE SÓDIO E CLORO NO SUOR (C/ COLETA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010015
+  Nome: GLICEMIA CAPILAR
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 02/2026, 06/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010040
+  Nome: TESTE RÁPIDO PARA DETECÇÃO DE HIV NA GESTANTE OU PAI/PARCEIRO
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010112
+  Nome: TESTE RÁPIDO PARA VÍRUS ZIKA IGG/IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010120
+  Nome: TESTE RÁPIDO PARA DENGUE IGG/IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010139
+  Nome: TESTE RÁPIDO PARA FEBRE CHIKUNGUNYA IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301010137
+  Nome: CONSULTA/ATENDIMENTO DOMICILIAR
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 07/2025, 08/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301010170
+  Nome: CONSULTA/AVALIAÇÃO EM PACIENTE INTERNADO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301040141
+  Nome: INSERÇÃO DO DISPOSITIVO INTRA-UTERINO (DIU)
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0310010055
+  Nome: PARTO NORMAL EM CENTRO DE PARTO NORMAL (CPN)
+  Complexidade: Média Complexidade
+  Financiamento: Incentivo - MAC
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: financiamento por INCENTIVO (valor nao aparece na tabela)
+
+CODIGO: 0415010012
+  Nome: TRATAMENTO C/ CIRURGIAS MULTIPLAS
+  Complexidade: Não se Aplica
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 12/2025
+  ** Motivo provavel: complexidade 'Nao se Aplica' - valor depende do contexto
+
+CODIGO: 0603030025
+  Nome: IMUNOGLOBULINA G 250 MG INJETAVEL (POR FRASCO)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+

@@ -1,0 +1,896 @@
+PROCEDIMENTOS SIGTAP COM TODOS OS VALORES ZERADOS
+Gerado em: 16/03/2026 18:18
+Total: 903 registros
+====================================================================================================
+
+Procedimentos unicos: 127
+
+CODIGO: 0202010031
+  Nome: DETERMINACAO DE CROMATOGRAFIA DE AMINOACIDOS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010040
+  Nome: DETERMINACAO DE CURVA GLICEMICA (2 DOSAGENS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010112
+  Nome: DOSAGEM DE ACIDO ASCORBICO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010120
+  Nome: DOSAGEM DE ACIDO URICO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010180
+  Nome: DOSAGEM DE AMILASE
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010201
+  Nome: DOSAGEM DE BILIRRUBINA TOTAL E FRACOES
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010210
+  Nome: DOSAGEM DE CALCIO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010228
+  Nome: DOSAGEM DE CALCIO IONIZAVEL
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 03/2026, 06/2025, 07/2025, 08/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010260
+  Nome: DOSAGEM DE CLORETO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010279
+  Nome: DOSAGEM DE COLESTEROL HDL
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010287
+  Nome: DOSAGEM DE COLESTEROL LDL
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025, 08/2025, 09/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010295
+  Nome: DOSAGEM DE COLESTEROL TOTAL
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010317
+  Nome: DOSAGEM DE CREATININA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010325
+  Nome: DOSAGEM DE CREATINOFOSFOQUINASE (CPK)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010333
+  Nome: DOSAGEM DE CREATINOFOSFOQUINASE FRACAO MB
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010341
+  Nome: DOSAGEM DE DESIDROGENASE ALFA-HIDROXIBUTIRICA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010350
+  Nome: DOSAGEM DE DESIDROGENASE GLUTAMICA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010368
+  Nome: DOSAGEM DE DESIDROGENASE LATICA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010376
+  Nome: DOSAGEM DE DESIDROGENASE LATICA (ISOENZIMAS FRACIONADAS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010392
+  Nome: DOSAGEM DE FERRO SERICO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010414
+  Nome: DOSAGEM DE FOSFATASE ACIDA TOTAL
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010422
+  Nome: DOSAGEM DE FOSFATASE ALCALINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010430
+  Nome: DOSAGEM DE FOSFORO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010457
+  Nome: DOSAGEM DE GALACTOSE
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010465
+  Nome: DOSAGEM DE GAMA-GLUTAMIL-TRANSFERASE (GAMA GT)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010473
+  Nome: DOSAGEM DE GLICOSE
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010503
+  Nome: DOSAGEM DE HEMOGLOBINA GLICOSILADA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010538
+  Nome: DOSAGEM DE LACTATO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010554
+  Nome: DOSAGEM DE LIPASE
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010562
+  Nome: DOSAGEM DE MAGNESIO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010570
+  Nome: DOSAGEM DE MUCO-PROTEINAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010600
+  Nome: DOSAGEM DE POTASSIO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010619
+  Nome: DOSAGEM DE PROTEINAS TOTAIS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010627
+  Nome: DOSAGEM DE PROTEINAS TOTAIS E FRACOES
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010635
+  Nome: DOSAGEM DE SODIO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010643
+  Nome: DOSAGEM DE TRANSAMINASE GLUTAMICO-OXALACETICA (TGO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010651
+  Nome: DOSAGEM DE TRANSAMINASE GLUTAMICO-PIRUVICA (TGP)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010678
+  Nome: DOSAGEM DE TRIGLICERIDEOS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010694
+  Nome: DOSAGEM DE UREIA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010716
+  Nome: ELETROFORESE DE LIPOPROTEINAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010732
+  Nome: GASOMETRIA (PH PCO2 PO2 BICARBONATO AS2 (EXCESSO OU DEFICIT BASE )
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202010759
+  Nome: TESTE DE TOLERÂNCIA A INSULINA / HIPOGLICEMIANTES ORAIS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 09/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020010
+  Nome: CITOQUIMICA HEMATOLOGICA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020029
+  Nome: CONTAGEM DE PLAQUETAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020070
+  Nome: DETERMINAÇÃO DE TEMPO DE COAGULAÇÃO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020096
+  Nome: DETERMINAÇÃO DE TEMPO DE SANGRAMENTO -DUKE
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020100
+  Nome: DETERMINAÇÃO DE TEMPO DE SANGRAMENTO DE IVY
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020134
+  Nome: DETERMINAÇÃO DE TEMPO DE TROMBOPLASTINA PARCIAL ATIVADA (TTP ATIVADA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020142
+  Nome: DETERMINAÇÃO DE TEMPO E ATIVIDADE DA PROTROMBINA (TAP)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020150
+  Nome: DETERMINAÇÃO DE VELOCIDADE DE HEMOSSEDIMENTAÇÃO (VHS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020290
+  Nome: DOSAGEM DE FIBRINOGENIO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020304
+  Nome: DOSAGEM DE HEMOGLOBINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020380
+  Nome: HEMOGRAMA COMPLETO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020398
+  Nome: LEUCOGRAMA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 08/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020479
+  Nome: PROVA DE COMPATIBILIDADE PRE-TRANSFUSIONAL (MEIOS SALINOS, ALBUMINOSO E COOMBS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020487
+  Nome: PROVA DE CONSUMO DE PROTROMBINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020525
+  Nome: TESTE DE AGREGACAO DE PLAQUETAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202020541
+  Nome: TESTE DIRETO DE ANTIGLOBULINA HUMANA (TAD)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030040
+  Nome: DETECÇÃO DE ÁCIDOS NUCLEICOS DO HIV-1 (QUALITATIVO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025, 08/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030059
+  Nome: DETECÇÃO DE RNA DO VÍRUS DA HEPATITE C (QUALITATIVO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030083
+  Nome: DETERMINAÇÃO QUANTITATIVA DE PROTEÍNA C REATIVA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030202
+  Nome: DOSAGEM DE PROTEINA C REATIVA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030229
+  Nome: IMUNOELETROFORESE DE PROTEINAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030296
+  Nome: PESQUISA DE ANTICORPOS ANTI-HIV-1 (WESTERN BLOT/IMUNOBLOT)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030300
+  Nome: PESQUISA DE ANTICORPOS ANTI-HIV-1 + HIV-2 (ELISA)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030474
+  Nome: PESQUISA DE ANTICORPOS ANTIESTREPTOLISINA O (ASLO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030512
+  Nome: PESQUISA DE ANTICORPOS ANTIILHOTA DE LANGERHANS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 08/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030636
+  Nome: PESQUISA DE ANTICORPOS CONTRA ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (ANTI-HBS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030644
+  Nome: PESQUISA DE ANTICORPOS CONTRA ANTIGENO E DO VIRUS DA HEPATITE B (ANTI-HBE)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 06/2025, 07/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030679
+  Nome: PESQUISA DE ANTICORPOS CONTRA O VIRUS DA HEPATITE C (ANTI-HCV)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030806
+  Nome: PESQUISA DE ANTICORPOS IGG CONTRA O VIRUS DA HEPATITE A (ANTI-HAV-IGG)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030890
+  Nome: PESQUISA DE ANTICORPOS IGM CONTRA ANTIGENO CENTRAL DO VIRUS DA HEPATITE B (ANTI-HBC-IGM)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030970
+  Nome: PESQUISA DE ANTIGENO DE SUPERFICIE DO VIRUS DA HEPATITE B (HBSAG)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202030989
+  Nome: PESQUISA DE ANTIGENO E DO VIRUS DA HEPATITE B (HBEAG)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025, 07/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031004
+  Nome: PESQUISA DE CRIOGLOBULINAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031012
+  Nome: PESQUISA DE FATOR REUMATOIDE (WAALER-ROSE)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 03/2026
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031063
+  Nome: PROVAS IMUNO-ALERGICAS BACTERIANAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031071
+  Nome: QUANTIFICAÇÃO DE RNA DO HIV-1
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 03/2026, 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031098
+  Nome: TESTE TREPONEMICO P/ DETECÇÃO DE SIFILIS
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031101
+  Nome: REAÇÃO DE MONTENEGRO ID
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031110
+  Nome: TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS PARA POPULAÇÃO GERAL (EXCETO GESTANTE, PARCEIRO OU PARCERIA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202031179
+  Nome: TESTE NÃO TREPONEMICO P/ DETECÇÃO DE SIFILIS EM GESTANTES
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202040046
+  Nome: IDENTIFICACAO DE FRAGMENTOS DE HELMINTOS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 09/2025, 10/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202040127
+  Nome: PESQUISA DE OVOS E CISTOS DE PARASITAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050017
+  Nome: ANALISE DE CARACTERES FISICOS, ELEMENTOS E SEDIMENTO DA URINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050025
+  Nome: CLEARANCE DE CREATININA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 09/2025, 10/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050041
+  Nome: CLEARANCE DE UREIA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025, 09/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050076
+  Nome: IDENTIFICAÇÃO DE GLICÍDIOS URINÁRIOS POR CROMATOGRAFIA (CAMADA DELGADA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050092
+  Nome: DOSAGEM DE MICROALBUMINA NA URINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050114
+  Nome: DOSAGEM DE PROTEINAS (URINA DE 24 HORAS)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050122
+  Nome: DOSAGEM E/OU FRACIONAMENTO DE ACIDOS ORGANICOS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050165
+  Nome: PESQUISA DE AMINOACIDOS NA URINA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202050173
+  Nome: PESQUISA DE BETA-MERCAPTO-LACTATO-DISSULFIDURIA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 03/2026
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202060217
+  Nome: DOSAGEM DE GONADOTROFINA CORIONICA HUMANA (HCG, BETA HCG)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202070026
+  Nome: DOSAGEM DE ACIDO HIPURICO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 06/2025, 07/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202070298
+  Nome: DOSAGEM DE METOTREXATO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202080080
+  Nome: CULTURA DE BACTÉRIAS P/ IDENTIFICAÇÃO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202080153
+  Nome: HEMOCULTURA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202080196
+  Nome: PESQUISA DE ESTREPTOCOCOS BETA-HEMOLÍTICOS DO GRUPO A
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 06/2025, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090060
+  Nome: CONTAGEM GLOBAL DE CÉLULAS NO LÍQUOR
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090086
+  Nome: DOSAGEM DE CREATININA NO LIQUIDO AMNIOTICO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090140
+  Nome: DOSAGEM DE SÓDIO E CLORO NO SUOR (C/ COLETA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090230
+  Nome: PESQUISA DE CARACTERES FÍSICOS NO LIQUOR
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202090299
+  Nome: PROVA DO LATEX P/ HAEMOPHILLUS INFLUENZAE, STREPTOCOCCUS PNEUMONIAE, NEISSERIA MENINGITIDIS (SOROTIPOS A, B, C)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202120023
+  Nome: DETERMINACAO DIRETA E REVERSA DE GRUPO ABO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202120031
+  Nome: FENOTIPAGEM DE SISTEMA RH - HR
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 08/2025, 09/2025, 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202120040
+  Nome: IDENTIFICACAO DE ANTICORPOS SERICOS IRREGULARES C/ PAINEL DE HEMACIAS
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 09/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202120082
+  Nome: PESQUISA DE FATOR RH (INCLUI D FRACO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0202120090
+  Nome: TESTE INDIRETO DE ANTIGLOBULINA HUMANA (TIA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0204030080
+  Nome: RADIOGRAFIA DE ESOFAGO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0204030170
+  Nome: RADIOGRAFIA DE TORAX (PA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0204050138
+  Nome: RADIOGRAFIA DE ABDOMEN SIMPLES (AP)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0211020036
+  Nome: ELETROCARDIOGRAMA
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0211040061
+  Nome: TOCOCARDIOGRAFIA ANTE-PARTO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010015
+  Nome: GLICEMIA CAPILAR
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 02/2026, 06/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010040
+  Nome: TESTE RÁPIDO PARA DETECÇÃO DE HIV NA GESTANTE OU PAI/PARCEIRO
+  Complexidade: 
+  Financiamento: 
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010074
+  Nome: TESTE RÁPIDO TREPONÊMICO (SÍFILIS) PARA POPULAÇÃO GERAL(EXCETO GESTANTE, PARCEIRO OU PARCERIA)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 03/2026, 06/2025, 07/2025, 08/2025, 10/2025, 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010112
+  Nome: TESTE RÁPIDO PARA VÍRUS ZIKA IGG/IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 01/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010120
+  Nome: TESTE RÁPIDO PARA DENGUE IGG/IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0214010139
+  Nome: TESTE RÁPIDO PARA FEBRE CHIKUNGUNYA IGM
+  Complexidade: Atenção Básica
+  Financiamento: Vigilância em Saúde
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 08/2025, 09/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301010048
+  Nome: CONSULTA DE PROFISSIONAIS DE NIVEL SUPERIOR NA ATENÇÃO ESPECIALIZADA (EXCETO MÉDICO)
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301010137
+  Nome: CONSULTA/ATENDIMENTO DOMICILIAR
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 07/2025, 08/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301010170
+  Nome: CONSULTA/AVALIAÇÃO EM PACIENTE INTERNADO
+  Complexidade: Média Complexidade
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0301040141
+  Nome: INSERÇÃO DO DISPOSITIVO INTRA-UTERINO (DIU)
+  Complexidade: Atenção Básica
+  Financiamento: Atenção Básica (PAB)
+  Competencias: 01/2026, 02/2026, 03/2026, 06/2025, 07/2025, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
+CODIGO: 0310010055
+  Nome: PARTO NORMAL EM CENTRO DE PARTO NORMAL (CPN)
+  Complexidade: Média Complexidade
+  Financiamento: Incentivo - MAC
+  Competencias: 01/2026, 02/2026, 03/2026, 08/2025, 09/2025, 10/2025, 11/2025, 12/2025
+  ** Motivo provavel: financiamento por INCENTIVO (valor nao aparece na tabela)
+
+CODIGO: 0415010012
+  Nome: TRATAMENTO C/ CIRURGIAS MULTIPLAS
+  Complexidade: Não se Aplica
+  Financiamento: Média e Alta Complexidade (MAC)
+  Competencias: 02/2026, 12/2025
+  ** Motivo provavel: complexidade 'Nao se Aplica' - valor depende do contexto
+
+CODIGO: 0603030025
+  Nome: IMUNOGLOBULINA G 250 MG INJETAVEL (POR FRASCO)
+  Complexidade: 
+  Financiamento: 
+  Competencias: 06/2025
+  ** Motivo provavel: procedimento valorado por pontos/percentual ou sem custo direto
+
