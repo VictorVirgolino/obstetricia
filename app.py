@@ -244,8 +244,8 @@ def load_isea_data():
 
     df_resumo = pd.read_sql_query("""
         SELECT r.competencia,
-               COUNT(DISTINCT r.prontuario) as pacientes,
-               COUNT(*) as registros,
+               COUNT(DISTINCT r.cns_paciente) as pacientes,
+               COUNT(DISTINCT r.prontuario) as prontuarios,
                SUM(ap.qtd) as procedimentos,
                SUM(ap.qtd * COALESCE(sm.s_hosp, 0)) as total_sh,
                SUM(ap.qtd * COALESCE(sm.s_prof, 0)) as total_sp,
@@ -431,9 +431,11 @@ view = st.sidebar.radio(
         "Pactuacao vs Realizado",
         "Custos Detalhados (SUS)",
         "Custos Reais (SIGTAP)",
-        "ISEA - Producao Mensal",
+        "ISEA - Gastos Mensal",
         "ISEA - Procedimentos",
         "ISEA - Pacientes e Cidades",
+        "ISEA - Consulta Prontuario",
+        "Tabela SIGTAP",
     ],
 )
 
@@ -1319,8 +1321,8 @@ elif view == "Custos Reais (SIGTAP)":
 # 8. ISEA - PRODUCAO MENSAL
 # ══════════════════════════════════════════════════════════════════════════════
 
-elif view == "ISEA - Producao Mensal":
-    st.title("ISEA - Producao Mensal (Dados Scrapeados)")
+elif view == "ISEA - Gastos Mensal":
+    st.title("ISEA - Gastos Mensal (Dados Scrapeados)")
     st.caption("Dados extraidos diretamente do sistema hospitalar ISEA com valores SIGTAP")
 
     df_resumo, df_procs, df_cidades = load_isea_data()
@@ -1330,7 +1332,7 @@ elif view == "ISEA - Producao Mensal":
 
     # KPIs gerais
     tot_pac = df_resumo["pacientes"].sum()
-    tot_reg = df_resumo["registros"].sum()
+    tot_pront = df_resumo["prontuarios"].sum()
     tot_procs = df_resumo["procedimentos"].sum()
     tot_sh = df_resumo["total_sh"].sum()
     tot_sp = df_resumo["total_sp"].sum()
@@ -1343,7 +1345,7 @@ elif view == "ISEA - Producao Mensal":
 
     c4, c5, c6, c7 = st.columns(4)
     c4.metric("Pacientes (unicos)", fmt_int(tot_pac))
-    c5.metric("Registros (AIHs)", fmt_int(tot_reg))
+    c5.metric("Prontuarios", fmt_int(tot_pront))
     c6.metric("Procedimentos", fmt_int(tot_procs))
     c7.metric("Ticket Medio/Paciente", fmt_brl(tot_th / tot_pac if tot_pac else 0))
 
@@ -1400,7 +1402,7 @@ elif view == "ISEA - Producao Mensal":
     totais = pd.DataFrame([{
         "competencia": "TOTAL",
         "pacientes": tot_pac,
-        "registros": tot_reg,
+        "prontuarios": tot_pront,
         "procedimentos": tot_procs,
         "total_sh": tot_sh,
         "total_sp": tot_sp,
@@ -1414,7 +1416,7 @@ elif view == "ISEA - Producao Mensal":
     df_tab["total_sp"] = df_tab["total_sp"].apply(fmt_brl)
     df_tab["total_th"] = df_tab["total_th"].apply(fmt_brl)
     df_tab["ticket_medio"] = df_tab["ticket_medio"].apply(fmt_brl)
-    df_tab.columns = ["Competencia", "Pacientes", "Registros", "Procedimentos",
+    df_tab.columns = ["Competencia", "Pacientes", "Prontuarios", "Procedimentos",
                        "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar",
                        "Media Proc/Pac", "Ticket Medio"]
     st.dataframe(df_tab, use_container_width=True, hide_index=True)
@@ -1722,3 +1724,287 @@ elif view == "ISEA - Pacientes e Cidades":
         df_show.columns = ["Cidade", "Pacientes", "Registros", "Procedimentos",
                            "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar", "Ticket Medio"]
         st.dataframe(df_show, use_container_width=True, hide_index=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 11. ISEA - CONSULTA PRONTUARIO
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "ISEA - Consulta Prontuario":
+    st.title("ISEA - Consulta por Prontuario")
+    st.caption("Consulte os gastos detalhados de um prontuario especifico")
+
+    DB_PATH = os.path.join(DATA_DIR, "saude_real.db")
+    if not os.path.exists(DB_PATH):
+        st.error("Banco de dados nao encontrado. Execute o scraper primeiro.")
+        st.stop()
+
+    conn = sqlite3.connect(DB_PATH)
+
+    # Carregar competencias disponiveis
+    competencias = pd.read_sql_query(
+        "SELECT DISTINCT competencia FROM aih_records ORDER BY SUBSTR(competencia, 4, 4) || SUBSTR(competencia, 1, 2)",
+        conn
+    )["competencia"].tolist()
+
+    if not competencias:
+        st.warning("Nenhuma competencia encontrada no banco.")
+        conn.close()
+        st.stop()
+
+    col_f1, col_f2 = st.columns(2)
+    with col_f1:
+        comp_sel = st.selectbox("Competencia", competencias, key="pront_comp")
+    with col_f2:
+        # Carregar prontuarios com nome do paciente para facilitar a busca
+        df_pront = pd.read_sql_query("""
+            SELECT DISTINCT r.prontuario, COALESCE(p.nome, 'N/A') as nome
+            FROM aih_records r
+            LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+            WHERE r.competencia = ?
+            ORDER BY p.nome, r.prontuario
+        """, conn, params=[comp_sel])
+        opcoes = [f"{row['prontuario']} - {row['nome']}" for _, row in df_pront.iterrows()]
+        sel = st.selectbox("Prontuario", opcoes, key="pront_sel")
+        pront_sel = sel.split(" - ")[0] if sel else None
+
+    if not pront_sel:
+        st.info("Selecione um prontuario para consultar.")
+        conn.close()
+        st.stop()
+
+    # Dados do paciente e AIH
+    df_aih = pd.read_sql_query("""
+        SELECT r.prontuario, r.competencia, r.id_aih, r.data_ent, r.data_sai,
+               r.cid_principal, r.motivo_saida, r.medico_solic, r.medico_resp,
+               r.cns_paciente, r.observacao,
+               p.nome, p.dt_nasc, p.sexo, p.cidade, p.estado, p.nome_mae
+        FROM aih_records r
+        LEFT JOIN pacientes p ON r.cns_paciente = p.cns
+        WHERE r.prontuario = ? AND r.competencia = ?
+    """, conn, params=[pront_sel, comp_sel])
+
+    if df_aih.empty:
+        st.warning("Nenhum registro encontrado para este prontuario/competencia.")
+        conn.close()
+        st.stop()
+
+    # Dados do paciente (primeiro registro)
+    pac = df_aih.iloc[0]
+    st.subheader("Dados do Paciente")
+    cp1, cp2, cp3 = st.columns(3)
+    cp1.markdown(f"**Nome:** {pac['nome'] or 'N/A'}")
+    cp1.markdown(f"**CNS:** {pac['cns_paciente'] or 'N/A'}")
+    cp2.markdown(f"**Data Nascimento:** {pac['dt_nasc'] or 'N/A'}")
+    cp2.markdown(f"**Sexo:** {pac['sexo'] or 'N/A'}")
+    cp3.markdown(f"**Cidade:** {pac['cidade'] or 'N/A'} - {pac['estado'] or ''}")
+    cp3.markdown(f"**Mae:** {pac['nome_mae'] or 'N/A'}")
+
+    st.divider()
+
+    # Para cada AIH do prontuario nessa competencia
+    for idx, aih in df_aih.iterrows():
+        st.subheader(f"AIH: {aih['id_aih']}")
+
+        ca1, ca2, ca3, ca4 = st.columns(4)
+        ca1.markdown(f"**Entrada:** {aih['data_ent'] or 'N/A'}")
+        ca2.markdown(f"**Saida:** {aih['data_sai'] or 'N/A'}")
+        ca3.markdown(f"**CID:** {aih['cid_principal'] or 'N/A'}")
+        ca4.markdown(f"**Motivo Saida:** {aih['motivo_saida'] or 'N/A'}")
+
+        if aih['observacao']:
+            st.warning(f"Observacao: {aih['observacao']}")
+
+        # Procedimentos desta AIH
+        df_proc = pd.read_sql_query("""
+            SELECT ap.proc_cod as "Codigo",
+                   COALESCE(sm.nome, sm_any.nome, ap.proc_cod) as "Procedimento",
+                   ap.qtd as "Qtde",
+                   COALESCE(sm.s_hosp, 0) as sh_unit,
+                   COALESCE(sm.s_prof, 0) as sp_unit,
+                   COALESCE(sm.t_hosp, 0) as th_unit,
+                   ap.qtd * COALESCE(sm.s_hosp, 0) as "Serv. Hospitalar",
+                   ap.qtd * COALESCE(sm.s_prof, 0) as "Serv. Profissional",
+                   ap.qtd * COALESCE(sm.t_hosp, 0) as "Total Hospitalar"
+            FROM aih_procedimentos ap
+            LEFT JOIN sigtap_metadata sm ON sm.proc_cod = ap.proc_cod AND sm.competencia = ?
+            LEFT JOIN (
+                SELECT proc_cod, nome FROM sigtap_metadata GROUP BY proc_cod
+            ) sm_any ON sm_any.proc_cod = ap.proc_cod
+            WHERE ap.id_aih = ?
+            ORDER BY "Total Hospitalar" DESC
+        """, conn, params=[comp_sel, aih['id_aih']])
+
+        if df_proc.empty:
+            st.info("Nenhum procedimento registrado para esta AIH.")
+            continue
+
+        total_sh = df_proc["Serv. Hospitalar"].sum()
+        total_sp = df_proc["Serv. Profissional"].sum()
+        total_th = df_proc["Total Hospitalar"].sum()
+
+        # KPIs da AIH
+        ck1, ck2, ck3, ck4 = st.columns(4)
+        ck1.metric("Procedimentos", int(df_proc["Qtde"].sum()))
+        ck2.markdown(f"**Serv. Hospitalar**<br><span style='font-size:1.3em;'>{fmt_brl(total_sh)}</span>", unsafe_allow_html=True)
+        ck3.markdown(f"**Serv. Profissional**<br><span style='font-size:1.3em;'>{fmt_brl(total_sp)}</span>", unsafe_allow_html=True)
+        ck4.markdown(f"**Total Hospitalar**<br><span style='font-size:1.3em; color:#1976D2; font-weight:bold;'>{fmt_brl(total_th)}</span>", unsafe_allow_html=True)
+
+        # Tabela de procedimentos
+        df_show = df_proc.copy()
+        df_show["Valor Unit."] = df_show["th_unit"].apply(fmt_brl)
+        df_show["Serv. Hospitalar"] = df_show["Serv. Hospitalar"].apply(fmt_brl)
+        df_show["Serv. Profissional"] = df_show["Serv. Profissional"].apply(fmt_brl)
+        df_show["Total Hospitalar"] = df_show["Total Hospitalar"].apply(fmt_brl)
+        df_show = df_show[["Codigo", "Procedimento", "Qtde", "Valor Unit.", "Serv. Hospitalar", "Serv. Profissional", "Total Hospitalar"]]
+        st.dataframe(df_show, use_container_width=True, hide_index=True)
+
+        st.divider()
+
+    # Resumo geral do prontuario
+    df_all_procs = pd.read_sql_query("""
+        SELECT ap.qtd,
+               ap.qtd * COALESCE(sm.s_hosp, 0) as val_sh,
+               ap.qtd * COALESCE(sm.s_prof, 0) as val_sp,
+               ap.qtd * COALESCE(sm.t_hosp, 0) as val_th
+        FROM aih_records r
+        JOIN aih_procedimentos ap ON r.id_aih = ap.id_aih
+        LEFT JOIN sigtap_metadata sm ON sm.proc_cod = ap.proc_cod AND sm.competencia = r.competencia
+        WHERE r.prontuario = ? AND r.competencia = ?
+    """, conn, params=[pront_sel, comp_sel])
+
+    if len(df_aih) > 1:
+        st.subheader("Resumo Geral do Prontuario")
+        rk1, rk2, rk3, rk4, rk5 = st.columns(5)
+        rk1.metric("AIHs", len(df_aih))
+        rk2.metric("Total Procedimentos", int(df_all_procs["qtd"].sum()))
+        rk3.markdown(f"**Total SH**<br><h3 style='margin-top:0;'>{fmt_brl(df_all_procs['val_sh'].sum())}</h3>", unsafe_allow_html=True)
+        rk4.markdown(f"**Total SP**<br><h3 style='margin-top:0;'>{fmt_brl(df_all_procs['val_sp'].sum())}</h3>", unsafe_allow_html=True)
+        rk5.markdown(f"**Total Geral**<br><h2 style='margin-top:0; color:#1976D2;'>{fmt_brl(df_all_procs['val_th'].sum())}</h2>", unsafe_allow_html=True)
+
+    conn.close()
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 12. TABELA SIGTAP
+# ══════════════════════════════════════════════════════════════════════════════
+
+elif view == "Tabela SIGTAP":
+    st.title("Tabela SIGTAP - Valores de Procedimentos SUS")
+    st.caption("Valores oficiais da tabela unificada do SUS (DATASUS) por procedimento e competencia")
+
+    DB_PATH = os.path.join(DATA_DIR, "saude_real.db")
+    if not os.path.exists(DB_PATH):
+        st.error("Banco de dados nao encontrado.")
+        st.stop()
+
+    conn_sigtap = sqlite3.connect(DB_PATH)
+
+    df_sigtap = pd.read_sql_query("""
+        SELECT proc_cod, competencia, nome, complexidade, financiamento,
+               s_hosp, s_prof, t_hosp, s_amb, t_amb,
+               idade_min, idade_max, sexo, permanencia_media
+        FROM sigtap_metadata
+        ORDER BY nome, SUBSTR(competencia, 4, 4) || SUBSTR(competencia, 1, 2)
+    """, conn_sigtap)
+    conn_sigtap.close()
+
+    if df_sigtap.empty:
+        st.warning("Nenhum procedimento SIGTAP encontrado no banco.")
+        st.stop()
+
+    # Filtros
+    col_f1, col_f2 = st.columns(2)
+    with col_f1:
+        competencias_sig = sorted(df_sigtap["competencia"].unique().tolist(),
+                                  key=lambda c: c[3:] + c[:2])
+        comp_sel_sig = st.selectbox("Competencia", ["Todas"] + competencias_sig, key="sigtap_comp")
+    with col_f2:
+        complexidades = ["Todas"] + sorted(df_sigtap["complexidade"].dropna().unique().tolist())
+        complex_sel = st.selectbox("Complexidade", complexidades, key="sigtap_complex")
+
+    # Selecao de procedimento especifico
+    procs_unicos = df_sigtap.drop_duplicates("proc_cod")[["proc_cod", "nome"]].sort_values("nome")
+    opcoes_proc = ["Todos"] + [f"{row['proc_cod']} - {row['nome']}" for _, row in procs_unicos.iterrows()]
+    proc_sel = st.selectbox("Procedimento", opcoes_proc, key="sigtap_proc")
+
+    df_filt = df_sigtap.copy()
+    if comp_sel_sig != "Todas":
+        df_filt = df_filt[df_filt["competencia"] == comp_sel_sig]
+    if complex_sel != "Todas":
+        df_filt = df_filt[df_filt["complexidade"] == complex_sel]
+    if proc_sel != "Todos":
+        cod_sel = proc_sel.split(" - ")[0]
+        df_filt = df_filt[df_filt["proc_cod"] == cod_sel]
+
+    # KPIs
+    n_procs = df_filt["proc_cod"].nunique()
+    n_comps = df_filt["competencia"].nunique()
+    media_th = df_filt["t_hosp"].mean() if not df_filt.empty else 0
+    max_th = df_filt["t_hosp"].max() if not df_filt.empty else 0
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Procedimentos", fmt_int(n_procs))
+    c2.metric("Competencias", fmt_int(n_comps))
+    c3.markdown(f"**Valor Medio (TH)**<br><h3 style='margin-top:0;'>{fmt_brl(media_th)}</h3>", unsafe_allow_html=True)
+    c4.markdown(f"**Maior Valor (TH)**<br><h3 style='margin-top:0; color:#dc3545;'>{fmt_brl(max_th)}</h3>", unsafe_allow_html=True)
+
+    st.divider()
+
+    # Grafico top 15 procedimentos por valor
+    if comp_sel_sig != "Todas":
+        df_top = df_filt.nlargest(15, "t_hosp")
+    else:
+        df_top = df_filt.groupby(["proc_cod", "nome"]).agg(t_hosp=("t_hosp", "mean")).reset_index().nlargest(15, "t_hosp")
+
+    titulo_grafico = f"Top 15 Procedimentos por Valor Total Hospitalar ({comp_sel_sig})" if comp_sel_sig != "Todas" else "Top 15 Procedimentos por Valor Medio Total Hospitalar"
+    fig = px.bar(df_top, x="t_hosp", y="nome", orientation="h",
+                 color="t_hosp", color_continuous_scale="Blues", height=500,
+                 text=df_top["t_hosp"].apply(fmt_brl),
+                 title=titulo_grafico)
+    fig.update_layout(yaxis_title="", xaxis_title="Valor (R$)", yaxis=dict(autorange="reversed"))
+    fig.update_traces(textposition="outside")
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Composicao SH vs SP dos top procedimentos
+    if comp_sel_sig != "Todas":
+        df_comp_sig = df_filt.nlargest(10, "t_hosp")[["nome", "s_hosp", "s_prof"]].copy()
+    else:
+        df_comp_sig = df_filt.groupby("nome").agg(s_hosp=("s_hosp", "mean"), s_prof=("s_prof", "mean")).reset_index()
+        df_comp_sig["t_hosp"] = df_comp_sig["s_hosp"] + df_comp_sig["s_prof"]
+        df_comp_sig = df_comp_sig.nlargest(10, "t_hosp")[["nome", "s_hosp", "s_prof"]]
+
+    fig2 = go.Figure()
+    fig2.add_trace(go.Bar(x=df_comp_sig["nome"], y=df_comp_sig["s_hosp"], name="Serv. Hospitalar (SH)", marker_color="#1976D2"))
+    fig2.add_trace(go.Bar(x=df_comp_sig["nome"], y=df_comp_sig["s_prof"], name="Serv. Profissional (SP)", marker_color="#FF9800"))
+    fig2.update_layout(barmode="stack", title="Composicao SH vs SP - Top 10 Procedimentos",
+                       xaxis_tickangle=-45, yaxis_title="Valor (R$)", height=450)
+    st.plotly_chart(fig2, use_container_width=True)
+
+    st.divider()
+
+    # Evolucao de valor ao longo das competencias (se "Todas")
+    if comp_sel_sig == "Todas" and n_procs <= 20:
+        st.subheader("Evolucao de Valores por Competencia")
+        fig3 = go.Figure()
+        for proc in df_filt["proc_cod"].unique():
+            df_p = df_filt[df_filt["proc_cod"] == proc].sort_values("competencia", key=lambda s: s.str[3:] + s.str[:2])
+            nome_proc = df_p["nome"].iloc[0] if not df_p.empty else proc
+            fig3.add_trace(go.Scatter(x=df_p["competencia"], y=df_p["t_hosp"],
+                                      mode="lines+markers", name=nome_proc[:40]))
+        fig3.update_layout(height=450, yaxis_title="Total Hospitalar (R$)", xaxis_title="Competencia")
+        st.plotly_chart(fig3, use_container_width=True)
+        st.divider()
+
+    # Tabela completa
+    st.subheader("Tabela de Valores")
+    df_show = df_filt.copy()
+    df_show["s_hosp"] = df_show["s_hosp"].apply(fmt_brl)
+    df_show["s_prof"] = df_show["s_prof"].apply(fmt_brl)
+    df_show["t_hosp"] = df_show["t_hosp"].apply(fmt_brl)
+    df_show["s_amb"] = df_show["s_amb"].apply(fmt_brl)
+    df_show["t_amb"] = df_show["t_amb"].apply(fmt_brl)
+    df_show.columns = ["Codigo", "Competencia", "Procedimento", "Complexidade", "Financiamento",
+                        "Serv. Hosp.", "Serv. Prof.", "Total Hosp.", "Serv. Amb.", "Total Amb.",
+                        "Idade Min", "Idade Max", "Sexo", "Perm. Media (dias)"]
+    st.dataframe(df_show, use_container_width=True, hide_index=True)
