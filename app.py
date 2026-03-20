@@ -62,6 +62,7 @@ DATA_DIR = os.path.dirname(os.path.abspath(__file__))
 EXCEL_FILE = os.path.join(DATA_DIR, "Produção AIH's Obstetricia CG_ISEA_CLIPSI_2025.xlsx")
 CSV_PAES = os.path.join(DATA_DIR, "pactuacao_paes_2025.csv")
 CSV_ITENS = os.path.join(DATA_DIR, "itens_programacao.csv")
+DB_PATH = os.path.join(DATA_DIR, "saude_real.db")
 
 MESES = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
 BONUS_CLIPSI = 800.0
@@ -437,6 +438,9 @@ view = st.sidebar.radio(
         "ISEA - Consulta Prontuario",
         "Tabela SIGTAP",
         "Entradas com Problemas",
+        "Estatisticas de Internacao",
+        "Estatisticas de Urgencia",
+        "Qualidade (NAQ)",
     ],
 )
 
@@ -2167,3 +2171,838 @@ elif view == "Entradas com Problemas":
 
     # Resumo
     st.caption(f"Total de registros exibidos: {len(df_display)} de {len(df_prob)} com problemas ({len(df_all)} registros totais)")
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION: Estatisticas de Internacao
+# ══════════════════════════════════════════════════════════════════════════════
+elif view == "Estatisticas de Internacao":
+    st.title("Estatisticas de Internacao")
+    st.caption("Dados extraídos da tabela estat_internacao — internações de 2025-05-01 a 2026-03-18")
+
+    # ── Carrega dados ─────────────────────────────────────────────────────────
+    @st.cache_data(ttl=300)
+    def load_estat_internacao():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query("SELECT * FROM estat_internacao", conn)
+        conn.close()
+        df["dt_internacao"] = pd.to_datetime(df["dt_internacao"], errors="coerce")
+        df["dt_nascimento"] = pd.to_datetime(df["dt_nascimento"], errors="coerce")
+        # Parse hora_internacao to integer hour
+        def parse_hour(h):
+            if pd.isna(h) or str(h).strip() == "":
+                return None
+            try:
+                parts = str(h).strip().split(":")
+                return int(parts[0])
+            except Exception:
+                return None
+        df["hora_int"] = df["hora_internacao"].apply(parse_hour)
+        df["mes"] = df["dt_internacao"].dt.to_period("M").astype(str)
+        df["dia_semana"] = df["dt_internacao"].dt.day_name()
+        return df
+
+    df_intern = load_estat_internacao()
+
+    if df_intern.empty:
+        st.warning("Nenhum dado encontrado na tabela estat_internacao.")
+        st.stop()
+
+    # ── Filtros sidebar ───────────────────────────────────────────────────────
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("Filtros — Internacao")
+
+    dt_min = df_intern["dt_internacao"].min().date()
+    dt_max = df_intern["dt_internacao"].max().date()
+    date_range = st.sidebar.date_input(
+        "Período de internação",
+        value=(dt_min, dt_max),
+        min_value=dt_min,
+        max_value=dt_max,
+        format="DD/MM/YYYY",
+    )
+    if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
+        d_start, d_end = date_range
+    else:
+        d_start, d_end = dt_min, dt_max
+
+    clinicas_disponiveis = sorted(df_intern["clinica"].dropna().unique().tolist())
+    sel_clinica = st.sidebar.multiselect("Ala", clinicas_disponiveis, default=[])
+
+    espec_disponiveis = sorted(df_intern["especialidade"].dropna().unique().tolist())
+    sel_espec = st.sidebar.multiselect("Especialidade", espec_disponiveis, default=[])
+
+    cidades_disponiveis = sorted(df_intern["cidade"].dropna().unique().tolist())
+    sel_cidade = st.sidebar.multiselect("Cidade", cidades_disponiveis, default=[])
+
+    excluir_cg_intern = st.sidebar.checkbox("Excluir Campina Grande", value=False, key="excl_cg_intern")
+    agrup_intern = st.sidebar.radio("Agrupar por", ["Dia", "Mês"], index=1, key="agrup_intern")
+
+    # ── Aplica filtros ────────────────────────────────────────────────────────
+    mask = (
+        (df_intern["dt_internacao"].dt.date >= d_start) &
+        (df_intern["dt_internacao"].dt.date <= d_end)
+    )
+    if sel_clinica:
+        mask &= df_intern["clinica"].isin(sel_clinica)
+    if sel_espec:
+        mask &= df_intern["especialidade"].isin(sel_espec)
+    if sel_cidade:
+        mask &= df_intern["cidade"].isin(sel_cidade)
+    if excluir_cg_intern:
+        mask &= ~df_intern["cidade"].str.strip().str.upper().str.contains("CAMPINA GRANDE", na=False)
+
+    df_f = df_intern[mask].copy()
+
+    if df_f.empty:
+        st.warning("Nenhuma internação encontrada com os filtros selecionados.")
+        st.stop()
+
+    # ── KPI Cards ─────────────────────────────────────────────────────────────
+    total_intern = len(df_f)
+    n_dias = max((d_end - d_start).days, 1)
+    media_diaria = total_intern / n_dias
+    cidades_atendidas = df_f["cidade"].nunique()
+    top_espec = df_f["especialidade"].value_counts().idxmax() if not df_f["especialidade"].isna().all() else "N/A"
+
+    col_k1, col_k2, col_k3, col_k4 = st.columns(4)
+    col_k1.metric("Total de Internações", fmt_int(total_intern))
+    col_k2.metric("Média Diária", f"{media_diaria:.1f}")
+    col_k3.metric("Cidades Atendidas", fmt_int(cidades_atendidas))
+    col_k4.metric("Top Especialidade", top_espec)
+
+    st.divider()
+
+    COLORS_PROF = [
+        "#2563EB", "#16A34A", "#DC2626", "#D97706", "#7C3AED",
+        "#0891B2", "#DB2777", "#65A30D", "#EA580C", "#4338CA",
+    ]
+
+    # ── Chart 1: Internações por período ─────────────────────────────────────
+    if agrup_intern == "Mês":
+        st.subheader("Internações por Mês")
+        mes_counts = df_f.groupby("mes", observed=True).size().reset_index(name="internacoes")
+        mes_counts = mes_counts.sort_values("mes")
+        fig_mes = px.line(
+            mes_counts, x="mes", y="internacoes", markers=True,
+            labels={"mes": "Mês", "internacoes": "Internações"},
+            color_discrete_sequence=[COLORS_PROF[0]],
+        )
+        fig_mes.update_layout(xaxis_title="Mês", yaxis_title="Internações", height=350)
+    else:
+        st.subheader("Internações por Dia")
+        df_f["dia"] = df_f["dt_internacao"].dt.date
+        dia_counts = df_f.groupby("dia", observed=True).size().reset_index(name="internacoes")
+        dia_counts = dia_counts.sort_values("dia")
+        fig_mes = px.line(
+            dia_counts, x="dia", y="internacoes", markers=False,
+            labels={"dia": "Data", "internacoes": "Internações"},
+            color_discrete_sequence=[COLORS_PROF[0]],
+        )
+        fig_mes.update_layout(xaxis_title="Data", yaxis_title="Internações", height=350)
+    st.plotly_chart(fig_mes, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 2: Top 15 cidades ───────────────────────────────────────────────
+    st.subheader("Top 15 Cidades")
+    cidade_counts = df_f.groupby("cidade", observed=True).size().reset_index(name="internacoes")
+    cidade_counts = cidade_counts.sort_values("internacoes", ascending=False).head(15)
+    cidade_counts = cidade_counts.sort_values("internacoes", ascending=True)
+
+    fig_cidade = px.bar(
+        cidade_counts,
+        x="internacoes",
+        y="cidade",
+        orientation="h",
+        labels={"cidade": "Cidade", "internacoes": "Internações"},
+        color_discrete_sequence=[COLORS_PROF[1]],
+    )
+    fig_cidade.update_layout(yaxis_title="", xaxis_title="Internações", height=450)
+    st.plotly_chart(fig_cidade, use_container_width=True)
+
+    st.divider()
+
+    # ── Charts 3 e 4 lado a lado ──────────────────────────────────────────────
+    col3, col4 = st.columns(2)
+
+    with col3:
+        st.subheader("Distribuição por Especialidade")
+        espec_counts = df_f["especialidade"].value_counts().reset_index()
+        espec_counts.columns = ["especialidade", "count"]
+        top8 = espec_counts.head(8).copy()
+        outros_total = espec_counts.iloc[8:]["count"].sum()
+        if outros_total > 0:
+            outros_row = pd.DataFrame([{"especialidade": "Outros", "count": outros_total}])
+            top8 = pd.concat([top8, outros_row], ignore_index=True)
+        fig_donut = px.pie(
+            top8,
+            names="especialidade",
+            values="count",
+            hole=0.4,
+            color_discrete_sequence=COLORS_PROF,
+        )
+        fig_donut.update_traces(textposition="inside", textinfo="percent+label")
+        fig_donut.update_layout(showlegend=False, height=400)
+        st.plotly_chart(fig_donut, use_container_width=True)
+
+    with col4:
+        st.subheader("Internações por Dia da Semana × Hora")
+        ORDEM_SEMANA = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        NOMES_SEMANA = {"Monday": "Seg", "Tuesday": "Ter", "Wednesday": "Qua",
+                        "Thursday": "Qui", "Friday": "Sex", "Saturday": "Sab", "Sunday": "Dom"}
+        df_heat = df_f.dropna(subset=["hora_int", "dia_semana"]).copy()
+        if df_heat.empty:
+            st.info("Dados de hora insuficientes para o heatmap.")
+        else:
+            heat_data = df_heat.groupby(["dia_semana", "hora_int"], observed=True).size().reset_index(name="count")
+            heat_pivot = heat_data.pivot(index="dia_semana", columns="hora_int", values="count").fillna(0)
+            # Reindex para garantir ordem
+            dias_presentes = [d for d in ORDEM_SEMANA if d in heat_pivot.index]
+            heat_pivot = heat_pivot.reindex(dias_presentes)
+            heat_pivot.index = [NOMES_SEMANA.get(d, d) for d in heat_pivot.index]
+            fig_heat = px.imshow(
+                heat_pivot,
+                labels={"x": "Hora", "y": "Dia da Semana", "color": "Internações"},
+                color_continuous_scale="Blues",
+                aspect="auto",
+            )
+            fig_heat.update_layout(height=400, xaxis_title="Hora do Dia", yaxis_title="")
+            st.plotly_chart(fig_heat, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 5: Internações por clínica ao longo do tempo ───────────────────
+    if agrup_intern == "Mês":
+        st.subheader("Internações por Ala ao Longo dos Meses")
+        clinica_tempo = df_f.groupby(["mes", "clinica"], observed=True).size().reset_index(name="internacoes")
+        clinica_tempo = clinica_tempo.sort_values("mes")
+        x_col, x_label = "mes", "Mês"
+    else:
+        st.subheader("Internações por Ala ao Longo dos Dias")
+        df_f["dia"] = df_f["dt_internacao"].dt.date
+        clinica_tempo = df_f.groupby(["dia", "clinica"], observed=True).size().reset_index(name="internacoes")
+        clinica_tempo = clinica_tempo.sort_values("dia")
+        x_col, x_label = "dia", "Data"
+    fig_stack = px.bar(
+        clinica_tempo,
+        x=x_col,
+        y="internacoes",
+        color="clinica",
+        barmode="stack",
+        labels={x_col: x_label, "internacoes": "Internações", "clinica": "Ala"},
+        color_discrete_sequence=COLORS_PROF,
+    )
+    fig_stack.update_layout(xaxis_title=x_label, yaxis_title="Internações", height=400, legend_title="Ala")
+    st.plotly_chart(fig_stack, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 6: Treemap — Internações por Ala e Enfermaria ───────────────────
+    st.subheader("Internações por Ala e Enfermaria")
+    df_tree = df_f[df_f["enfermaria"].str.strip() != ""].copy()
+    if not df_tree.empty:
+        tree_data = df_tree.groupby(["clinica", "enfermaria"], observed=True).size().reset_index(name="internacoes")
+        fig_tree = px.treemap(
+            tree_data,
+            path=["clinica", "enfermaria"],
+            values="internacoes",
+            color="internacoes",
+            color_continuous_scale="Blues",
+            labels={"clinica": "Ala", "enfermaria": "Enfermaria", "internacoes": "Internações"},
+        )
+        fig_tree.update_layout(height=550, coloraxis_colorbar_title="Internações")
+        fig_tree.update_traces(textinfo="label+value")
+        st.plotly_chart(fig_tree, use_container_width=True)
+    else:
+        st.info("Sem dados de enfermaria para os filtros selecionados.")
+
+    st.divider()
+
+    # ── Tabela detalhada ──────────────────────────────────────────────────────
+    st.subheader("Tabela Detalhada de Internações")
+    colunas_tabela = ["prontuario", "paciente", "cpf", "cns", "dt_internacao", "hora_internacao",
+                      "cidade", "medico", "clinica", "enfermaria", "leito", "especialidade",
+                      "cid", "sexo", "idade", "atendente_responsavel"]
+    colunas_existentes = [c for c in colunas_tabela if c in df_f.columns]
+    df_tabela = df_f[colunas_existentes].copy()
+    df_tabela.columns = [c.replace("_", " ").title() for c in colunas_existentes]
+    st.dataframe(df_tabela, use_container_width=True, hide_index=True, height=500)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION: Estatisticas de Urgencia
+# ══════════════════════════════════════════════════════════════════════════════
+elif view == "Estatisticas de Urgencia":
+    st.title("Estatísticas de Urgência")
+    st.caption("Dados extraídos da tabela estat_urgencia — atendimentos de 2025-05-01 a 2026-03-18")
+
+    # ── Carrega dados ─────────────────────────────────────────────────────────
+    @st.cache_data(ttl=300)
+    def load_estat_urgencia():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query("SELECT * FROM estat_urgencia", conn)
+        conn.close()
+        df["dt_atendimento"] = pd.to_datetime(df["dt_atendimento"], errors="coerce")
+        df["dt_nascimento"] = pd.to_datetime(df["dt_nascimento"], errors="coerce")
+
+        def parse_hour(h):
+            if pd.isna(h) or str(h).strip() == "":
+                return None
+            try:
+                parts = str(h).strip().split(":")
+                return int(parts[0])
+            except Exception:
+                return None
+
+        df["hora_int"] = df["hora_atendimento"].apply(parse_hour)
+        df["mes"] = df["dt_atendimento"].dt.to_period("M").astype(str)
+        df["dia_semana"] = df["dt_atendimento"].dt.day_name()
+        return df
+
+    df_urg = load_estat_urgencia()
+
+    if df_urg.empty:
+        st.warning("Nenhum dado encontrado na tabela estat_urgencia.")
+        st.stop()
+
+    # ── Filtros sidebar ───────────────────────────────────────────────────────
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("Filtros — Urgência")
+
+    dt_min_urg = df_urg["dt_atendimento"].min().date()
+    dt_max_urg = df_urg["dt_atendimento"].max().date()
+    date_range_urg = st.sidebar.date_input(
+        "Período de atendimento",
+        value=(dt_min_urg, dt_max_urg),
+        min_value=dt_min_urg,
+        max_value=dt_max_urg,
+        format="DD/MM/YYYY",
+        key="urg_date_range",
+    )
+    if isinstance(date_range_urg, (list, tuple)) and len(date_range_urg) == 2:
+        d_start_urg, d_end_urg = date_range_urg
+    else:
+        d_start_urg, d_end_urg = dt_min_urg, dt_max_urg
+
+    status_disponiveis = sorted(df_urg["status_final"].dropna().unique().tolist())
+    sel_status = st.sidebar.multiselect("Status Final", status_disponiveis, default=[])
+
+    cidades_urg = sorted(df_urg["cidade"].dropna().unique().tolist())
+    sel_cidade_urg = st.sidebar.multiselect("Cidade", cidades_urg, default=[])
+
+    motivo_search = st.sidebar.text_input("Buscar motivo (texto)", value="")
+
+    excluir_cg_urg = st.sidebar.checkbox("Excluir Campina Grande", value=False, key="excl_cg_urg")
+    agrup_urg = st.sidebar.radio("Agrupar por", ["Dia", "Mês"], index=1, key="agrup_urg")
+
+    # ── Aplica filtros ────────────────────────────────────────────────────────
+    mask_urg = (
+        (df_urg["dt_atendimento"].dt.date >= d_start_urg) &
+        (df_urg["dt_atendimento"].dt.date <= d_end_urg)
+    )
+    if sel_status:
+        mask_urg &= df_urg["status_final"].isin(sel_status)
+    if sel_cidade_urg:
+        mask_urg &= df_urg["cidade"].isin(sel_cidade_urg)
+    if motivo_search.strip():
+        mask_urg &= df_urg["motivo"].str.contains(motivo_search.strip(), case=False, na=False)
+    if excluir_cg_urg:
+        mask_urg &= ~df_urg["cidade"].str.strip().str.upper().str.contains("CAMPINA GRANDE", na=False)
+
+    df_fu = df_urg[mask_urg].copy()
+
+    if df_fu.empty:
+        st.warning("Nenhum atendimento encontrado com os filtros selecionados.")
+        st.stop()
+
+    # ── KPI Cards ─────────────────────────────────────────────────────────────
+    total_urg = len(df_fu)
+    dias_urg = max((df_fu["dt_atendimento"].max() - df_fu["dt_atendimento"].min()).days, 1)
+    media_diaria_urg = total_urg / dias_urg
+
+    status_counts_urg = df_fu["status_final"].value_counts()
+    internados_urg = status_counts_urg.get("Internado", 0)
+    evadiu_urg = status_counts_urg.get("Evadiu", 0)
+    taxa_internacao_urg = (internados_urg / total_urg * 100) if total_urg > 0 else 0
+    taxa_evasao_urg = (evadiu_urg / total_urg * 100) if total_urg > 0 else 0
+
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Total de Atendimentos", fmt_int(total_urg))
+    col2.metric("Média Diária", f"{media_diaria_urg:.1f}")
+    col3.metric("Taxa de Internação", f"{taxa_internacao_urg:.1f}%")
+    col4.metric("Taxa de Evasão", f"{taxa_evasao_urg:.1f}%")
+
+    st.divider()
+
+    # ── Chart 1: Atendimentos por período ─────────────────────────────────────
+    if agrup_urg == "Mês":
+        st.subheader("Atendimentos por Mês")
+        atend_periodo = df_fu.groupby("mes", observed=True).size().reset_index(name="atendimentos")
+        atend_periodo = atend_periodo.sort_values("mes")
+        fig_line_urg = px.line(
+            atend_periodo, x="mes", y="atendimentos", markers=True,
+            labels={"mes": "Mês", "atendimentos": "Atendimentos"},
+        )
+        fig_line_urg.update_layout(xaxis_title="Mês", yaxis_title="Atendimentos", height=380)
+    else:
+        st.subheader("Atendimentos por Dia")
+        df_fu["dia"] = df_fu["dt_atendimento"].dt.date
+        atend_periodo = df_fu.groupby("dia", observed=True).size().reset_index(name="atendimentos")
+        atend_periodo = atend_periodo.sort_values("dia")
+        fig_line_urg = px.line(
+            atend_periodo, x="dia", y="atendimentos", markers=False,
+            labels={"dia": "Data", "atendimentos": "Atendimentos"},
+        )
+        fig_line_urg.update_layout(xaxis_title="Data", yaxis_title="Atendimentos", height=380)
+    st.plotly_chart(fig_line_urg, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 2: Distribuição por status final ────────────────────────────────
+    st.subheader("Distribuição por Status Final")
+    status_df = df_fu["status_final"].value_counts().reset_index()
+    status_df.columns = ["status_final", "quantidade"]
+
+    _status_color_map = {
+        "Alta": "#2ca02c",
+        "Internado": "#1f77b4",
+        "Retorno": "#ff7f0e",
+        "Evadiu": "#d62728",
+    }
+    status_df["cor"] = status_df["status_final"].map(
+        lambda s: _status_color_map.get(s, "#9467bd")
+    )
+    fig_bar_status = px.bar(
+        status_df,
+        x="status_final",
+        y="quantidade",
+        color="status_final",
+        color_discrete_map=_status_color_map,
+        labels={"status_final": "Status Final", "quantidade": "Quantidade"},
+        text="quantidade",
+    )
+    fig_bar_status.update_traces(textposition="outside")
+    fig_bar_status.update_layout(
+        xaxis_title="Status Final",
+        yaxis_title="Quantidade",
+        height=400,
+        showlegend=False,
+    )
+    st.plotly_chart(fig_bar_status, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 3: Top 10 motivos de atendimento ────────────────────────────────
+    st.subheader("Top 10 Motivos de Atendimento")
+    motivos_top = (
+        df_fu["motivo"].dropna().value_counts().head(10).reset_index()
+    )
+    motivos_top.columns = ["motivo", "quantidade"]
+    motivos_top = motivos_top.sort_values("quantidade")
+    fig_motivos = px.bar(
+        motivos_top,
+        x="quantidade",
+        y="motivo",
+        orientation="h",
+        labels={"motivo": "Motivo", "quantidade": "Quantidade"},
+        text="quantidade",
+    )
+    fig_motivos.update_traces(textposition="outside")
+    fig_motivos.update_layout(
+        xaxis_title="Quantidade",
+        yaxis_title="Motivo",
+        height=420,
+        yaxis={"categoryorder": "total ascending"},
+    )
+    st.plotly_chart(fig_motivos, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 4: Heatmap — atendimentos por dia da semana × hora ─────────────
+    st.subheader("Heatmap — Atendimentos por Dia da Semana × Hora")
+    _day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    _day_labels = {
+        "Monday": "Segunda",
+        "Tuesday": "Terça",
+        "Wednesday": "Quarta",
+        "Thursday": "Quinta",
+        "Friday": "Sexta",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo",
+    }
+    heatmap_df = (
+        df_fu.dropna(subset=["hora_int", "dia_semana"])
+        .groupby(["dia_semana", "hora_int"], observed=True)
+        .size()
+        .reset_index(name="quantidade")
+    )
+    heatmap_df["dia_semana_pt"] = heatmap_df["dia_semana"].map(_day_labels)
+    heatmap_pivot = heatmap_df.pivot_table(
+        index="dia_semana_pt", columns="hora_int", values="quantidade", fill_value=0
+    )
+    # Reorder rows
+    ordered_rows = [_day_labels[d] for d in _day_order if _day_labels[d] in heatmap_pivot.index]
+    heatmap_pivot = heatmap_pivot.reindex(ordered_rows)
+
+    fig_heat_urg = px.imshow(
+        heatmap_pivot,
+        labels={"x": "Hora do Dia", "y": "Dia da Semana", "color": "Atendimentos"},
+        color_continuous_scale="Blues",
+        aspect="auto",
+    )
+    fig_heat_urg.update_layout(
+        xaxis_title="Hora do Dia",
+        yaxis_title="Dia da Semana",
+        height=350,
+        coloraxis_colorbar_title="Atendimentos",
+    )
+    st.plotly_chart(fig_heat_urg, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 5: Top 15 cidades de origem ────────────────────────────────────
+    st.subheader("Top 15 Cidades de Origem")
+    cidades_top = (
+        df_fu["cidade"].dropna().value_counts().head(15).reset_index()
+    )
+    cidades_top.columns = ["cidade", "quantidade"]
+    cidades_top = cidades_top.sort_values("quantidade")
+    fig_cidades_urg = px.bar(
+        cidades_top,
+        x="quantidade",
+        y="cidade",
+        orientation="h",
+        labels={"cidade": "Cidade", "quantidade": "Quantidade"},
+        text="quantidade",
+    )
+    fig_cidades_urg.update_traces(textposition="outside")
+    fig_cidades_urg.update_layout(
+        xaxis_title="Quantidade",
+        yaxis_title="Cidade",
+        height=480,
+        yaxis={"categoryorder": "total ascending"},
+    )
+    st.plotly_chart(fig_cidades_urg, use_container_width=True)
+
+    st.divider()
+
+    # ── Tabela detalhada ──────────────────────────────────────────────────────
+    st.subheader("Tabela Detalhada de Atendimentos")
+    colunas_tabela_urg = [
+        "prontuario", "paciente", "cpf", "cns", "dt_atendimento", "hora_atendimento",
+        "cidade", "motivo", "gerador_ficha", "cid", "atendido_por",
+        "especialidade", "status_final", "hora_status_final",
+    ]
+    colunas_existentes_urg = [c for c in colunas_tabela_urg if c in df_fu.columns]
+    df_tabela_urg = df_fu[colunas_existentes_urg].copy()
+    df_tabela_urg.columns = [c.replace("_", " ").title() for c in colunas_existentes_urg]
+    st.dataframe(df_tabela_urg, use_container_width=True, hide_index=True, height=500)
+    st.caption(f"Exibindo {len(df_tabela_urg)} atendimentos com os filtros aplicados.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION: Qualidade (NAQ)
+# ══════════════════════════════════════════════════════════════════════════════
+elif view == "Qualidade (NAQ)":
+    st.title("Qualidade — NAQ")
+    st.caption("Indicadores de qualidade hospitalar extraídos das tabelas NAQ (taxa de ocupação, tempo de permanência, censo geral)")
+
+    # ── Carrega dados ─────────────────────────────────────────────────────────
+    @st.cache_data(ttl=300)
+    def load_naq_taxa_ocupacao():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query(
+            "SELECT * FROM naq_taxa_ocupacao ORDER BY data_inicio", conn
+        )
+        conn.close()
+        df["data_inicio"] = pd.to_datetime(df["data_inicio"], errors="coerce")
+        df["data_fim"] = pd.to_datetime(df["data_fim"], errors="coerce")
+        return df
+
+    @st.cache_data(ttl=300)
+    def load_naq_taxa_ocupacao_clinica():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query(
+            "SELECT * FROM naq_taxa_ocupacao_clinica ORDER BY data_inicio", conn
+        )
+        conn.close()
+        df["data_inicio"] = pd.to_datetime(df["data_inicio"], errors="coerce")
+        df["data_fim"] = pd.to_datetime(df["data_fim"], errors="coerce")
+        return df
+
+    @st.cache_data(ttl=300)
+    def load_naq_taxa_ocupacao_detalhe():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query(
+            "SELECT * FROM naq_taxa_ocupacao_detalhe ORDER BY data_inicio", conn
+        )
+        conn.close()
+        df["data_inicio"] = pd.to_datetime(df["data_inicio"], errors="coerce")
+        df["data_fim"] = pd.to_datetime(df["data_fim"], errors="coerce")
+        df["dt_internacao"] = pd.to_datetime(df["dt_internacao"], errors="coerce")
+        df["tempo_perm_periodo"] = pd.to_numeric(df["tempo_perm_periodo"], errors="coerce")
+        df["tempo_perm_total"] = pd.to_numeric(df["tempo_perm_total"], errors="coerce")
+        return df
+
+    @st.cache_data(ttl=300)
+    def load_naq_censo_geral():
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query(
+            "SELECT * FROM naq_censo_geral ORDER BY data_consulta", conn
+        )
+        conn.close()
+        df["data_consulta"] = pd.to_datetime(df["data_consulta"], errors="coerce")
+        df["dias_internacao"] = pd.to_numeric(df["dias_internacao"], errors="coerce")
+        return df
+
+    df_ocu = load_naq_taxa_ocupacao()
+    df_ocu_cli = load_naq_taxa_ocupacao_clinica()
+    df_det = load_naq_taxa_ocupacao_detalhe()
+    df_censo = load_naq_censo_geral()
+
+    if df_ocu.empty:
+        st.warning("Nenhum dado encontrado nas tabelas NAQ.")
+        st.stop()
+
+    # ── Cria label de período (ex: "Mai/25") ──────────────────────────────────
+    _mes_ptbr = {1: "Jan", 2: "Fev", 3: "Mar", 4: "Abr", 5: "Mai", 6: "Jun",
+                 7: "Jul", 8: "Ago", 9: "Set", 10: "Out", 11: "Nov", 12: "Dez"}
+
+    def _period_label(row):
+        try:
+            m = row["data_inicio"].month
+            y = str(row["data_inicio"].year)[2:]
+            return f"{_mes_ptbr.get(m, str(m))}/{y}"
+        except Exception:
+            return str(row["data_inicio"])
+
+    df_ocu = df_ocu.sort_values("data_inicio").reset_index(drop=True)
+    df_ocu["periodo"] = df_ocu.apply(_period_label, axis=1)
+
+    # ── KPI Cards (mês mais recente) ──────────────────────────────────────────
+    latest = df_ocu.iloc[-1]
+    prev = df_ocu.iloc[-2] if len(df_ocu) >= 2 else None
+
+    taxa_atual = float(latest["taxa_ocupacao"]) if pd.notna(latest["taxa_ocupacao"]) else 0.0
+    tmp_atual = float(latest["tempo_medio_perm"]) if pd.notna(latest["tempo_medio_perm"]) else 0.0
+    mpd_atual = float(latest["media_pac_dia"]) if pd.notna(latest["media_pac_dia"]) else 0.0
+
+    delta_taxa = None
+    if prev is not None and pd.notna(prev["taxa_ocupacao"]):
+        delta_taxa = taxa_atual - float(prev["taxa_ocupacao"])
+
+    # Leitos monitorados: última data_consulta do censo
+    total_leitos_monit = 0
+    if not df_censo.empty:
+        ultima_consulta = df_censo["data_consulta"].max()
+        df_censo_latest = df_censo[df_censo["data_consulta"] == ultima_consulta]
+        total_leitos_monit = len(df_censo_latest)
+
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(
+        "Taxa de Ocupação Atual (%)",
+        f"{taxa_atual:.1f}%",
+        delta=f"{delta_taxa:+.1f}%" if delta_taxa is not None else None,
+    )
+    col2.metric("Tempo Médio de Permanência (dias)", f"{tmp_atual:.1f}")
+    col3.metric("Média de Pacientes/Dia", f"{mpd_atual:.1f}")
+    col4.metric("Leitos Monitorados (censo)", fmt_int(total_leitos_monit))
+
+    st.divider()
+
+    # ── Chart 1 & 2: Evolução (lado a lado) ───────────────────────────────────
+    col_l, col_r = st.columns(2)
+
+    with col_l:
+        st.subheader("Evolução da Taxa de Ocupação")
+        fig_ocu = px.line(
+            df_ocu,
+            x="periodo",
+            y="taxa_ocupacao",
+            markers=True,
+            labels={"periodo": "Período", "taxa_ocupacao": "Taxa de Ocupação (%)"},
+        )
+        fig_ocu.update_traces(line_color="#1f77b4", marker_size=8)
+        fig_ocu.add_hline(y=100, line_dash="dash", line_color="red",
+                          annotation_text="100%", annotation_position="top right")
+        fig_ocu.update_layout(
+            xaxis_title="Período",
+            yaxis_title="Taxa de Ocupação (%)",
+            height=380,
+        )
+        st.plotly_chart(fig_ocu, use_container_width=True)
+
+    with col_r:
+        st.subheader("Evolução do Tempo Médio de Permanência")
+        fig_tmp = px.line(
+            df_ocu,
+            x="periodo",
+            y="tempo_medio_perm",
+            markers=True,
+            labels={"periodo": "Período", "tempo_medio_perm": "Tempo Médio (dias)"},
+        )
+        fig_tmp.update_traces(line_color="#ff7f0e", marker_size=8)
+        fig_tmp.update_layout(
+            xaxis_title="Período",
+            yaxis_title="Tempo Médio de Permanência (dias)",
+            height=380,
+        )
+        st.plotly_chart(fig_tmp, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 3: Ocupação por Clínica (período mais recente) ──────────────────
+    st.subheader("Ocupação por Ala — Período Mais Recente")
+    if not df_ocu_cli.empty:
+        ultima_data_cli = df_ocu_cli["data_inicio"].max()
+        df_cli_latest = df_ocu_cli[df_ocu_cli["data_inicio"] == ultima_data_cli].copy()
+        df_cli_latest["ocupados"] = pd.to_numeric(df_cli_latest["ocupados"], errors="coerce").fillna(0)
+        df_cli_latest = df_cli_latest.sort_values("ocupados", ascending=False)
+        fig_cli = px.bar(
+            df_cli_latest,
+            x="clinica",
+            y="ocupados",
+            labels={"clinica": "Ala", "ocupados": "Pacientes Ocupados"},
+            text="ocupados",
+            color="ocupados",
+            color_continuous_scale="Blues",
+        )
+        fig_cli.update_traces(textposition="outside")
+        fig_cli.update_layout(
+            xaxis_title="Ala",
+            yaxis_title="Pacientes Ocupados",
+            height=420,
+            coloraxis_showscale=False,
+        )
+        st.plotly_chart(fig_cli, use_container_width=True)
+    else:
+        st.info("Sem dados de ocupação por ala.")
+
+    st.divider()
+
+    # ── Chart 4: Gauge — Taxa de Ocupação Atual ────────────────────────────────
+    st.subheader("Gauge — Taxa de Ocupação Atual")
+    fig_gauge = go.Figure(
+        go.Indicator(
+            mode="gauge+number+delta",
+            value=taxa_atual,
+            delta={"reference": float(prev["taxa_ocupacao"]) if prev is not None and pd.notna(prev["taxa_ocupacao"]) else taxa_atual,
+                   "valueformat": ".1f"},
+            number={"suffix": "%", "valueformat": ".1f"},
+            title={"text": f"Taxa de Ocupação — {latest['periodo'] if 'periodo' in latest else ''}"},
+            gauge={
+                "axis": {"range": [0, max(200, taxa_atual * 1.2)], "ticksuffix": "%"},
+                "bar": {"color": "#1f77b4"},
+                "steps": [
+                    {"range": [0, 80], "color": "#2ca02c"},
+                    {"range": [80, 100], "color": "#ffbf00"},
+                    {"range": [100, max(200, taxa_atual * 1.2)], "color": "#d62728"},
+                ],
+                "threshold": {
+                    "line": {"color": "black", "width": 4},
+                    "thickness": 0.75,
+                    "value": 100,
+                },
+            },
+        )
+    )
+    fig_gauge.update_layout(height=380)
+    st.plotly_chart(fig_gauge, use_container_width=True)
+
+    st.divider()
+
+    # ── Chart 5: Box Plot — Tempo de Permanência por Clínica ──────────────────
+    st.subheader("Distribuição do Tempo de Permanência por Ala")
+    if not df_det.empty:
+        df_box = df_det.dropna(subset=["tempo_perm_periodo", "clinica"]).copy()
+        df_box = df_box[df_box["tempo_perm_periodo"] <= 60]  # filtra outliers > 60 dias
+        df_box = df_box[df_box["tempo_perm_periodo"] >= 0]
+        if not df_box.empty:
+            clinica_order = (
+                df_box.groupby("clinica")["tempo_perm_periodo"]
+                .median()
+                .sort_values(ascending=False)
+                .index.tolist()
+            )
+            fig_box = px.box(
+                df_box,
+                x="clinica",
+                y="tempo_perm_periodo",
+                category_orders={"clinica": clinica_order},
+                labels={"clinica": "Ala", "tempo_perm_periodo": "Tempo de Permanência (dias)"},
+                color="clinica",
+            )
+            fig_box.update_layout(
+                xaxis_title="Ala",
+                yaxis_title="Tempo de Permanência no Período (dias)",
+                height=460,
+                showlegend=False,
+            )
+            st.plotly_chart(fig_box, use_container_width=True)
+        else:
+            st.info("Sem dados suficientes para o box plot após filtro de outliers.")
+    else:
+        st.info("Sem dados de detalhe de ocupação.")
+
+    st.divider()
+
+    # ── Chart 6: Censo Hospitalar — Leitos Ocupados vs Vagos por Clínica ──────
+    st.subheader("Censo Hospitalar — Leitos Ocupados vs Vagos por Ala")
+    if not df_censo.empty:
+        ultima_consulta_censo = df_censo["data_consulta"].max()
+        df_censo_snap = df_censo[df_censo["data_consulta"] == ultima_consulta_censo].copy()
+        df_censo_snap["status_leito"] = df_censo_snap["paciente"].apply(
+            lambda p: "Vago" if str(p).strip().upper() == "VAGO" else "Ocupado"
+        )
+        censo_agg = (
+            df_censo_snap.groupby(["clinica", "status_leito"])
+            .size()
+            .reset_index(name="quantidade")
+        )
+        total_por_clinica = censo_agg.groupby("clinica")["quantidade"].sum().sort_values(ascending=False)
+        clinica_order_censo = total_por_clinica.index.tolist()
+
+        fig_censo = px.bar(
+            censo_agg,
+            x="quantidade",
+            y="clinica",
+            color="status_leito",
+            orientation="h",
+            category_orders={"clinica": clinica_order_censo, "status_leito": ["Ocupado", "Vago"]},
+            color_discrete_map={"Ocupado": "#1f77b4", "Vago": "#aec7e8"},
+            labels={"clinica": "Ala", "quantidade": "Leitos", "status_leito": "Status"},
+            barmode="stack",
+        )
+        fig_censo.update_layout(
+            xaxis_title="Número de Leitos",
+            yaxis_title="Ala",
+            height=520,
+            legend_title="Status do Leito",
+        )
+        data_label = ultima_consulta_censo.strftime("%d/%m/%Y") if pd.notna(ultima_consulta_censo) else "N/A"
+        st.caption(f"Snapshot do censo hospitalar em {data_label}")
+        st.plotly_chart(fig_censo, use_container_width=True)
+    else:
+        st.info("Sem dados de censo geral.")
+
+    st.divider()
+
+    # ── Tabela: Top 20 pacientes com maior tempo de internação ────────────────
+    st.subheader("Top 20 Pacientes com Maior Tempo de Internação")
+    if not df_det.empty:
+        df_top20 = (
+            df_det.dropna(subset=["tempo_perm_total", "paciente"])
+            .sort_values("tempo_perm_total", ascending=False)
+            .drop_duplicates(subset=["prontuario"])
+            .head(20)
+        )
+        colunas_top20 = [
+            "prontuario", "paciente", "clinica", "especialidade",
+            "cidade", "medico", "dt_internacao", "tempo_perm_total",
+        ]
+        colunas_existentes_top20 = [c for c in colunas_top20 if c in df_top20.columns]
+        df_top20_display = df_top20[colunas_existentes_top20].copy()
+        df_top20_display.columns = [c.replace("_", " ").title() for c in colunas_existentes_top20]
+        st.dataframe(df_top20_display, use_container_width=True, hide_index=True)
+    else:
+        st.info("Sem dados de detalhe para exibir ranking de pacientes.")

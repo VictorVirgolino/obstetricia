@@ -78,6 +78,173 @@ def create_tables():
     )
     """)
 
+    # === TABELAS DO MÓDULO DIRETORIA ===
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS estat_internacao (
+        prontuario TEXT,
+        paciente TEXT,
+        cpf TEXT,
+        cns TEXT,
+        nome_mae TEXT,
+        dt_nascimento TEXT,
+        dt_internacao TEXT,
+        hora_internacao TEXT,
+        cidade TEXT,
+        medico TEXT,
+        clinica TEXT,
+        enfermaria TEXT,
+        leito TEXT,
+        especialidade TEXT,
+        cid TEXT,
+        sexo TEXT,
+        idade TEXT,
+        atendente_responsavel TEXT,
+        PRIMARY KEY (prontuario, dt_internacao, hora_internacao)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS estat_urgencia (
+        prontuario TEXT,
+        paciente TEXT,
+        cpf TEXT,
+        cns TEXT,
+        nome_mae TEXT,
+        dt_nascimento TEXT,
+        dt_atendimento TEXT,
+        hora_atendimento TEXT,
+        cidade TEXT,
+        motivo TEXT,
+        gerador_ficha TEXT,
+        cid TEXT,
+        atendido_por TEXT,
+        especialidade TEXT,
+        status_final TEXT,
+        hora_status_final TEXT,
+        PRIMARY KEY (prontuario, dt_atendimento, hora_atendimento)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_taxa_ocupacao (
+        data_inicio TEXT,
+        data_fim TEXT,
+        taxa_ocupacao REAL,
+        tempo_medio_perm REAL,
+        media_pac_dia REAL,
+        PRIMARY KEY (data_inicio, data_fim)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_taxa_ocupacao_detalhe (
+        prontuario TEXT,
+        paciente TEXT,
+        nome_mae TEXT,
+        dt_nascimento TEXT,
+        dt_internacao TEXT,
+        alta TEXT,
+        cidade TEXT,
+        medico TEXT,
+        especialidade TEXT,
+        clinica TEXT,
+        enfermaria TEXT,
+        leito TEXT,
+        tempo_perm_periodo INTEGER,
+        tempo_perm_total INTEGER,
+        data_inicio TEXT,
+        data_fim TEXT,
+        PRIMARY KEY (prontuario, dt_internacao, data_inicio, data_fim)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_taxa_ocupacao_clinica (
+        clinica TEXT,
+        ocupados INTEGER,
+        data_inicio TEXT,
+        data_fim TEXT,
+        PRIMARY KEY (clinica, data_inicio, data_fim)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_censo_geral (
+        clinica TEXT,
+        enfermaria TEXT,
+        leitos TEXT,
+        prontuario TEXT,
+        paciente TEXT,
+        idade TEXT,
+        cidade TEXT,
+        diagnostico TEXT,
+        especialidade TEXT,
+        dias_internacao TEXT,
+        dt_internacao TEXT,
+        previsao_alta TEXT,
+        data_consulta TEXT,
+        PRIMARY KEY (prontuario, clinica, enfermaria, leitos, data_consulta)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_censo_geral_cidade (
+        cidade TEXT,
+        clinica TEXT,
+        enfermaria TEXT,
+        leitos TEXT,
+        prontuario TEXT,
+        paciente TEXT,
+        idade TEXT,
+        diagnostico TEXT,
+        especialidade TEXT,
+        dias_internacao TEXT,
+        dt_internacao TEXT,
+        previsao_alta TEXT,
+        data_inicio TEXT,
+        data_fim TEXT,
+        PRIMARY KEY (prontuario, clinica, enfermaria, leitos, data_inicio, data_fim)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_tempo_espera_internacao (
+        prontuario TEXT,
+        paciente TEXT,
+        dt_atendimento TEXT,
+        hora_atendimento TEXT,
+        dt_internacao TEXT,
+        hora_internacao TEXT,
+        tempo_espera TEXT,
+        cidade TEXT,
+        clinica TEXT,
+        especialidade TEXT,
+        data_inicio TEXT,
+        data_fim TEXT,
+        PRIMARY KEY (prontuario, dt_atendimento, hora_atendimento, data_inicio, data_fim)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS naq_tempo_atendimento_cr (
+        prontuario TEXT,
+        paciente TEXT,
+        dt_atendimento TEXT,
+        hora_atendimento TEXT,
+        classificacao TEXT,
+        cor TEXT,
+        hora_classificacao TEXT,
+        hora_atendimento_medico TEXT,
+        tempo_espera TEXT,
+        cidade TEXT,
+        motivo TEXT,
+        data_inicio TEXT,
+        data_fim TEXT,
+        PRIMARY KEY (prontuario, dt_atendimento, hora_atendimento, data_inicio, data_fim)
+    )
+    """)
+
     # View com custo mais recente por procedimento
     cursor.execute("DROP VIEW IF EXISTS sigtap_custo_atual")
     cursor.execute("""
@@ -482,6 +649,222 @@ def get_costs_by_city():
     rows = [dict(r) for r in cursor.fetchall()]
     conn.close()
     return rows
+
+
+def save_estat_internacao_batch(records, data_inicio, data_fim):
+    """Save internação statistics records in a single transaction."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        # Clear existing data for this period
+        cursor.execute("DELETE FROM estat_internacao WHERE dt_internacao >= ? AND dt_internacao <= ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO estat_internacao
+            (prontuario, paciente, cpf, cns, nome_mae, dt_nascimento,
+             dt_internacao, hora_internacao, cidade, medico, clinica,
+             enfermaria, leito, especialidade, cid, sexo, idade, atendente_responsavel)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r['prontuario'], r['paciente'], r['cpf'], r['cns'], r['nome_mae'],
+                  r['dt_nascimento'], r['dt_internacao'], r['hora_internacao'],
+                  r['cidade'], r['medico'], r['clinica'], r['enfermaria'], r['leito'],
+                  r['especialidade'], r['cid'], r['sexo'], r['idade'], r['atendente_responsavel']))
+        conn.commit()
+        return len(records)
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_estat_urgencia_batch(records, data_inicio, data_fim):
+    """Save urgência statistics records in a single transaction."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM estat_urgencia WHERE dt_atendimento >= ? AND dt_atendimento <= ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO estat_urgencia
+            (prontuario, paciente, cpf, cns, nome_mae, dt_nascimento,
+             dt_atendimento, hora_atendimento, cidade, motivo, gerador_ficha,
+             cid, atendido_por, especialidade, status_final, hora_status_final)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r['prontuario'], r['paciente'], r['cpf'], r['cns'], r['nome_mae'],
+                  r['dt_nascimento'], r['dt_atendimento'], r['hora_atendimento'],
+                  r['cidade'], r['motivo'], r['gerador_ficha'], r['cid'],
+                  r['atendido_por'], r['especialidade'], r['status_final'], r['hora_status_final']))
+        conn.commit()
+        return len(records)
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_taxa_ocupacao(data_inicio, data_fim, resumo, detalhes):
+    """Save taxa de ocupação summary + details."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_taxa_ocupacao WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        cursor.execute("DELETE FROM naq_taxa_ocupacao_detalhe WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        if resumo:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_taxa_ocupacao (data_inicio, data_fim, taxa_ocupacao, tempo_medio_perm, media_pac_dia)
+            VALUES (?, ?, ?, ?, ?)
+            """, (data_inicio, data_fim, resumo['taxa_ocupacao'], resumo['tempo_medio_perm'], resumo['media_pac_dia']))
+        for r in detalhes:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_taxa_ocupacao_detalhe
+            (prontuario, paciente, nome_mae, dt_nascimento, dt_internacao, alta,
+             cidade, medico, especialidade, clinica, enfermaria, leito,
+             tempo_perm_periodo, tempo_perm_total, data_inicio, data_fim)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r['prontuario'], r['paciente'], r['nome_mae'], r['dt_nascimento'],
+                  r['dt_internacao'], r['alta'], r['cidade'], r['medico'], r['especialidade'],
+                  r['clinica'], r['enfermaria'], r['leito'],
+                  r['tempo_perm_periodo'], r['tempo_perm_total'], data_inicio, data_fim))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_taxa_ocupacao_clinica(data_inicio, data_fim, records):
+    """Save taxa de ocupação por clínica."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_taxa_ocupacao_clinica WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_taxa_ocupacao_clinica (clinica, ocupados, data_inicio, data_fim)
+            VALUES (?, ?, ?, ?)
+            """, (r['clinica'], r['ocupados'], data_inicio, data_fim))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_censo_geral(data_consulta, records):
+    """Save censo geral data."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_censo_geral WHERE data_consulta = ?", (data_consulta,))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_censo_geral
+            (clinica, enfermaria, leitos, prontuario, paciente, idade,
+             cidade, diagnostico, especialidade, dias_internacao, dt_internacao,
+             previsao_alta, data_consulta)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r['clinica'], r['enfermaria'], r['leitos'], r['prontuario'],
+                  r['paciente'], r['idade'], r['cidade'], r['diagnostico'],
+                  r['especialidade'], r['dias_internacao'], r['dt_internacao'],
+                  r['previsao_alta'], data_consulta))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_censo_geral_cidade(data_inicio, data_fim, records):
+    """Save censo geral por cidade."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_censo_geral_cidade WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_censo_geral_cidade
+            (cidade, clinica, enfermaria, leitos, prontuario, paciente, idade,
+             diagnostico, especialidade, dias_internacao, dt_internacao,
+             previsao_alta, data_inicio, data_fim)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r.get('cidade',''), r.get('clinica',''), r.get('enfermaria',''),
+                  r.get('leitos',''), r.get('prontuario',''), r.get('paciente',''),
+                  r.get('idade',''), r.get('diagnostico',''), r.get('especialidade',''),
+                  r.get('dias_internacao',''), r.get('dt_internacao',''),
+                  r.get('previsao_alta',''), data_inicio, data_fim))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_tempo_espera(data_inicio, data_fim, records):
+    """Save tempo de espera para internação."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_tempo_espera_internacao WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_tempo_espera_internacao
+            (prontuario, paciente, dt_atendimento, hora_atendimento,
+             dt_internacao, hora_internacao, tempo_espera, cidade, clinica,
+             especialidade, data_inicio, data_fim)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r.get('prontuario',''), r.get('paciente',''),
+                  r.get('dt_atendimento',''), r.get('hora_atendimento',''),
+                  r.get('dt_internacao',''), r.get('hora_internacao',''),
+                  r.get('tempo_espera',''), r.get('cidade',''),
+                  r.get('clinica',''), r.get('especialidade',''),
+                  data_inicio, data_fim))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
+def save_naq_tempo_atendimento_cr(data_inicio, data_fim, records):
+    """Save tempo de atendimento classificação de risco."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM naq_tempo_atendimento_cr WHERE data_inicio = ? AND data_fim = ?",
+                        (data_inicio, data_fim))
+        for r in records:
+            cursor.execute("""
+            INSERT OR REPLACE INTO naq_tempo_atendimento_cr
+            (prontuario, paciente, dt_atendimento, hora_atendimento,
+             classificacao, cor, hora_classificacao, hora_atendimento_medico,
+             tempo_espera, cidade, motivo, data_inicio, data_fim)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (r.get('prontuario',''), r.get('paciente',''),
+                  r.get('dt_atendimento',''), r.get('hora_atendimento',''),
+                  r.get('classificacao',''), r.get('cor',''),
+                  r.get('hora_classificacao',''), r.get('hora_atendimento_medico',''),
+                  r.get('tempo_espera',''), r.get('cidade',''),
+                  r.get('motivo',''), data_inicio, data_fim))
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":

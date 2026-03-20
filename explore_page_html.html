@@ -1,0 +1,752 @@
+<html lang="en"><head></head><body>﻿﻿﻿﻿﻿﻿﻿
+﻿﻿﻿﻿﻿
+﻿
+<style type="text/css">
+      
+	 
+	     #escondeisso
+       {
+            display:none;
+       }
+	      div.table {
+    overflow-x: scroll;
+}
+th, td {
+    min-width: 50px; /* width/largura das células à escolha */
+}
+</style>
+﻿<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+ 
+
+
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SISTEMA JC</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="../assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
+  
+  <script type="text/javascript" src="js/jquery-1.3.2.min"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+
+
+
+   
+<div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" href="PAGINA DE LOGIN.php">
+            <img src="../assets/images/jc-software-svg-white.svg" alt="logo"> </a>
+          <a class="navbar-brand brand-logo-mini" href="PAGINA DE LOGIN.php">
+            <img src="../assets/images/favicon.png" alt="logo"> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+       
+   
+          </ul>
+          
+            <div class="form-group">
+			 <form class="form-inline my-2 my-lg-0" action="PAGINA DE LOGIN.php" method="post">
+	  <label> Módulo: </label>
+  <select name="setor2" id="setor2" class="form-control">
+		
+		 <option value="Clinica Medica">Diretoria</option>
+	
+
+	
+	 <option value="Administracao">Administracao</option>
+	 
+    <option value="Agência Transf">Agência Transf</option>
+   <option value="Almoxarifado">Almoxarifado</option>
+   <option value="Ambulatório">Ambulatório</option>
+   <option value="Aprovisionamento">Aprovisionamento</option>
+   <option value="Arquivo">Arquivo</option>
+ 
+      <option value="CCIH">CCIH</option>
+    <option value="Urgência Geral">Classificação de Risco</option>
+   <option value="Contas">Contas Médicas</option>
+   <option value="Contas ambu">Contas Ambulatoriais</option>
+   <option value="CPD">TI</option>
+   <option value="Direção">Diretoria</option>
+    <option value="Internamento">Enfermagem</option>
+   <option value="Farmácia">Farmácia</option>
+   <option value="Fisioterapia">Fisioterapia</option>
+   <option value="Fonoaudiologia">Fonoaudiologia</option>
+   <option value="ADM Otorrino">Geral</option>
+   <option value="Hotelaria">Hotelaria</option>
+   <option value="Laboratório">Laboratório</option>
+   <option value="Licitação">Licitação</option>
+    <option value="Clinica Medica">Médico</option>
+  
+   <option value="Nutrição">Nutrição</option>
+   <option value="Odontologia">Odontologia</option>
+   
+   <option value="Psicologia">Psicologia</option>
+   <option value="Radiologia">Radiologia</option>
+   <option value="Recepção">Recepção</option>
+   <option value="S.Social">S.Social</option>
+    <option value="Urgência">Tec. de Enfermagem</option>   
+   
+
+ 
+   </select>
+            <button class="btn btn-primary toolbar-item" type="submit" name="btvalidar2">Alterar</button>  
+            </form></div>
+			
+          
+          <ul class="navbar-nav ml-auto">
+		  
+          <li class="nav-item dropdown">
+			
+               <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <i class="mdi mdi-bell-outline"></i>
+				                <span class="count"><!-- numero de notificações --> 11</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+			                   <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=1174';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  TRIAGEM</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=1185';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  TRIAGEM</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=35348';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=40306';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=40308';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=54605';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=55369';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=62188';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=80626';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=80633';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  SALA DE PARTO</span>
+				  
+				 
+                </a>
+				                 <a class="dropdown-item py-3" href="javascript: if(confirm('Tem certeza que deseja Ver ?'))location.href='rescham.php?solicitacao=94980';">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+				 
+                  <span class="badge badge-pill badge-primary float-right">CHAMADO ABERTO  FARMACIA</span>
+				  
+				 
+                </a>
+				 				   
+				   
+				                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left"></p>
+                  <span class="badge badge-pill badge-primary float-right">Ver</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                  <!-- imagem da pessoa --> </div>
+                  <div class="preview-item-content flex-grow py-2">
+               
+                  </div>
+                </a>
+                
+              </div>
+            </div></li>
+      <li class="nav-item dropdown">
+              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-email-outline"></i>
+				               
+				                <span class="count bg-success"><!-- numero de notificações --> 0</span>
+                
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+			                 
+                		
+                
+
+			                </div>
+            </li>
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <img class="img-xs rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image"> </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <img class="img-md rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image">
+                  <p class="mb-1 mt-3 font-weight-semibold">ÍTALO GUSTAVO CUNHA DE OLIVEIRA</p>
+                  <p class="font-weight-light text-muted mb-0">email@gmail.com</p>
+                </div>
+               <a class="dropdown-item">Meu perfil <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                <a class="dropdown-item">Menssagens<i class="dropdown-item-icon ti-comment-alt"></i></a>
+               
+                <a class="dropdown-item" href="PAGINA DE LOGIN.php?acao=logout" title="Fazer logout!">Sair<i class="dropdown-item-icon ti-power-off"></i></a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="profile-image">
+                  <img class="img-xs rounded-circle" src="../assets/images/faces/face8.jpg" alt="profile image">
+                  <div class="dot-indicator bg-success"></div>
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">ÍTALO GUSTAVO CUNHA DE OLIVEIRA</p>
+                 
+                </div>
+              </a>
+            </li>
+            <li class="nav-item nav-category">Main Menu</li>
+            <li class="nav-item">
+              <a class="nav-link" href="PAGINA DE LOGIN.php">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Menu</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+<li class="nav-item">
+                    <a class="nav-link" href="arquivardoc.php">Arquivar Documentos(DIRETORIA)</a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="buscardoc.php">Buscar Documentos</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="excluirdoc.php">Excluir Documentos</a>
+                  </li>
+				
+				   <li class="nav-item">
+                    <a class="nav-link" href="editarfrase.php">Editar Frase do Painel</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="figurapainel.php">Alterar Imagem e Vídeos do Painel</a>
+                  </li>
+				      <li class="nav-item">
+                    <a class="nav-link" href="acompanharc.php">Abrir Chamados</a>
+                  </li>
+				  
+				  <li class="nav-item">
+                    <a class="nav-link" href="responcha.php">Responder Chamados</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            
+             <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-teste" aria-expanded="false" aria-controls="ui-teste">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Relatórios  Analíticos</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-teste">
+                <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+                    <a class="nav-link" href="relaambulatorio.php">Ambulatórial</a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="relainternamento.php">Internação</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaurgencia.php">Urgência</a>
+                  </li>
+				
+				  <li class="nav-item">
+                    <a class="nav-link" href="relaurgenciaarquivo.php">Urgência Anterior 2023</a>
+                  </li>
+				      <li class="nav-item">
+                    <a class="nav-link" href="relamaternidade.php">Urgência/Maternidade</a>
+                  </li>
+				  <li class="nav-item">
+                    <a class="nav-link" href="relaurgenciaele.php">Eletivos/PS</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+                 <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-ter" aria-expanded="false" aria-controls="ui-ter">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Relatórios  Sintéticos</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-ter">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="relaambulatoriope.php">Ambulatórial</a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="relainternamentope.php">Internação</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaurgenciape.php">Urgência</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaurgenciapearquivo.php">Urgência Anterior 2023</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relamaternidadepe.php">Urgência/Maternidade</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaurgenciapele.php">Eletivos/PS</a>
+                  </li>
+				     <li class="nav-item">
+                    <a class="nav-link" href="relaclassificacao.php">Classificação</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaclassificacaoarquivo.php">Classificação Anterior 2023</a>
+                  </li>
+			       <li class="nav-item">
+                    <a class="nav-link" href="segundavia.php">2° Via (Ficha de paciente)</a>
+                  </li>
+			   
+			    <li class="nav-item">
+                    <a class="nav-link" href="relamedipe.php">Evolução Médica</a>
+                  </li>
+				  
+				   <li class="nav-item">
+                    <a class="nav-link" href="relafisiope.php">Evolução Fisioterapeuta</a>
+                  </li>
+				  
+				   <li class="nav-item">
+                    <a class="nav-link" href="relaenferpe.php">Evolução Enfermagem</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relatecpe.php">Evolução Tec Enfermagem</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="relanutripe.php">Evolução Nutrição</a>
+                  </li>
+			    <li class="nav-item">
+                    <a class="nav-link" href="relassocialpe.php">Evolução Serviço Social</a>
+                  </li>
+				  
+				   <li class="nav-item">
+                    <a class="nav-link" href="relanaqlab.php">Exames Laboratório</a>
+                  </li>
+				  
+				   <li class="nav-item">
+                    <a class="nav-link" href="relanaqrad.php">Exames de Imagem</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-la" aria-expanded="false" aria-controls="ui-la">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Relatórios  Farmácia</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-la">
+                <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+                    <a class="nav-link" href="relaalta.php">Alta</a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="relaalto.php">Alto Custo</a>
+                  </li>
+				 
+				   <li class="nav-item">
+                    <a class="nav-link" href="repoestoque.php">Alerta de  Reposição</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="repoestoque2.php">Alerta de  Reposição Completo</a>
+                  </li>
+				     <li class="nav-item">
+                    <a class="nav-link" href="relafarmantiprescri.php">Antimicrobianos Prescristos</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relafarcmm.php">CMM</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="reladepartamento.php">Departamento</a>
+                  </li>
+				    <li class="nav-item">
+                    <a class="nav-link" href="reladistricaf.php">Distribuição CAF (Entre Satelites)</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="reladistricentral.php">Distribuição Central (Entre Satelites)</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relafarmentra.php">Entrada</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relafarmentrap.php">Entrada/Produto</a>
+                  </li>
+
+
+     <li class="nav-item">
+                    <a class="nav-link" href="relafarmentrasaida.php">Entrada/Saída</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relaestoquetotal.php">Posição Estoque</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relaestoqueinsucat.php">Posição Estoque/Categ</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relaestoqueinsu.php">Posição Estoque/Grupo</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relaestoque.php">Posição Estoque/Insumo</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relafarmsaida.php">Saída</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="reladistriind.php">Saídas Ind</a>
+                  </li>
+				  
+				       <li class="nav-item">
+                    <a class="nav-link" href="relafarmvalidade.php">Validade</a>
+                  </li>
+
+
+				
+                </ul>
+              </div>
+            </li>
+           
+		   
+		   
+		   
+		    <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-lal" aria-expanded="false" aria-controls="ui-lal">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Relatórios  Almoxarifado</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-lal">
+                <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+                    <a class="nav-link" href="relaalmentra.php">Entrada</a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="relaalmmentrap.php">Entrada/Produto</a>
+                  </li>
+				 
+				   <li class="nav-item">
+                    <a class="nav-link" href="reladepartamentoalmo.php">Departamento</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relaestoquetotalalmo.php">Posição Estoque</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relaestoqueinsualmo.php">Posição Estoque/Categ</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relaestoquealmo.php">Posição Estoque/Insumo</a>
+                  </li>
+				    <li class="nav-item">
+                    <a class="nav-link" href="relaalmsaida.php">Saída</a>
+                  </li>
+				  
+				     <li class="nav-item">
+                    <a class="nav-link" href="relaalmoentrasaida.php">Sáida/Entrada Setor</a>
+                  </li>
+				  
+				     
+
+				
+                </ul>
+              </div>
+            </li>
+          
+		  
+		   <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-tern" aria-expanded="false" aria-controls="ui-tern">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Relatórios NAQ</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-tern">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="relanaqarquivo.php">Relatórios de Qualidade</a>
+                  </li>
+                  
+				    <li class="nav-item">
+                    <a class="nav-link" href="relanaq.php">Relatórios de Qualidade Anterior 2023</a>
+                  </li>
+				  
+				  <li class="nav-item">
+                    <a class="nav-link" href="relanaq2.php">Relatório Nucleo</a>
+                  </li>
+				 <li class="nav-item">
+                    <a class="nav-link" href="relaalta.php">Relatórios de Alta</a>
+                  </li>
+				  
+				  
+				  	 <li class="nav-item">
+                    <a class="nav-link" href="relaciru.php">Cirurgias por Descrição</a>
+                  </li>
+				  
+				  	 <li class="nav-item">
+                    <a class="nav-link" href="relaciruenfe.php">Cirurgias (Enfermagem)</a>
+                  </li>
+				             <li class="nav-item">
+                    <a class="nav-link" href="relaregula.php">Relatórios de Regulação</a>
+                  </li>
+                  
+				 <li class="nav-item">
+                    <a class="nav-link" href="relaregulas.php">Relatórios de Regulados</a>
+                  </li>
+				             <li class="nav-item">
+                    <a class="nav-link" href="relaregulan.php">Relatórios de Não Regulados</a>
+                  </li>
+                  
+				  
+				  <li class="nav-item">
+                    <a class="nav-link" href="relaregulasvs.php">Relatórios VIA SISREG</a>
+                  </li>
+				  
+				  
+				  
+				  <li class="nav-item">
+                    <a class="nav-link" href="relaregulascs.php">CENTRAL ESTADUAL DE LEITOS</a>
+                  </li>
+			
+                </ul>
+              </div>
+            </li>
+			
+			
+			
+					  
+ <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-tern1" aria-expanded="false" aria-controls="ui-tern1">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Licitação</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ui-tern1">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="relaopme.php">OPME</a>
+                  </li>
+                  
+				              <li class="nav-item">
+                    <a class="nav-link" href="comprabusca.php">Compra Direta</a>
+                  </li>
+				  
+                       <li class="nav-item">
+                    <a class="nav-link" href="atabusca.php">Licitado</a>
+                  </li>
+			
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>       <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+               <div class="col-12">
+                <div class="page-header">
+                  <h4 class="page-title"> INSTITUTO DE SAUDE ELPIDIO DE ALMEIDA	</h4>
+                  <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                    <ul class="quick-links">
+					   
+                        <li>Data: 18/03/2026</li>
+                      <li>Hora: 16:34:54</li>
+                    
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="page-header-toolbar">
+                  <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
+  
+                  </div>
+                  <div class="filter-wrapper">
+                    <div class="dropdown toolbar-item">
+                                               <select class="form-control" required="required" name="clinica" id="clinica">
+							<option>Toda Unidade</option>				   
+			<option></option>
+	  ﻿
+	
+
+<option value="ALA NOVA">ALA NOVA</option><option value="ALA NOVA RN">ALA NOVA RN</option><option value="ALTO RISCO">ALTO RISCO</option><option value="BI">BI</option><option value="BLOCO CIRURGICO">BLOCO CIRURGICO</option><option value="CANGURU">CANGURU</option><option value="CPN">CPN</option><option value="CPN RN">CPN RN</option><option value="FLORES">FLORES</option><option value="FLORES RN">FLORES RN</option><option value="SALA DE PARTO">SALA DE PARTO</option><option value="SEMI INTENSIVA">SEMI INTENSIVA</option><option value="UTI MATERNA">UTI MATERNA</option><option value="UTI NEO NATAL">UTI NEO NATAL</option>	  </select>
+                    </div>
+                    
+                  </div>
+                  <div class="sort-wrapper">
+                    <button type="button" class="btn btn-primary toolbar-item">Buscar</button>
+                    <div class="dropdown ml-lg-auto ml-3 toolbar-item">
+                     
+                      <div class="dropdown-menu" aria-labelledby="dropdownexport">
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+           			            <div class="row">
+              <div class="col-md-12 grid-margin">
+		
+                <div class="card">
+                  <div class="card-body">
+				   <h4 class="card-title mb-0">Farmácia (Insumos com Falta de Estoque)</h4>
+ <div class="table">
+ 					               <div id="tabelad15">
+</div>
+    
+    
+ 
+ 
+   </div>
+                    </div>
+                  </div>
+                </div>
+             
+         
+			    					               <div id="tabelad16">
+</div>
+			   
+            
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid clearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2020 <a href="http://www.sistemasjc.com.br" target="_blank">JC SOFTWARE</a>.</span>
+              
+            </div>
+          </footer>
+          <!-- partial -->
+        
+        <!-- main-panel ends -->
+      
+      <!-- page-body-wrapper ends -->
+    
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="../assets/js/shared/off-canvas.js"></script>
+    <script src="../assets/js/shared/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../assets/js/demo_1/dashboard.js"></script>
+    <!-- End custom js for this page-->
+  
+	
+	
+
+ </body></html>
