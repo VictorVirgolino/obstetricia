@@ -8,6 +8,7 @@ import unicodedata
 import hashlib
 import sqlite3
 import streamlit.components.v1 as components
+import page_abrangencia
 
 st.set_page_config(
     page_title="Dashboard Obstetricia - CG",
@@ -441,6 +442,7 @@ view = st.sidebar.radio(
         "Estatisticas de Internacao",
         "Estatisticas de Urgencia",
         "Qualidade (NAQ)",
+        "Abrangência e Pactuação",
     ],
 )
 
@@ -3006,3 +3008,6 @@ elif view == "Qualidade (NAQ)":
         st.dataframe(df_top20_display, use_container_width=True, hide_index=True)
     else:
         st.info("Sem dados de detalhe para exibir ranking de pacientes.")
+
+elif view == "Abrangência e Pactuação":
+    page_abrangencia.render()

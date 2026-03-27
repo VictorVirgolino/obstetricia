@@ -245,6 +245,48 @@ def create_tables():
     )
     """)
 
+    # === TABELAS DE ABRANGÊNCIA / PACTUAÇÃO ===
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS item_procedimento (
+        tipo TEXT,
+        item_cod TEXT,
+        item_nome TEXT,
+        proc_cod TEXT,
+        proc_nome TEXT,
+        PRIMARY KEY (tipo, item_cod, proc_cod)
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS abrangencia (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tipo TEXT,
+        financiamento TEXT,
+        item_cod TEXT,
+        item_nome TEXT,
+        municipio_executor TEXT,
+        quantidade INTEGER,
+        valor_unitario REAL,
+        valor_total REAL
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS referencia (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tipo TEXT,
+        financiamento TEXT,
+        municipio_encaminhador TEXT,
+        item_cod TEXT,
+        item_nome TEXT,
+        municipio_executor TEXT,
+        quantidade INTEGER,
+        valor_unitario REAL,
+        valor_total REAL
+    )
+    """)
+
     # View com custo mais recente por procedimento
     cursor.execute("DROP VIEW IF EXISTS sigtap_custo_atual")
     cursor.execute("""
